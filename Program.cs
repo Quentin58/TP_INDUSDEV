@@ -21,6 +21,7 @@ namespace TP_INDUSDEV
 
             int a = new int();
             int b = new int();
+            int c = new int();
         }
     }
 }
