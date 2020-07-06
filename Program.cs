@@ -20,6 +20,7 @@ namespace TP_INDUSDEV
             Application.Run(new Form1());
 
             int a = new int();
+            int b = new int();
         }
     }
 }
