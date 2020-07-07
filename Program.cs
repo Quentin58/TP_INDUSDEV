@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-// Commentaire de Alex
 namespace TP_INDUSDEV
 {
     static class Program
@@ -18,10 +17,6 @@ namespace TP_INDUSDEV
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-
-            int a = new int();
-            int b = new int();
-            int c = new int();
         }
     }
 }
