@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_INDUSDEV_DEV" Class="linqToDB_INDUSDEV_DEVDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=myrod-dev.c8nesh19lf5i.eu-west-3.rds.amazonaws.com,1433;Initial Catalog=DB_INDUSDEV_DEV;Persist Security Info=True;User ID=admin" SettingsObjectName="TP_INDUSDEV.Properties.Settings" SettingsPropertyName="DB_INDUSDEV_DEVConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.T_MATERIAL_TYPE" Member="T_MATERIAL_TYPE">
+    <Type Name="T_MATERIAL_TYPE">
+      <Column Name="ID_MATERIAL_TYPE" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[NAME_MATERIAL-TYPE]" Member="NAME_MATERIAL_TYPE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="T_MATERIAL_TYPE_TJ_TICKET_MATERIAL_TYPE" Member="TJ_TICKET_MATERIAL_TYPE" ThisKey="ID_MATERIAL_TYPE" OtherKey="ID_TICKET_MATERIAL_TYPE" Type="TJ_TICKET_MATERIAL_TYPE" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_OPERATOR" Member="T_OPERATOR">
+    <Type Name="T_OPERATOR">
+      <Column Name="ID_OPERATOR" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LAST_NAME_OPERATOR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FIRST_NAME_OPERATOR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LOGIN_OPERATOR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PASSWORD_OPERATOR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_OPERATOR_TYPE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="T_OPERATOR_T_TICKET" Member="T_TICKET" ThisKey="ID_OPERATOR" OtherKey="ID_OWNER_OPERATOR" Type="T_TICKET" />
+      <Association Name="T_OPERATOR_T_TICKET1" Member="T_TICKET1" ThisKey="ID_OPERATOR" OtherKey="ID_SELECTED_OPERATOR" Type="T_TICKET" />
+      <Association Name="T_OPERATOR_T_TICKET2" Member="T_TICKET2" ThisKey="ID_OPERATOR" OtherKey="ID_SOLVER_OPERATOR" Type="T_TICKET" />
+      <Association Name="T_OPERATOR_TYPE_T_OPERATOR" Member="T_OPERATOR_TYPE" ThisKey="ID_OPERATOR_TYPE" OtherKey="ID_OPERATOR_TYPE" Type="T_OPERATOR_TYPE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_OPERATOR_TYPE" Member="T_OPERATOR_TYPE">
+    <Type Name="T_OPERATOR_TYPE">
+      <Column Name="ID_OPERATOR_TYPE" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME_OPERATOR_TYPE" Type="System.Data.Linq.Binary" DbType="VarBinary(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="T_OPERATOR_TYPE_T_OPERATOR" Member="T_OPERATOR" ThisKey="ID_OPERATOR_TYPE" OtherKey="ID_OPERATOR_TYPE" Type="T_OPERATOR" />
+      <Association Name="T_OPERATOR_TYPE_TJ_RIGHT_OPERATOR_TYPE" Member="TJ_RIGHT_OPERATOR_TYPE" ThisKey="ID_OPERATOR_TYPE" OtherKey="ID_RIGHT_OPERATOR_TYPE" Type="TJ_RIGHT_OPERATOR_TYPE" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_RIGHT" Member="T_RIGHT">
+    <Type Name="T_RIGHT">
+      <Column Name="ID_RIGHT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME_RIGHT" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="T_RIGHT_TJ_RIGHT_OPERATOR_TYPE" Member="TJ_RIGHT_OPERATOR_TYPE" ThisKey="ID_RIGHT" OtherKey="ID_RIGHT_OPERATOR_TYPE" Type="TJ_RIGHT_OPERATOR_TYPE" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_TICKET" Member="T_TICKET">
+    <Type Name="T_TICKET">
+      <Column Name="ID_TICKET" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="START_DATE_TICKET" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="END_DATE_TICKET" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DETAILS_TICKET" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="INTERVENTION_DESCRIPTION_TICKET" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ID_TICKET_STATE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_OWNER_OPERATOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_SELECTED_OPERATOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_SOLVER_OPERATOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="T_TICKET_TJ_TICKET_MATERIAL_TYPE" Member="TJ_TICKET_MATERIAL_TYPE" ThisKey="ID_TICKET" OtherKey="ID_TICKET" Type="TJ_TICKET_MATERIAL_TYPE" />
+      <Association Name="T_OPERATOR_T_TICKET" Member="T_OPERATOR" ThisKey="ID_OWNER_OPERATOR" OtherKey="ID_OPERATOR" Type="T_OPERATOR" IsForeignKey="true" />
+      <Association Name="T_OPERATOR_T_TICKET1" Member="T_OPERATOR1" ThisKey="ID_SELECTED_OPERATOR" OtherKey="ID_OPERATOR" Type="T_OPERATOR" IsForeignKey="true" />
+      <Association Name="T_OPERATOR_T_TICKET2" Member="T_OPERATOR2" ThisKey="ID_SOLVER_OPERATOR" OtherKey="ID_OPERATOR" Type="T_OPERATOR" IsForeignKey="true" />
+      <Association Name="T_TICKET_STATE_T_TICKET" Member="T_TICKET_STATE" ThisKey="ID_TICKET_STATE" OtherKey="ID_TICKET_STATE" Type="T_TICKET_STATE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_TICKET_STATE" Member="T_TICKET_STATE">
+    <Type Name="T_TICKET_STATE">
+      <Column Name="ID_TICKET_STATE" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME_TICKET_STATE" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="T_TICKET_STATE_T_TICKET" Member="T_TICKET" ThisKey="ID_TICKET_STATE" OtherKey="ID_TICKET_STATE" Type="T_TICKET" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TJ_RIGHT_OPERATOR_TYPE" Member="TJ_RIGHT_OPERATOR_TYPE">
+    <Type Name="TJ_RIGHT_OPERATOR_TYPE">
+      <Column Name="ID_RIGHT_OPERATOR_TYPE" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ALLOWED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ID_RIGHT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_OPERATOR_TYPE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="T_OPERATOR_TYPE_TJ_RIGHT_OPERATOR_TYPE" Member="T_OPERATOR_TYPE" ThisKey="ID_RIGHT_OPERATOR_TYPE" OtherKey="ID_OPERATOR_TYPE" Type="T_OPERATOR_TYPE" IsForeignKey="true" />
+      <Association Name="T_RIGHT_TJ_RIGHT_OPERATOR_TYPE" Member="T_RIGHT" ThisKey="ID_RIGHT_OPERATOR_TYPE" OtherKey="ID_RIGHT" Type="T_RIGHT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TJ_TICKET_MATERIAL_TYPE" Member="TJ_TICKET_MATERIAL_TYPE">
+    <Type Name="TJ_TICKET_MATERIAL_TYPE">
+      <Column Name="ID_TICKET_MATERIAL_TYPE" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_TICKET" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_MATERIAL_TYPE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="T_MATERIAL_TYPE_TJ_TICKET_MATERIAL_TYPE" Member="T_MATERIAL_TYPE" ThisKey="ID_TICKET_MATERIAL_TYPE" OtherKey="ID_MATERIAL_TYPE" Type="T_MATERIAL_TYPE" IsForeignKey="true" />
+      <Association Name="T_TICKET_TJ_TICKET_MATERIAL_TYPE" Member="T_TICKET" ThisKey="ID_TICKET" OtherKey="ID_TICKET" Type="T_TICKET" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
