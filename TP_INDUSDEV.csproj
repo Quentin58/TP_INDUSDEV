@@ -58,6 +58,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LinqToDB_INDUSDEV_DEV.dbml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\FormTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\FormTest.Designer.cs">
+      <DependentUpon>FormTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\FrmConnection.cs">
       <SubType>Form</SubType>
     </Compile>

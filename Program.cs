@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_INDUSDEV.Data;
+using TP_INDUSDEV.UserControls;
 
 namespace TP_INDUSDEV
 {
@@ -45,6 +46,7 @@ namespace TP_INDUSDEV
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmConnection());
+            //Application.Run(new FormTest());
         }
     }
 }
