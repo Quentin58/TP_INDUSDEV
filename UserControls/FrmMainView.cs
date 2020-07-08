@@ -26,6 +26,17 @@ namespace TP_INDUSDEV.UserControls
         // Méthodes
         #region Méthodes
 
+        // Affichage
+        #region Affichage
+        private void InitializeDisplay()
+        {
+            // Permet de :
+            // - positionner les controls par rapport à la page
+            // - définir leur taille
+
+            this.pnlAddTicket.Width = 12;
+        }
+        #endregion
         #endregion
 
         // Evenements
