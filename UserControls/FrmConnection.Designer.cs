@@ -31,16 +31,17 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.tbxPassword = new CustomControlsLibrary.CustomTextBox();
             this.tbxLogin = new CustomControlsLibrary.CustomTextBox();
+            this.tbxPassword = new CustomControlsLibrary.CustomTextBox();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(87, 23);
+            this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(449, 55);
+            this.lblTitle.Size = new System.Drawing.Size(624, 55);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Ticket Manager";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -48,7 +49,7 @@
             // lblSubTitle
             // 
             this.lblSubTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubTitle.Location = new System.Drawing.Point(233, 78);
+            this.lblSubTitle.Location = new System.Drawing.Point(230, 97);
             this.lblSubTitle.Name = "lblSubTitle";
             this.lblSubTitle.Size = new System.Drawing.Size(160, 31);
             this.lblSubTitle.TabIndex = 1;
@@ -64,35 +65,39 @@
             this.button1.Text = "Se connecter";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // tbxPassword
-            // 
-            this.tbxPassword.BackColor = System.Drawing.SystemColors.Control;
-            this.tbxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbxPassword.BottomBorderColor = System.Drawing.Color.Black;
-            this.tbxPassword.ButtonBorderOnFocusColor = System.Drawing.Color.Blue;
-            this.tbxPassword.ColorWatermark = System.Drawing.Color.Gray;
-            this.tbxPassword.ForeColor = System.Drawing.Color.Gray;
-            this.tbxPassword.IsPassword = true;
-            this.tbxPassword.Location = new System.Drawing.Point(227, 197);
-            this.tbxPassword.Name = "tbxPassword";
-            this.tbxPassword.Size = new System.Drawing.Size(151, 20);
-            this.tbxPassword.TabIndex = 6;
-            this.tbxPassword.Text = "Entrer votre mot de passe";
-            this.tbxPassword.WatermarkText = "Entrer votre mot de passe";
-            // 
             // tbxLogin
             // 
             this.tbxLogin.BackColor = System.Drawing.SystemColors.Control;
             this.tbxLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxLogin.BottomBorderColor = System.Drawing.Color.Black;
             this.tbxLogin.ButtonBorderOnFocusColor = System.Drawing.Color.Blue;
-            this.tbxLogin.ColorWatermark = System.Drawing.Color.Empty;
+            this.tbxLogin.ColorWatermark = System.Drawing.Color.DarkGray;
+            this.tbxLogin.ForeColor = System.Drawing.Color.DarkGray;
             this.tbxLogin.IsPassword = false;
             this.tbxLogin.Location = new System.Drawing.Point(227, 156);
             this.tbxLogin.Name = "tbxLogin";
             this.tbxLogin.Size = new System.Drawing.Size(151, 20);
             this.tbxLogin.TabIndex = 5;
-            this.tbxLogin.WatermarkText = null;
+            this.tbxLogin.Text = "Entrez votre indentifiant";
+            this.tbxLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbxLogin.WatermarkText = "Entrez votre indentifiant";
+            // 
+            // tbxPassword
+            // 
+            this.tbxPassword.BackColor = System.Drawing.SystemColors.Control;
+            this.tbxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbxPassword.BottomBorderColor = System.Drawing.Color.Black;
+            this.tbxPassword.ButtonBorderOnFocusColor = System.Drawing.Color.Blue;
+            this.tbxPassword.ColorWatermark = System.Drawing.Color.DarkGray;
+            this.tbxPassword.ForeColor = System.Drawing.Color.DarkGray;
+            this.tbxPassword.IsPassword = true;
+            this.tbxPassword.Location = new System.Drawing.Point(227, 197);
+            this.tbxPassword.Name = "tbxPassword";
+            this.tbxPassword.Size = new System.Drawing.Size(151, 20);
+            this.tbxPassword.TabIndex = 6;
+            this.tbxPassword.Text = "Entrez votre mot de passe";
+            this.tbxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbxPassword.WatermarkText = "Entrez votre mot de passe";
             // 
             // FrmConnection
             // 
