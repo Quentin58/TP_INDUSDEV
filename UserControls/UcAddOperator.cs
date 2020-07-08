@@ -28,11 +28,21 @@ namespace TP_INDUSDEV.UserControls
         public UcAddOperator()
         {
             InitializeComponent();
+            InitializeControls();
         }
         /*_____________________________________________________________________________________________*/
 
         // Méthodes
         #region Méthodes
+
+        // Initialisation champs formulaire
+        private void InitializeControls()
+        {
+            // ComboBox types opérateur
+            cbbxOperatorType.DataSource = from t in Program.dcIndusDev.T_OPERATOR_TYPE
+                                          select t.NAME_OPERATOR_TYPE;
+        }
+        /*_____________________________________________________________________________________________*/
 
         // Ajouter nouvel opérateur (intervevant, technicien ou administrateur)
         private void AddOperator(T_OPERATOR dOperator)
@@ -49,21 +59,19 @@ namespace TP_INDUSDEV.UserControls
         /*_____________________________________________________________________________________________*/
 
         // Récupérer les informations du formulaire
-        private T_OPERATOR GetOperatorFormData()
+        private T_OPERATOR GetOperatorData()
         {
             T_OPERATOR dOperator = new T_OPERATOR();
 
-            dOperator.FIRST_NAME_OPERATOR = tbxOperatorFirstName.Text;  // Prénom
-            dOperator.LAST_NAME_OPERATOR = tbxOperatorLastName.Text;    // Nom
-            dOperator.LOGIN_OPERATOR = CreateOperatorLogin(             // Login
-                tbxOperatorFirstName.Text, 
-                tbxOperatorLastName.Text,
-                GetOperatorId());
-            dOperator.PASSWORD_OPERATOR =                               // Mot de passe
-                DateTime.Now.Year.ToString() +
-                "TicketManager!";
-            dOperator.T_OPERATOR_TYPE = default;
-
+            // Prénom, nom, login, mot de passe, type d'opérateur
+            dOperator.FIRST_NAME_OPERATOR = tbxOperatorFirstName.Text;
+            dOperator.LAST_NAME_OPERATOR = tbxOperatorLastName.Text;
+            dOperator.LOGIN_OPERATOR = CreateOperatorLogin(tbxOperatorFirstName.Text, tbxOperatorLastName.Text, GetOperatorId());
+            dOperator.PASSWORD_OPERATOR = DateTime.Now.Year.ToString() + "TicketManager!";
+            dOperator.T_OPERATOR_TYPE = (from t in Program.dcIndusDev.T_OPERATOR_TYPE
+                                         where t.NAME_OPERATOR_TYPE == cbbxOperatorType.SelectedItem.ToString()
+                                         select t).FirstOrDefault();
+;
             return dOperator;
         }
         /*_____________________________________________________________________________________________*/
@@ -82,12 +90,26 @@ namespace TP_INDUSDEV.UserControls
             if ((from t in Program.dcIndusDev.T_OPERATOR select t).Any()) // Recherche d'un opérateur en base
             {
                 return (from t in Program.dcIndusDev.T_OPERATOR
-                        select t.ID_OPERATOR).LastOrDefault() + 1;
+                        select t.ID_OPERATOR).Max() + 1;
             }
             else // Pas d'opérateur en base
             {
-                return default;
+                return 1;
             }
+        }
+        /*_____________________________________________________________________________________________*/
+
+        // Ajouter type opérateur
+        private void AddOperatorType(string strTypeName)
+        {
+            T_OPERATOR_TYPE dOperatorType = new T_OPERATOR_TYPE
+            {
+                ID_OPERATOR_TYPE = (from t in Program.dcIndusDev.T_OPERATOR_TYPE
+                                    select t.ID_OPERATOR_TYPE).Max() + 1,
+                NAME_OPERATOR_TYPE = strTypeName
+            };
+
+            Program.dcIndusDev.T_OPERATOR_TYPE.InsertOnSubmit(dOperatorType);
         }
         /*_____________________________________________________________________________________________*/
 
@@ -98,12 +120,8 @@ namespace TP_INDUSDEV.UserControls
 
         // Ajouter nouvel opérateur (intervenant, technicien ou administrateur)
         private void BtnAddOperator_Click(object sender, EventArgs e)
-        {
-            T_OPERATOR dOperator = GetOperatorFormData();
-
-            MessageBox.Show(dOperator.FIRST_NAME_OPERATOR + " - " + dOperator.LAST_NAME_OPERATOR + " - " + dOperator.LOGIN_OPERATOR + " - " + dOperator.PASSWORD_OPERATOR); ;
-
-            AddOperator(dOperator);
+        {        
+            AddOperator(GetOperatorData());
             Program.SubmitChanges(strAddOperatorErrorMessage);
         }
         /*_____________________________________________________________________________________________*/

@@ -143,11 +143,11 @@
     <EmbeddedResource Include="UserControls\FrmMainView.resx">
       <DependentUpon>FrmMainView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UcManageRights.resx">
-      <DependentUpon>UcManageRights.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UcAddOperator.resx">
+      <DependentUpon>UcAddOperator.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UcOperatorRights.resx">
-      <DependentUpon>UcOperatorRights.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UcAddTicket.resx">
+      <DependentUpon>UcAddTicket.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Data\LinqToDB_INDUSDEV.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
@@ -183,6 +183,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Padlock-symbol.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
