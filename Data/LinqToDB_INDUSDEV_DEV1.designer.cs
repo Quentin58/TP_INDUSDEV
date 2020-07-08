@@ -23,7 +23,7 @@ namespace TP_INDUSDEV.Data
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DB_INDUSDEV_DEV")]
-	public partial class LinqToDB_INDUSDEV_DEVDataContext : System.Data.Linq.DataContext
+	public partial class linqToDB_INDUSDEV_DEVDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -36,9 +36,6 @@ namespace TP_INDUSDEV.Data
     partial void InsertT_OPERATOR(T_OPERATOR instance);
     partial void UpdateT_OPERATOR(T_OPERATOR instance);
     partial void DeleteT_OPERATOR(T_OPERATOR instance);
-    partial void InsertT_OPERATOR_TYPE(T_OPERATOR_TYPE instance);
-    partial void UpdateT_OPERATOR_TYPE(T_OPERATOR_TYPE instance);
-    partial void DeleteT_OPERATOR_TYPE(T_OPERATOR_TYPE instance);
     partial void InsertT_RIGHT(T_RIGHT instance);
     partial void UpdateT_RIGHT(T_RIGHT instance);
     partial void DeleteT_RIGHT(T_RIGHT instance);
@@ -54,33 +51,36 @@ namespace TP_INDUSDEV.Data
     partial void InsertTJ_TICKET_MATERIAL_TYPE(TJ_TICKET_MATERIAL_TYPE instance);
     partial void UpdateTJ_TICKET_MATERIAL_TYPE(TJ_TICKET_MATERIAL_TYPE instance);
     partial void DeleteTJ_TICKET_MATERIAL_TYPE(TJ_TICKET_MATERIAL_TYPE instance);
+    partial void InsertT_OPERATOR_TYPE(T_OPERATOR_TYPE instance);
+    partial void UpdateT_OPERATOR_TYPE(T_OPERATOR_TYPE instance);
+    partial void DeleteT_OPERATOR_TYPE(T_OPERATOR_TYPE instance);
     #endregion
 		
-		public LinqToDB_INDUSDEV_DEVDataContext() : 
+		public linqToDB_INDUSDEV_DEVDataContext() : 
 				base(global::TP_INDUSDEV.Properties.Settings.Default.DB_INDUSDEV_DEVConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public LinqToDB_INDUSDEV_DEVDataContext(string connection) : 
+		public linqToDB_INDUSDEV_DEVDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public LinqToDB_INDUSDEV_DEVDataContext(System.Data.IDbConnection connection) : 
+		public linqToDB_INDUSDEV_DEVDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public LinqToDB_INDUSDEV_DEVDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public linqToDB_INDUSDEV_DEVDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public LinqToDB_INDUSDEV_DEVDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public linqToDB_INDUSDEV_DEVDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -99,14 +99,6 @@ namespace TP_INDUSDEV.Data
 			get
 			{
 				return this.GetTable<T_OPERATOR>();
-			}
-		}
-		
-		public System.Data.Linq.Table<T_OPERATOR_TYPE> T_OPERATOR_TYPE
-		{
-			get
-			{
-				return this.GetTable<T_OPERATOR_TYPE>();
 			}
 		}
 		
@@ -147,6 +139,14 @@ namespace TP_INDUSDEV.Data
 			get
 			{
 				return this.GetTable<TJ_TICKET_MATERIAL_TYPE>();
+			}
+		}
+		
+		public System.Data.Linq.Table<T_OPERATOR_TYPE> T_OPERATOR_TYPE
+		{
+			get
+			{
+				return this.GetTable<T_OPERATOR_TYPE>();
 			}
 		}
 	}
@@ -573,152 +573,6 @@ namespace TP_INDUSDEV.Data
 		{
 			this.SendPropertyChanging();
 			entity.T_OPERATOR2 = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.T_OPERATOR_TYPE")]
-	public partial class T_OPERATOR_TYPE : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID_OPERATOR_TYPE;
-		
-		private System.Data.Linq.Binary _NAME_OPERATOR_TYPE;
-		
-		private EntitySet<T_OPERATOR> _T_OPERATOR;
-		
-		private EntityRef<TJ_RIGHT_OPERATOR_TYPE> _TJ_RIGHT_OPERATOR_TYPE;
-		
-    #region Définitions de méthodes d'extensibilité
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnID_OPERATOR_TYPEChanging(int value);
-    partial void OnID_OPERATOR_TYPEChanged();
-    partial void OnNAME_OPERATOR_TYPEChanging(System.Data.Linq.Binary value);
-    partial void OnNAME_OPERATOR_TYPEChanged();
-    #endregion
-		
-		public T_OPERATOR_TYPE()
-		{
-			this._T_OPERATOR = new EntitySet<T_OPERATOR>(new Action<T_OPERATOR>(this.attach_T_OPERATOR), new Action<T_OPERATOR>(this.detach_T_OPERATOR));
-			this._TJ_RIGHT_OPERATOR_TYPE = default(EntityRef<TJ_RIGHT_OPERATOR_TYPE>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_OPERATOR_TYPE", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID_OPERATOR_TYPE
-		{
-			get
-			{
-				return this._ID_OPERATOR_TYPE;
-			}
-			set
-			{
-				if ((this._ID_OPERATOR_TYPE != value))
-				{
-					this.OnID_OPERATOR_TYPEChanging(value);
-					this.SendPropertyChanging();
-					this._ID_OPERATOR_TYPE = value;
-					this.SendPropertyChanged("ID_OPERATOR_TYPE");
-					this.OnID_OPERATOR_TYPEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME_OPERATOR_TYPE", DbType="VarBinary(50) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary NAME_OPERATOR_TYPE
-		{
-			get
-			{
-				return this._NAME_OPERATOR_TYPE;
-			}
-			set
-			{
-				if ((this._NAME_OPERATOR_TYPE != value))
-				{
-					this.OnNAME_OPERATOR_TYPEChanging(value);
-					this.SendPropertyChanging();
-					this._NAME_OPERATOR_TYPE = value;
-					this.SendPropertyChanged("NAME_OPERATOR_TYPE");
-					this.OnNAME_OPERATOR_TYPEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="T_OPERATOR_TYPE_T_OPERATOR", Storage="_T_OPERATOR", ThisKey="ID_OPERATOR_TYPE", OtherKey="ID_OPERATOR_TYPE")]
-		public EntitySet<T_OPERATOR> T_OPERATOR
-		{
-			get
-			{
-				return this._T_OPERATOR;
-			}
-			set
-			{
-				this._T_OPERATOR.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="T_OPERATOR_TYPE_TJ_RIGHT_OPERATOR_TYPE", Storage="_TJ_RIGHT_OPERATOR_TYPE", ThisKey="ID_OPERATOR_TYPE", OtherKey="ID_RIGHT_OPERATOR_TYPE", IsUnique=true, IsForeignKey=false)]
-		public TJ_RIGHT_OPERATOR_TYPE TJ_RIGHT_OPERATOR_TYPE
-		{
-			get
-			{
-				return this._TJ_RIGHT_OPERATOR_TYPE.Entity;
-			}
-			set
-			{
-				TJ_RIGHT_OPERATOR_TYPE previousValue = this._TJ_RIGHT_OPERATOR_TYPE.Entity;
-				if (((previousValue != value) 
-							|| (this._TJ_RIGHT_OPERATOR_TYPE.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TJ_RIGHT_OPERATOR_TYPE.Entity = null;
-						previousValue.T_OPERATOR_TYPE = null;
-					}
-					this._TJ_RIGHT_OPERATOR_TYPE.Entity = value;
-					if ((value != null))
-					{
-						value.T_OPERATOR_TYPE = this;
-					}
-					this.SendPropertyChanged("TJ_RIGHT_OPERATOR_TYPE");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_T_OPERATOR(T_OPERATOR entity)
-		{
-			this.SendPropertyChanging();
-			entity.T_OPERATOR_TYPE = this;
-		}
-		
-		private void detach_T_OPERATOR(T_OPERATOR entity)
-		{
-			this.SendPropertyChanging();
-			entity.T_OPERATOR_TYPE = null;
 		}
 	}
 	
@@ -1414,9 +1268,9 @@ namespace TP_INDUSDEV.Data
 		
 		private int _ID_OPERATOR_TYPE;
 		
-		private EntityRef<T_OPERATOR_TYPE> _T_OPERATOR_TYPE;
-		
 		private EntityRef<T_RIGHT> _T_RIGHT;
+		
+		private EntityRef<T_OPERATOR_TYPE> _T_OPERATOR_TYPE;
 		
     #region Définitions de méthodes d'extensibilité
     partial void OnLoaded();
@@ -1434,8 +1288,8 @@ namespace TP_INDUSDEV.Data
 		
 		public TJ_RIGHT_OPERATOR_TYPE()
 		{
-			this._T_OPERATOR_TYPE = default(EntityRef<T_OPERATOR_TYPE>);
 			this._T_RIGHT = default(EntityRef<T_RIGHT>);
+			this._T_OPERATOR_TYPE = default(EntityRef<T_OPERATOR_TYPE>);
 			OnCreated();
 		}
 		
@@ -1450,7 +1304,7 @@ namespace TP_INDUSDEV.Data
 			{
 				if ((this._ID_RIGHT_OPERATOR_TYPE != value))
 				{
-					if ((this._T_OPERATOR_TYPE.HasLoadedOrAssignedValue || this._T_RIGHT.HasLoadedOrAssignedValue))
+					if ((this._T_RIGHT.HasLoadedOrAssignedValue || this._T_OPERATOR_TYPE.HasLoadedOrAssignedValue))
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -1523,40 +1377,6 @@ namespace TP_INDUSDEV.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="T_OPERATOR_TYPE_TJ_RIGHT_OPERATOR_TYPE", Storage="_T_OPERATOR_TYPE", ThisKey="ID_RIGHT_OPERATOR_TYPE", OtherKey="ID_OPERATOR_TYPE", IsForeignKey=true)]
-		public T_OPERATOR_TYPE T_OPERATOR_TYPE
-		{
-			get
-			{
-				return this._T_OPERATOR_TYPE.Entity;
-			}
-			set
-			{
-				T_OPERATOR_TYPE previousValue = this._T_OPERATOR_TYPE.Entity;
-				if (((previousValue != value) 
-							|| (this._T_OPERATOR_TYPE.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._T_OPERATOR_TYPE.Entity = null;
-						previousValue.TJ_RIGHT_OPERATOR_TYPE = null;
-					}
-					this._T_OPERATOR_TYPE.Entity = value;
-					if ((value != null))
-					{
-						value.TJ_RIGHT_OPERATOR_TYPE = this;
-						this._ID_RIGHT_OPERATOR_TYPE = value.ID_OPERATOR_TYPE;
-					}
-					else
-					{
-						this._ID_RIGHT_OPERATOR_TYPE = default(int);
-					}
-					this.SendPropertyChanged("T_OPERATOR_TYPE");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="T_RIGHT_TJ_RIGHT_OPERATOR_TYPE", Storage="_T_RIGHT", ThisKey="ID_RIGHT_OPERATOR_TYPE", OtherKey="ID_RIGHT", IsForeignKey=true)]
 		public T_RIGHT T_RIGHT
 		{
@@ -1587,6 +1407,40 @@ namespace TP_INDUSDEV.Data
 						this._ID_RIGHT_OPERATOR_TYPE = default(int);
 					}
 					this.SendPropertyChanged("T_RIGHT");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="T_OPERATOR_TYPE_TJ_RIGHT_OPERATOR_TYPE", Storage="_T_OPERATOR_TYPE", ThisKey="ID_RIGHT_OPERATOR_TYPE", OtherKey="ID_OPERATOR_TYPE", IsForeignKey=true)]
+		public T_OPERATOR_TYPE T_OPERATOR_TYPE
+		{
+			get
+			{
+				return this._T_OPERATOR_TYPE.Entity;
+			}
+			set
+			{
+				T_OPERATOR_TYPE previousValue = this._T_OPERATOR_TYPE.Entity;
+				if (((previousValue != value) 
+							|| (this._T_OPERATOR_TYPE.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._T_OPERATOR_TYPE.Entity = null;
+						previousValue.TJ_RIGHT_OPERATOR_TYPE = null;
+					}
+					this._T_OPERATOR_TYPE.Entity = value;
+					if ((value != null))
+					{
+						value.TJ_RIGHT_OPERATOR_TYPE = this;
+						this._ID_RIGHT_OPERATOR_TYPE = value.ID_OPERATOR_TYPE;
+					}
+					else
+					{
+						this._ID_RIGHT_OPERATOR_TYPE = default(int);
+					}
+					this.SendPropertyChanged("T_OPERATOR_TYPE");
 				}
 			}
 		}
@@ -1801,6 +1655,152 @@ namespace TP_INDUSDEV.Data
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.T_OPERATOR_TYPE")]
+	public partial class T_OPERATOR_TYPE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID_OPERATOR_TYPE;
+		
+		private string _NAME_OPERATOR_TYPE;
+		
+		private EntitySet<T_OPERATOR> _T_OPERATOR;
+		
+		private EntityRef<TJ_RIGHT_OPERATOR_TYPE> _TJ_RIGHT_OPERATOR_TYPE;
+		
+    #region Définitions de méthodes d'extensibilité
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnID_OPERATOR_TYPEChanging(int value);
+    partial void OnID_OPERATOR_TYPEChanged();
+    partial void OnNAME_OPERATOR_TYPEChanging(string value);
+    partial void OnNAME_OPERATOR_TYPEChanged();
+    #endregion
+		
+		public T_OPERATOR_TYPE()
+		{
+			this._T_OPERATOR = new EntitySet<T_OPERATOR>(new Action<T_OPERATOR>(this.attach_T_OPERATOR), new Action<T_OPERATOR>(this.detach_T_OPERATOR));
+			this._TJ_RIGHT_OPERATOR_TYPE = default(EntityRef<TJ_RIGHT_OPERATOR_TYPE>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_OPERATOR_TYPE", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID_OPERATOR_TYPE
+		{
+			get
+			{
+				return this._ID_OPERATOR_TYPE;
+			}
+			set
+			{
+				if ((this._ID_OPERATOR_TYPE != value))
+				{
+					this.OnID_OPERATOR_TYPEChanging(value);
+					this.SendPropertyChanging();
+					this._ID_OPERATOR_TYPE = value;
+					this.SendPropertyChanged("ID_OPERATOR_TYPE");
+					this.OnID_OPERATOR_TYPEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME_OPERATOR_TYPE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string NAME_OPERATOR_TYPE
+		{
+			get
+			{
+				return this._NAME_OPERATOR_TYPE;
+			}
+			set
+			{
+				if ((this._NAME_OPERATOR_TYPE != value))
+				{
+					this.OnNAME_OPERATOR_TYPEChanging(value);
+					this.SendPropertyChanging();
+					this._NAME_OPERATOR_TYPE = value;
+					this.SendPropertyChanged("NAME_OPERATOR_TYPE");
+					this.OnNAME_OPERATOR_TYPEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="T_OPERATOR_TYPE_T_OPERATOR", Storage="_T_OPERATOR", ThisKey="ID_OPERATOR_TYPE", OtherKey="ID_OPERATOR_TYPE")]
+		public EntitySet<T_OPERATOR> T_OPERATOR
+		{
+			get
+			{
+				return this._T_OPERATOR;
+			}
+			set
+			{
+				this._T_OPERATOR.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="T_OPERATOR_TYPE_TJ_RIGHT_OPERATOR_TYPE", Storage="_TJ_RIGHT_OPERATOR_TYPE", ThisKey="ID_OPERATOR_TYPE", OtherKey="ID_RIGHT_OPERATOR_TYPE", IsUnique=true, IsForeignKey=false)]
+		public TJ_RIGHT_OPERATOR_TYPE TJ_RIGHT_OPERATOR_TYPE
+		{
+			get
+			{
+				return this._TJ_RIGHT_OPERATOR_TYPE.Entity;
+			}
+			set
+			{
+				TJ_RIGHT_OPERATOR_TYPE previousValue = this._TJ_RIGHT_OPERATOR_TYPE.Entity;
+				if (((previousValue != value) 
+							|| (this._TJ_RIGHT_OPERATOR_TYPE.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TJ_RIGHT_OPERATOR_TYPE.Entity = null;
+						previousValue.T_OPERATOR_TYPE = null;
+					}
+					this._TJ_RIGHT_OPERATOR_TYPE.Entity = value;
+					if ((value != null))
+					{
+						value.T_OPERATOR_TYPE = this;
+					}
+					this.SendPropertyChanged("TJ_RIGHT_OPERATOR_TYPE");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_T_OPERATOR(T_OPERATOR entity)
+		{
+			this.SendPropertyChanging();
+			entity.T_OPERATOR_TYPE = this;
+		}
+		
+		private void detach_T_OPERATOR(T_OPERATOR entity)
+		{
+			this.SendPropertyChanging();
+			entity.T_OPERATOR_TYPE = null;
 		}
 	}
 }
