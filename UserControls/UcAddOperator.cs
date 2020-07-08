@@ -59,7 +59,7 @@ namespace TP_INDUSDEV.UserControls
         /*_____________________________________________________________________________________________*/
 
         // Récupérer les informations du formulaire
-        private T_OPERATOR GetOperatorFormData()
+        private T_OPERATOR GetOperatorData()
         {
             T_OPERATOR dOperator = new T_OPERATOR();
 
@@ -120,9 +120,8 @@ namespace TP_INDUSDEV.UserControls
 
         // Ajouter nouvel opérateur (intervenant, technicien ou administrateur)
         private void BtnAddOperator_Click(object sender, EventArgs e)
-        {
-            T_OPERATOR dOperator = GetOperatorFormData();         
-            AddOperator(dOperator);
+        {        
+            AddOperator(GetOperatorData());
             Program.SubmitChanges(strAddOperatorErrorMessage);
         }
         /*_____________________________________________________________________________________________*/

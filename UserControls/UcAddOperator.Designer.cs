@@ -32,15 +32,16 @@
             this.tbxOperatorFirstName = new CustomControlsLibrary.CustomTextBox();
             this.btnAddOperator = new ZiTest.CustomButton();
             this.tbxOperatorLastName = new CustomControlsLibrary.CustomTextBox();
+            this.lblOperatorType = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbbxOperatorType
             // 
             this.cbbxOperatorType.FormattingEnabled = true;
-            this.cbbxOperatorType.Location = new System.Drawing.Point(143, 152);
+            this.cbbxOperatorType.Location = new System.Drawing.Point(143, 171);
             this.cbbxOperatorType.Name = "cbbxOperatorType";
             this.cbbxOperatorType.Size = new System.Drawing.Size(121, 24);
-            this.cbbxOperatorType.TabIndex = 2;
+            this.cbbxOperatorType.TabIndex = 3;
             // 
             // tbxOperatorFirstName
             // 
@@ -67,7 +68,7 @@
             this.btnAddOperator.OnHoverButtonColor = System.Drawing.Color.Yellow;
             this.btnAddOperator.OnHoverTextColor = System.Drawing.Color.Gray;
             this.btnAddOperator.Size = new System.Drawing.Size(125, 56);
-            this.btnAddOperator.TabIndex = 3;
+            this.btnAddOperator.TabIndex = 4;
             this.btnAddOperator.Text = "Ajouter opérateur";
             this.btnAddOperator.TextColor = System.Drawing.Color.White;
             this.btnAddOperator.UseVisualStyleBackColor = true;
@@ -88,10 +89,20 @@
             this.tbxOperatorLastName.Text = "Nom";
             this.tbxOperatorLastName.WatermarkText = "Nom";
             // 
+            // lblOperatorType
+            // 
+            this.lblOperatorType.AutoSize = true;
+            this.lblOperatorType.Location = new System.Drawing.Point(140, 151);
+            this.lblOperatorType.Name = "lblOperatorType";
+            this.lblOperatorType.Size = new System.Drawing.Size(117, 17);
+            this.lblOperatorType.TabIndex = 2;
+            this.lblOperatorType.Text = "Type d\'opérateur";
+            // 
             // UcAddOperator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblOperatorType);
             this.Controls.Add(this.cbbxOperatorType);
             this.Controls.Add(this.tbxOperatorFirstName);
             this.Controls.Add(this.btnAddOperator);
@@ -99,6 +110,7 @@
             this.Name = "UcAddOperator";
             this.Size = new System.Drawing.Size(707, 464);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -107,5 +119,6 @@
         private ZiTest.CustomButton btnAddOperator;
         private CustomControlsLibrary.CustomTextBox tbxOperatorFirstName;
         private System.Windows.Forms.ComboBox cbbxOperatorType;
+        private System.Windows.Forms.Label lblOperatorType;
     }
 }
