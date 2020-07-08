@@ -29,19 +29,18 @@ namespace TP_INDUSDEV
 
         // Méthodes
         #region Méthodes
-
+        // Vérifier si utilisateur existe
         #endregion
 
         // Evenements
         #region Evenements
-
-        #endregion
-
+        // Connexion
         private void btnConnect_Click(object sender, EventArgs e)
         {
             FrmMainView newFrmMainView = new FrmMainView();
             this.Visible = false;
             newFrmMainView.Show();
         }
+        #endregion
     }
 }

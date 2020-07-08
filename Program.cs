@@ -18,6 +18,7 @@ namespace TP_INDUSDEV
         #region Variables
 
         public static linqToDB_INDUSDEV_DEVDataContext dcIndusDev = new linqToDB_INDUSDEV_DEVDataContext();
+        public static T_OPERATOR connectedOperator;
 
         #endregion
 
