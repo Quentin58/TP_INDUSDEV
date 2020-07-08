@@ -20,6 +20,8 @@ namespace CustomControlsLibrary
         private Color _WatermarkColor;
         private string _WatermarkText;
         private bool _Multiline = false;
+        // Other
+        private bool _IsPassword = false;
         #endregion
 
         public CustomTextBox()
@@ -112,11 +114,22 @@ namespace CustomControlsLibrary
             {
                 this.ForeColor = _WatermarkColor;
                 this.Text = WatermarkText;
+                this.PasswordChar = new char();
             }
             else
             {
                 this.ForeColor = Color.Black;
+                if (_IsPassword)
+                    this.PasswordChar = '*';
             }
+        }
+        #endregion
+
+        #region Other
+        public bool IsPassword
+        {
+            get { return _IsPassword; }
+            set { _IsPassword = value; }
         }
         #endregion
     }
