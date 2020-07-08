@@ -12,9 +12,25 @@ namespace TP_INDUSDEV.UserControls
 {
     public partial class UcDisplayTicket : UserControl
     {
+        // Variables
+        #region Variables
+
+        #endregion
+
+        // Constructeur
         public UcDisplayTicket()
         {
             InitializeComponent();
         }
+
+        // Méthodes
+        #region Méthodes
+
+        #endregion
+
+        // Evenements
+        #region Evenements
+
+        #endregion
     }
 }

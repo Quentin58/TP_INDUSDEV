@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.CompilerServices;
 
 namespace CustomControlsLibrary
 {
@@ -69,11 +70,23 @@ namespace CustomControlsLibrary
         private void CustomTextBox_Enter(object sender, EventArgs e)
         {
             Controls[0].BackColor = _OnFocusColor;
+
+            this.PasswordChar = (this.IsPassword) ? '*' : new char();
+
+            // Partie Watermark
+            if ((this.Text == WatermarkText) || (this.Text == string.Empty))
+            {
+                this.Text = string.Empty;
+                this.ForeColor = Color.Black;
+            }
         }
 
         private void CustomTextBox_Leave(object sender, EventArgs e)
         {
             Controls[0].BackColor = _BottomBorderColor;
+
+            // Partie Watermark
+            GetSetWatermark();
         }
         #endregion
 
@@ -123,6 +136,8 @@ namespace CustomControlsLibrary
                     this.PasswordChar = '*';
             }
         }
+
+        // Enter et Leave sont dans la partie Border
         #endregion
 
         #region Other

@@ -28,6 +28,14 @@ namespace TP_INDUSDEV
         }
         /*_______________________________________________________________________________________________________*/
 
+        // Méthodes
+        #region Méthodes
 
+        #endregion
+
+        // Evenements
+        #region Evenements
+
+        #endregion
     }
 }
