@@ -143,6 +143,9 @@
     <EmbeddedResource Include="UserControls\FrmMainView.resx">
       <DependentUpon>FrmMainView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcAddOperator.resx">
+      <DependentUpon>UcAddOperator.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Data\LinqToDB_INDUSDEV.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>LinqToDB_INDUSDEV1.designer.cs</LastGenOutput>
