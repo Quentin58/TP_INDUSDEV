@@ -100,12 +100,14 @@ namespace TP_INDUSDEV.UserControls
         private void BtnAddOperator_Click(object sender, EventArgs e)
         {
             T_OPERATOR dOperator = GetOperatorFormData();
+
+            MessageBox.Show(dOperator.FIRST_NAME_OPERATOR + " - " + dOperator.LAST_NAME_OPERATOR + " - " + dOperator.LOGIN_OPERATOR + " - " + dOperator.PASSWORD_OPERATOR); ;
+
             AddOperator(dOperator);
             Program.SubmitChanges(strAddOperatorErrorMessage);
         }
         /*_____________________________________________________________________________________________*/
 
         #endregion
-
     }
 }

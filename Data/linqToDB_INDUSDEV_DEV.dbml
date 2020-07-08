@@ -21,14 +21,6 @@
       <Association Name="T_OPERATOR_TYPE_T_OPERATOR" Member="T_OPERATOR_TYPE" ThisKey="ID_OPERATOR_TYPE" OtherKey="ID_OPERATOR_TYPE" Type="T_OPERATOR_TYPE" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.T_OPERATOR_TYPE" Member="T_OPERATOR_TYPE">
-    <Type Name="T_OPERATOR_TYPE">
-      <Column Name="ID_OPERATOR_TYPE" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="NAME_OPERATOR_TYPE" Type="System.Data.Linq.Binary" DbType="VarBinary(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Association Name="T_OPERATOR_TYPE_T_OPERATOR" Member="T_OPERATOR" ThisKey="ID_OPERATOR_TYPE" OtherKey="ID_OPERATOR_TYPE" Type="T_OPERATOR" />
-      <Association Name="T_OPERATOR_TYPE_TJ_RIGHT_OPERATOR_TYPE" Member="TJ_RIGHT_OPERATOR_TYPE" ThisKey="ID_OPERATOR_TYPE" OtherKey="ID_RIGHT_OPERATOR_TYPE" Type="TJ_RIGHT_OPERATOR_TYPE" Cardinality="One" />
-    </Type>
-  </Table>
   <Table Name="dbo.T_RIGHT" Member="T_RIGHT">
     <Type Name="T_RIGHT">
       <Column Name="ID_RIGHT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -67,8 +59,8 @@
       <Column Name="ALLOWED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="ID_RIGHT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ID_OPERATOR_TYPE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="T_OPERATOR_TYPE_TJ_RIGHT_OPERATOR_TYPE" Member="T_OPERATOR_TYPE" ThisKey="ID_RIGHT_OPERATOR_TYPE" OtherKey="ID_OPERATOR_TYPE" Type="T_OPERATOR_TYPE" IsForeignKey="true" />
       <Association Name="T_RIGHT_TJ_RIGHT_OPERATOR_TYPE" Member="T_RIGHT" ThisKey="ID_RIGHT_OPERATOR_TYPE" OtherKey="ID_RIGHT" Type="T_RIGHT" IsForeignKey="true" />
+      <Association Name="T_OPERATOR_TYPE_TJ_RIGHT_OPERATOR_TYPE" Member="T_OPERATOR_TYPE" ThisKey="ID_RIGHT_OPERATOR_TYPE" OtherKey="ID_OPERATOR_TYPE" Type="T_OPERATOR_TYPE" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TJ_TICKET_MATERIAL_TYPE" Member="TJ_TICKET_MATERIAL_TYPE">
@@ -78,6 +70,14 @@
       <Column Name="ID_MATERIAL_TYPE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="T_MATERIAL_TYPE_TJ_TICKET_MATERIAL_TYPE" Member="T_MATERIAL_TYPE" ThisKey="ID_TICKET_MATERIAL_TYPE" OtherKey="ID_MATERIAL_TYPE" Type="T_MATERIAL_TYPE" IsForeignKey="true" />
       <Association Name="T_TICKET_TJ_TICKET_MATERIAL_TYPE" Member="T_TICKET" ThisKey="ID_TICKET" OtherKey="ID_TICKET" Type="T_TICKET" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_OPERATOR_TYPE" Member="T_OPERATOR_TYPE">
+    <Type Name="T_OPERATOR_TYPE">
+      <Column Name="ID_OPERATOR_TYPE" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME_OPERATOR_TYPE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="T_OPERATOR_TYPE_T_OPERATOR" Member="T_OPERATOR" ThisKey="ID_OPERATOR_TYPE" OtherKey="ID_OPERATOR_TYPE" Type="T_OPERATOR" />
+      <Association Name="T_OPERATOR_TYPE_TJ_RIGHT_OPERATOR_TYPE" Member="TJ_RIGHT_OPERATOR_TYPE" ThisKey="ID_OPERATOR_TYPE" OtherKey="ID_RIGHT_OPERATOR_TYPE" Type="TJ_RIGHT_OPERATOR_TYPE" Cardinality="One" />
     </Type>
   </Table>
 </Database>

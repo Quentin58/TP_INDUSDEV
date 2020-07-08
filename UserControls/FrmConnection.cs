@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_INDUSDEV.Data;
+using TP_INDUSDEV.UserControls;
 
 namespace TP_INDUSDEV
 {
@@ -16,8 +17,6 @@ namespace TP_INDUSDEV
     {
         // Variables
         #region Variables
-
-        public static LinqToDB_INDUSDEV_DEVDataContext dcIndusDev = new LinqToDB_INDUSDEV_DEVDataContext();
 
         #endregion
 
@@ -37,5 +36,12 @@ namespace TP_INDUSDEV
         #region Evenements
 
         #endregion
+
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+            FrmMainView newFrmMainView = new FrmMainView();
+            this.Visible = false;
+            newFrmMainView.Show();
+        }
     }
 }

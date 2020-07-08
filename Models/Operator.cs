@@ -13,8 +13,6 @@ namespace TP_INDUSDEV.Models
         // Variables
         #region Variables
 
-        private Table<T_OPERATOR> source = FrmConnection.dcIndusDev.T_OPERATOR;
-
         #endregion
 
         // Constructeur

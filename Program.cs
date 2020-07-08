@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_INDUSDEV.Data;
+using TP_INDUSDEV.UserControls;
 
 namespace TP_INDUSDEV
 {
@@ -16,7 +17,7 @@ namespace TP_INDUSDEV
         // Variables
         #region Variables
 
-        public static LinqToDB_INDUSDEV_DEVDataContext dcIndusDev = new LinqToDB_INDUSDEV_DEVDataContext();
+        public static linqToDB_INDUSDEV_DEVDataContext dcIndusDev = new linqToDB_INDUSDEV_DEVDataContext();
 
         #endregion
 
@@ -45,6 +46,7 @@ namespace TP_INDUSDEV
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmConnection());
+            //Application.Run(new FormTest());
         }
     }
 }

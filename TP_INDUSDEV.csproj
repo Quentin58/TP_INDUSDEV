@@ -58,6 +58,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LinqToDB_INDUSDEV_DEV.dbml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\FormTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\FormTest.Designer.cs">
+      <DependentUpon>FormTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\FrmConnection.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,9 +138,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserControls\UcAddOperator.resx">
-      <DependentUpon>UcAddOperator.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\FrmMainView.resx">
+      <DependentUpon>FrmMainView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Data\LinqToDB_INDUSDEV.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
@@ -165,7 +172,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
