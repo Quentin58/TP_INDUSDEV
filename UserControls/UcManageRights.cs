@@ -33,7 +33,10 @@ namespace TP_INDUSDEV.UserControls
             GetRightsOperatorsTypes();
 
             foreach (T_OPERATOR_TYPE operatorType in liOperatorType)
-                new UcOperatorRigths(operatorType,liRight,liRightOperatorType);
+            {
+                UcOperatorRigths ucOperatorRigthsTemp = new UcOperatorRigths(operatorType, liRight, liRightOperatorType);
+                flpnlOperatorType.Controls.Add(ucOperatorRigthsTemp);
+            }
         }
 
         // Méthodes

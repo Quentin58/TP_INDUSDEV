@@ -35,8 +35,13 @@ namespace TP_INDUSDEV.UserControls
             this.OperatorType = operatorType;
             this.liRight = liRight;
             this.liRightOperatorType = liRightOperatorType;
-        }
 
+            lblOperatorTypeName.Text = operatorType.NAME_OPERATOR_TYPE;
+
+            foreach (T_RIGHT right in liRight)
+                clibxRightsOperator.Items.Add(right.NAME_RIGHT);
+
+        }
 
         // Méthodes
         #region Méthodes

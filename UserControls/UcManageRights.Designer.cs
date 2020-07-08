@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpnlOperatorType = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -39,18 +39,18 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(8, 14);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // flowLayoutPanel2
+            // flpnlOperatorType
             // 
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(306, 217);
-            this.flowLayoutPanel2.TabIndex = 1;
+            this.flpnlOperatorType.Location = new System.Drawing.Point(3, 3);
+            this.flpnlOperatorType.Name = "flpnlOperatorType";
+            this.flpnlOperatorType.Size = new System.Drawing.Size(306, 217);
+            this.flpnlOperatorType.TabIndex = 1;
             // 
             // UcManageRights
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.flpnlOperatorType);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "UcManageRights";
             this.Size = new System.Drawing.Size(312, 223);
@@ -61,6 +61,6 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flpnlOperatorType;
     }
 }

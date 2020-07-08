@@ -28,10 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.lblOperatorTypeName = new System.Windows.Forms.Label();
+            this.clibxRightsOperator = new System.Windows.Forms.CheckedListBox();
+            this.SuspendLayout();
+            // 
+            // lblOperatorTypeName
+            // 
+            this.lblOperatorTypeName.Location = new System.Drawing.Point(3, 3);
+            this.lblOperatorTypeName.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.lblOperatorTypeName.Name = "lblOperatorTypeName";
+            this.lblOperatorTypeName.Size = new System.Drawing.Size(107, 30);
+            this.lblOperatorTypeName.TabIndex = 0;
+            this.lblOperatorTypeName.Text = "label1";
+            this.lblOperatorTypeName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // clibxRightsOperator
+            // 
+            this.clibxRightsOperator.FormattingEnabled = true;
+            this.clibxRightsOperator.Location = new System.Drawing.Point(116, 3);
+            this.clibxRightsOperator.Name = "clibxRightsOperator";
+            this.clibxRightsOperator.Size = new System.Drawing.Size(485, 199);
+            this.clibxRightsOperator.TabIndex = 1;
+            // 
+            // UcOperatorRigths
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.clibxRightsOperator);
+            this.Controls.Add(this.lblOperatorTypeName);
+            this.Name = "UcOperatorRigths";
+            this.Size = new System.Drawing.Size(604, 210);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblOperatorTypeName;
+        private System.Windows.Forms.CheckedListBox clibxRightsOperator;
     }
 }
