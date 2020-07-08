@@ -45,8 +45,8 @@ namespace TP_INDUSDEV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FrmConnection());
-            Application.Run(new FormTest());
+            Application.Run(new FrmConnection());
+            //Application.Run(new FormTest());
         }
     }
 }
