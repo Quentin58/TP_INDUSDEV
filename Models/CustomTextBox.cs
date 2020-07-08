@@ -71,13 +71,12 @@ namespace CustomControlsLibrary
         {
             Controls[0].BackColor = _OnFocusColor;
 
-            this.PasswordChar = (this.IsPassword) ? '*' : new char();
-
             // Partie Watermark
             if ((this.Text == WatermarkText) || (this.Text == string.Empty))
             {
                 this.Text = string.Empty;
                 this.ForeColor = Color.Black;
+                this.PasswordChar = (this.IsPassword) ? '*' : new char();
             }
         }
 
