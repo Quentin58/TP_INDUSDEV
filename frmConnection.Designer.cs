@@ -1,6 +1,6 @@
 ﻿namespace TP_INDUSDEV
 {
-    partial class frmConnection
+    partial class FrmConnection
     {
         /// <summary>
         /// Variable nécessaire au concepteur.

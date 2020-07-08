@@ -16,7 +16,7 @@ namespace TP_INDUSDEV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmConnection());
+            Application.Run(new FrmConnection());
         }
     }
 }

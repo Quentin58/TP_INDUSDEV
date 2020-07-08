@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TP_INDUSDEV
 {
-    public partial class frmConnection : Form
+    public partial class FrmConnection : Form
     {
-        public frmConnection()
+        public FrmConnection()
         {
             InitializeComponent();
         }
