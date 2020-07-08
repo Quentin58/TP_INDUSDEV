@@ -112,6 +112,12 @@
     <Compile Include="UserControls\UcManageRights.Designer.cs">
       <DependentUpon>UcManageRights.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UcOperatorRights.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcOperatorRights.Designer.cs">
+      <DependentUpon>UcOperatorRights.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="UserControls\FrmConnection.resx">
       <DependentUpon>FrmConnection.cs</DependentUpon>
     </EmbeddedResource>

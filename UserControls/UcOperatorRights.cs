@@ -44,7 +44,6 @@ namespace TP_INDUSDEV.UserControls
 
         // Evenements
         #region Evenements
-
         #endregion
     }
 }
