@@ -23,7 +23,7 @@ namespace TP_INDUSDEV.Data
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DB_INDUSDEV_DEV")]
-	public partial class linqToDB_INDUSDEV_DEVDataContext : System.Data.Linq.DataContext
+	public partial class LinqToDB_INDUSDEV_DEVDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -56,31 +56,31 @@ namespace TP_INDUSDEV.Data
     partial void DeleteTJ_TICKET_MATERIAL_TYPE(TJ_TICKET_MATERIAL_TYPE instance);
     #endregion
 		
-		public linqToDB_INDUSDEV_DEVDataContext() : 
+		public LinqToDB_INDUSDEV_DEVDataContext() : 
 				base(global::TP_INDUSDEV.Properties.Settings.Default.DB_INDUSDEV_DEVConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public linqToDB_INDUSDEV_DEVDataContext(string connection) : 
+		public LinqToDB_INDUSDEV_DEVDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public linqToDB_INDUSDEV_DEVDataContext(System.Data.IDbConnection connection) : 
+		public LinqToDB_INDUSDEV_DEVDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public linqToDB_INDUSDEV_DEVDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public LinqToDB_INDUSDEV_DEVDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public linqToDB_INDUSDEV_DEVDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public LinqToDB_INDUSDEV_DEVDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
