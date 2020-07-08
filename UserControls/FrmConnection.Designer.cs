@@ -145,6 +145,7 @@
             this.Name = "FrmConnection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Page de connexion";
+            this.VisibleChanged += new System.EventHandler(this.FrmConnection_VisibleChanged);
             this.ResumeLayout(false);
 
         }
