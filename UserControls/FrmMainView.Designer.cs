@@ -30,16 +30,14 @@
         {
             this.flpnlMainContent = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.ptbAddTicket = new System.Windows.Forms.PictureBox();
+            this.ptbAddTicketOrOperator = new System.Windows.Forms.PictureBox();
             this.ptbUpdateOperatorRights = new System.Windows.Forms.PictureBox();
-            this.ptbAddOperator = new System.Windows.Forms.PictureBox();
             this.btnTicketsOrOperateur = new ZiTest.CustomButton();
             this.btnDisconnect = new ZiTest.CustomButton();
             this.pnlAddTicket = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAddTicket)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAddTicketOrOperator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbUpdateOperatorRights)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAddOperator)).BeginInit();
             this.SuspendLayout();
             // 
             // flpnlMainContent
@@ -53,9 +51,8 @@
             // 
             // pnlMenu
             // 
-            this.pnlMenu.Controls.Add(this.ptbAddTicket);
+            this.pnlMenu.Controls.Add(this.ptbAddTicketOrOperator);
             this.pnlMenu.Controls.Add(this.ptbUpdateOperatorRights);
-            this.pnlMenu.Controls.Add(this.ptbAddOperator);
             this.pnlMenu.Controls.Add(this.btnTicketsOrOperateur);
             this.pnlMenu.Controls.Add(this.btnDisconnect);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -64,15 +61,15 @@
             this.pnlMenu.Size = new System.Drawing.Size(1134, 52);
             this.pnlMenu.TabIndex = 1;
             // 
-            // ptbAddTicket
+            // ptbAddTicketOrOperator
             // 
-            this.ptbAddTicket.Image = global::TP_INDUSDEV.Properties.Resources.plus;
-            this.ptbAddTicket.Location = new System.Drawing.Point(630, 6);
-            this.ptbAddTicket.Name = "ptbAddTicket";
-            this.ptbAddTicket.Size = new System.Drawing.Size(45, 43);
-            this.ptbAddTicket.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbAddTicket.TabIndex = 14;
-            this.ptbAddTicket.TabStop = false;
+            this.ptbAddTicketOrOperator.Image = global::TP_INDUSDEV.Properties.Resources.plus;
+            this.ptbAddTicketOrOperator.Location = new System.Drawing.Point(630, 6);
+            this.ptbAddTicketOrOperator.Name = "ptbAddTicketOrOperator";
+            this.ptbAddTicketOrOperator.Size = new System.Drawing.Size(45, 43);
+            this.ptbAddTicketOrOperator.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbAddTicketOrOperator.TabIndex = 14;
+            this.ptbAddTicketOrOperator.TabStop = false;
             // 
             // ptbUpdateOperatorRights
             // 
@@ -84,17 +81,6 @@
             this.ptbUpdateOperatorRights.TabIndex = 13;
             this.ptbUpdateOperatorRights.TabStop = false;
             this.ptbUpdateOperatorRights.Visible = false;
-            // 
-            // ptbAddOperator
-            // 
-            this.ptbAddOperator.Image = global::TP_INDUSDEV.Properties.Resources.plus;
-            this.ptbAddOperator.Location = new System.Drawing.Point(579, 6);
-            this.ptbAddOperator.Name = "ptbAddOperator";
-            this.ptbAddOperator.Size = new System.Drawing.Size(45, 43);
-            this.ptbAddOperator.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbAddOperator.TabIndex = 12;
-            this.ptbAddOperator.TabStop = false;
-            this.ptbAddOperator.Visible = false;
             // 
             // btnTicketsOrOperateur
             // 
@@ -117,6 +103,7 @@
             this.btnTicketsOrOperateur.Text = "Tickets";
             this.btnTicketsOrOperateur.TextColor = System.Drawing.Color.Black;
             this.btnTicketsOrOperateur.UseVisualStyleBackColor = true;
+            this.btnTicketsOrOperateur.Visible = false;
             // 
             // btnDisconnect
             // 
@@ -139,6 +126,7 @@
             this.btnDisconnect.Text = "Se déconnecter";
             this.btnDisconnect.TextColor = System.Drawing.Color.Black;
             this.btnDisconnect.UseVisualStyleBackColor = true;
+            this.btnDisconnect.Click += new System.EventHandler(this.btnDisconnect_Click);
             // 
             // pnlAddTicket
             // 
@@ -160,11 +148,11 @@
             this.Name = "FrmMainView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Page principale";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMainView_FormClosing);
             this.Resize += new System.EventHandler(this.FrmMainView_Resize);
             this.pnlMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAddTicket)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAddTicketOrOperator)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbUpdateOperatorRights)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAddOperator)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -176,8 +164,7 @@
         private System.Windows.Forms.Panel pnlAddTicket;
         private ZiTest.CustomButton btnDisconnect;
         private ZiTest.CustomButton btnTicketsOrOperateur;
-        private System.Windows.Forms.PictureBox ptbAddOperator;
         private System.Windows.Forms.PictureBox ptbUpdateOperatorRights;
-        private System.Windows.Forms.PictureBox ptbAddTicket;
+        private System.Windows.Forms.PictureBox ptbAddTicketOrOperator;
     }
 }
