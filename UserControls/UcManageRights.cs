@@ -16,7 +16,6 @@ namespace TP_INDUSDEV.UserControls
         // Variables
         #region Variables
 
-        public static LinqToDB_INDUSDEV_DEVDataContext dcIndusDev = new LinqToDB_INDUSDEV_DEVDataContext();
         List<T_OPERATOR_TYPE> liOperatorType;
         List<T_RIGHT> liRight;
         List<TJ_RIGHT_OPERATOR_TYPE> liRightOperatorType;
@@ -44,7 +43,7 @@ namespace TP_INDUSDEV.UserControls
         {
             liOperatorType = new List<T_OPERATOR_TYPE>();
 
-            liOperatorType = (from ot in dcIndusDev.T_OPERATOR_TYPE
+            liOperatorType = (from ot in Program.dcIndusDev.T_OPERATOR_TYPE
                               select ot).ToList();
         }
 
@@ -52,7 +51,7 @@ namespace TP_INDUSDEV.UserControls
         {
             liRight = new List<T_RIGHT>();
 
-            liRight = (from r in dcIndusDev.T_RIGHT
+            liRight = (from r in Program.dcIndusDev.T_RIGHT
                        select r).ToList();
         }
 
@@ -60,7 +59,7 @@ namespace TP_INDUSDEV.UserControls
         {
             liRightOperatorType = new List<TJ_RIGHT_OPERATOR_TYPE>();
 
-            liRightOperatorType = (from rot in dcIndusDev.TJ_RIGHT_OPERATOR_TYPE
+            liRightOperatorType = (from rot in Program.dcIndusDev.TJ_RIGHT_OPERATOR_TYPE
                                     select rot).ToList();
         }
 
