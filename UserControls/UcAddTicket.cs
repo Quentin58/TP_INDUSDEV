@@ -56,11 +56,58 @@ namespace TP_INDUSDEV.UserControls
             Program.dcIndusDev.T_TICKET_STATE.InsertAllOnSubmit(liTest);
             Program.SubmitChanges("Salut");*/
 
+            // Initialisation de l'affichage des controls et des valeurs
+            this.InitializeDisplay();
+
             InitializeControls();
         }
 
         // Méthodes
         #region Méthodes
+
+        // Affichage
+        #region Affichage
+        private void InitializeDisplay()
+        {
+            // Permet de :
+            // - positionner les controls par rapport à la page
+            // - définir leur taille
+
+            // Titre
+            this.lblTitle.Height = (int)(this.Height * 0.1);
+            this.ptbQuit.Size = new Size((int)(this.lblTitle.Height * 0.5), (int)(this.lblTitle.Height * 0.5));
+            this.ptbQuit.Location = new Point((int)(this.lblTitle.Width - (this.lblTitle.Height * 0.1 + this.ptbQuit.Width)), (int)(this.lblTitle.Height * 0.25));
+            // Label titre de champs
+            Size sLblTitleField = new Size((int)(this.Width * 0.175),
+                                            (int)(this.Height * 0.05));
+            this.lblTicketDetails.Size = sLblTitleField;
+            this.lblTicketDetails.Location = new Point((int)(this.Width * 0.15),
+                                                        (int)(this.Height * 0.15));
+            this.lblSelectedOperator.Size = sLblTitleField;
+            this.lblSelectedOperator.Location = new Point((int)(this.Width * 0.15),
+                                                        (int)(this.Height * 0.45));
+            this.lblLevelTicket.Size = sLblTitleField;
+            this.lblLevelTicket.Location = new Point((int)(this.Width * 0.15),
+                                                        (int)(this.Height * 0.65));
+            // Champs
+            Size sCtlField = new Size((int)(this.Width * 0.7),
+                                        (int)(this.Height * 0.15));
+            this.rtbxTicketDetails.Size = sCtlField;
+            this.rtbxTicketDetails.Location = new Point((int)(this.Width * 0.15),
+                                                        (int)(this.Height * 0.2));
+            this.cbbxSelectedOperator.Size = sCtlField;
+            this.cbbxSelectedOperator.Location = new Point((int)(this.Width * 0.15),
+                                                        (int)(this.Height * 0.5));
+            this.cbbxLevelTicket.Size = sCtlField;
+            this.cbbxLevelTicket.Location = new Point((int)(this.Width * 0.15),
+                                                        (int)(this.Height * 0.7));
+
+            // Bouton
+            this.btnAddTicket.Size = new Size((int)(this.Width * 0.5), (int)(this.Height * 0.1));
+            this.btnAddTicket.Location = new Point((int)(this.Width * 0.25), (int)(this.Height * 0.85));
+        }
+        /*_____________________________________________________________________________________________*/
+        #endregion
 
         // Initialisation champs formulaire
         private void InitializeControls()
@@ -69,6 +116,7 @@ namespace TP_INDUSDEV.UserControls
             cbbxSelectedOperator.DataSource = from t in Program.dcIndusDev.T_OPERATOR
                                               where t.ID_OPERATOR_TYPE == 2
                                               select t.FIRST_NAME_OPERATOR + " " + t.LAST_NAME_OPERATOR;
+            cbbxSelectedOperator.SelectedIndex = -1;
         }
         /*_____________________________________________________________________________________________*/
 
@@ -95,7 +143,6 @@ namespace TP_INDUSDEV.UserControls
             dTicket.START_DATE_TICKET = DateTime.Now;
             dTicket.END_DATE_TICKET = null;
             dTicket.DETAILS_TICKET = rtbxTicketDetails.Text;
-            dTicket.INTERVENTION_DESCRIPTION_TICKET = rtbxTicketInterventionDescription.Text;
             dTicket.ID_TICKET_STATE = (from t in Program.dcIndusDev.T_TICKET_STATE
                                        where t.NAME_TICKET_STATE == "En saisie"
                                        select t.ID_TICKET_STATE).FirstOrDefault();
@@ -120,6 +167,21 @@ namespace TP_INDUSDEV.UserControls
 
         // Evenements
         #region Evenements
+
+        // Affichage
+        #region Affichage
+        private void UcAddTicket_Resize(object sender, EventArgs e)
+        {
+            this.InitializeDisplay();
+        }
+        /*_____________________________________________________________________________________________*/
+        private void ptbQuit_Click(object sender, EventArgs e)
+        {
+            this.Parent.Visible = false;
+            this.Parent.Controls.Remove(this);
+        }
+        /*_____________________________________________________________________________________________*/
+        #endregion
 
         // Créer un nouveau ticket
         private void btnAddTicket_Click(object sender, EventArgs e)

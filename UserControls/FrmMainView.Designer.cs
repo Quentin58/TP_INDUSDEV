@@ -34,7 +34,8 @@
             this.ptbUpdateOperatorRights = new System.Windows.Forms.PictureBox();
             this.btnTicketsOrOperateur = new ZiTest.CustomButton();
             this.btnDisconnect = new ZiTest.CustomButton();
-            this.pnlAddTicket = new System.Windows.Forms.Panel();
+            this.pnlManagement = new System.Windows.Forms.Panel();
+            this.pnlDesing = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAddTicketOrOperator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbUpdateOperatorRights)).BeginInit();
@@ -46,7 +47,7 @@
             this.flpnlMainContent.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpnlMainContent.Location = new System.Drawing.Point(0, 0);
             this.flpnlMainContent.Name = "flpnlMainContent";
-            this.flpnlMainContent.Size = new System.Drawing.Size(693, 557);
+            this.flpnlMainContent.Size = new System.Drawing.Size(693, 552);
             this.flpnlMainContent.TabIndex = 0;
             // 
             // pnlMenu
@@ -70,6 +71,7 @@
             this.ptbAddTicketOrOperator.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbAddTicketOrOperator.TabIndex = 14;
             this.ptbAddTicketOrOperator.TabStop = false;
+            this.ptbAddTicketOrOperator.Click += new System.EventHandler(this.ptbAddTicket_Click);
             // 
             // ptbUpdateOperatorRights
             // 
@@ -100,10 +102,11 @@
             this.btnTicketsOrOperateur.OnHoverTextColor = System.Drawing.Color.Firebrick;
             this.btnTicketsOrOperateur.Size = new System.Drawing.Size(191, 52);
             this.btnTicketsOrOperateur.TabIndex = 11;
-            this.btnTicketsOrOperateur.Text = "Tickets";
+            this.btnTicketsOrOperateur.Text = "Opérateurs";
             this.btnTicketsOrOperateur.TextColor = System.Drawing.Color.Black;
             this.btnTicketsOrOperateur.UseVisualStyleBackColor = true;
             this.btnTicketsOrOperateur.Visible = false;
+            this.btnTicketsOrOperateur.Click += new System.EventHandler(this.btnTicketsOrOperateur_Click);
             // 
             // btnDisconnect
             // 
@@ -128,14 +131,23 @@
             this.btnDisconnect.UseVisualStyleBackColor = true;
             this.btnDisconnect.Click += new System.EventHandler(this.btnDisconnect_Click);
             // 
-            // pnlAddTicket
+            // pnlManagement
             // 
-            this.pnlAddTicket.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlAddTicket.Location = new System.Drawing.Point(693, 0);
-            this.pnlAddTicket.Name = "pnlAddTicket";
-            this.pnlAddTicket.Size = new System.Drawing.Size(441, 557);
-            this.pnlAddTicket.TabIndex = 2;
-            this.pnlAddTicket.Visible = false;
+            this.pnlManagement.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlManagement.Location = new System.Drawing.Point(693, 0);
+            this.pnlManagement.Name = "pnlManagement";
+            this.pnlManagement.Size = new System.Drawing.Size(441, 552);
+            this.pnlManagement.TabIndex = 2;
+            this.pnlManagement.Visible = false;
+            // 
+            // pnlDesing
+            // 
+            this.pnlDesing.BackColor = System.Drawing.Color.Firebrick;
+            this.pnlDesing.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlDesing.Location = new System.Drawing.Point(0, 552);
+            this.pnlDesing.Name = "pnlDesing";
+            this.pnlDesing.Size = new System.Drawing.Size(1134, 5);
+            this.pnlDesing.TabIndex = 15;
             // 
             // FrmMainView
             // 
@@ -143,7 +155,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1134, 609);
             this.Controls.Add(this.flpnlMainContent);
-            this.Controls.Add(this.pnlAddTicket);
+            this.Controls.Add(this.pnlManagement);
+            this.Controls.Add(this.pnlDesing);
             this.Controls.Add(this.pnlMenu);
             this.Name = "FrmMainView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -161,10 +174,11 @@
 
         private System.Windows.Forms.FlowLayoutPanel flpnlMainContent;
         private System.Windows.Forms.Panel pnlMenu;
-        private System.Windows.Forms.Panel pnlAddTicket;
+        private System.Windows.Forms.Panel pnlManagement;
         private ZiTest.CustomButton btnDisconnect;
         private ZiTest.CustomButton btnTicketsOrOperateur;
         private System.Windows.Forms.PictureBox ptbUpdateOperatorRights;
         private System.Windows.Forms.PictureBox ptbAddTicketOrOperator;
+        private System.Windows.Forms.Panel pnlDesing;
     }
 }

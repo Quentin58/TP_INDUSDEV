@@ -54,6 +54,12 @@ namespace TP_INDUSDEV.Data
     partial void InsertT_OPERATOR_TYPE(T_OPERATOR_TYPE instance);
     partial void UpdateT_OPERATOR_TYPE(T_OPERATOR_TYPE instance);
     partial void DeleteT_OPERATOR_TYPE(T_OPERATOR_TYPE instance);
+    partial void InsertT_UPDATE_TICKET(T_UPDATE_TICKET instance);
+    partial void UpdateT_UPDATE_TICKET(T_UPDATE_TICKET instance);
+    partial void DeleteT_UPDATE_TICKET(T_UPDATE_TICKET instance);
+    partial void InsertT_LEVEL_TICKET(T_LEVEL_TICKET instance);
+    partial void UpdateT_LEVEL_TICKET(T_LEVEL_TICKET instance);
+    partial void DeleteT_LEVEL_TICKET(T_LEVEL_TICKET instance);
     #endregion
 		
 		public linqToDB_INDUSDEV_DEVDataContext() : 
@@ -147,6 +153,22 @@ namespace TP_INDUSDEV.Data
 			get
 			{
 				return this.GetTable<T_OPERATOR_TYPE>();
+			}
+		}
+		
+		public System.Data.Linq.Table<T_UPDATE_TICKET> T_UPDATE_TICKET
+		{
+			get
+			{
+				return this.GetTable<T_UPDATE_TICKET>();
+			}
+		}
+		
+		public System.Data.Linq.Table<T_LEVEL_TICKET> T_LEVEL_TICKET
+		{
+			get
+			{
+				return this.GetTable<T_LEVEL_TICKET>();
 			}
 		}
 	}
@@ -293,6 +315,10 @@ namespace TP_INDUSDEV.Data
 		
 		private EntitySet<T_TICKET> _T_TICKET2;
 		
+		private EntitySet<T_UPDATE_TICKET> _T_UPDATE_TICKET;
+		
+		private EntitySet<T_UPDATE_TICKET> _T_UPDATE_TICKET1;
+		
 		private EntityRef<T_OPERATOR_TYPE> _T_OPERATOR_TYPE;
 		
     #region Définitions de méthodes d'extensibilité
@@ -318,6 +344,8 @@ namespace TP_INDUSDEV.Data
 			this._T_TICKET = new EntitySet<T_TICKET>(new Action<T_TICKET>(this.attach_T_TICKET), new Action<T_TICKET>(this.detach_T_TICKET));
 			this._T_TICKET1 = new EntitySet<T_TICKET>(new Action<T_TICKET>(this.attach_T_TICKET1), new Action<T_TICKET>(this.detach_T_TICKET1));
 			this._T_TICKET2 = new EntitySet<T_TICKET>(new Action<T_TICKET>(this.attach_T_TICKET2), new Action<T_TICKET>(this.detach_T_TICKET2));
+			this._T_UPDATE_TICKET = new EntitySet<T_UPDATE_TICKET>(new Action<T_UPDATE_TICKET>(this.attach_T_UPDATE_TICKET), new Action<T_UPDATE_TICKET>(this.detach_T_UPDATE_TICKET));
+			this._T_UPDATE_TICKET1 = new EntitySet<T_UPDATE_TICKET>(new Action<T_UPDATE_TICKET>(this.attach_T_UPDATE_TICKET1), new Action<T_UPDATE_TICKET>(this.detach_T_UPDATE_TICKET1));
 			this._T_OPERATOR_TYPE = default(EntityRef<T_OPERATOR_TYPE>);
 			OnCreated();
 		}
@@ -485,6 +513,32 @@ namespace TP_INDUSDEV.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="T_OPERATOR_T_UPDATE_TICKET", Storage="_T_UPDATE_TICKET", ThisKey="ID_OPERATOR", OtherKey="ID_DELEGATED_OPERATOR")]
+		public EntitySet<T_UPDATE_TICKET> T_UPDATE_TICKET
+		{
+			get
+			{
+				return this._T_UPDATE_TICKET;
+			}
+			set
+			{
+				this._T_UPDATE_TICKET.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="T_OPERATOR_T_UPDATE_TICKET1", Storage="_T_UPDATE_TICKET1", ThisKey="ID_OPERATOR", OtherKey="ID_MODIFIER_OPERATOR")]
+		public EntitySet<T_UPDATE_TICKET> T_UPDATE_TICKET1
+		{
+			get
+			{
+				return this._T_UPDATE_TICKET1;
+			}
+			set
+			{
+				this._T_UPDATE_TICKET1.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="T_OPERATOR_TYPE_T_OPERATOR", Storage="_T_OPERATOR_TYPE", ThisKey="ID_OPERATOR_TYPE", OtherKey="ID_OPERATOR_TYPE", IsForeignKey=true)]
 		public T_OPERATOR_TYPE T_OPERATOR_TYPE
 		{
@@ -573,6 +627,30 @@ namespace TP_INDUSDEV.Data
 		{
 			this.SendPropertyChanging();
 			entity.T_OPERATOR2 = null;
+		}
+		
+		private void attach_T_UPDATE_TICKET(T_UPDATE_TICKET entity)
+		{
+			this.SendPropertyChanging();
+			entity.T_OPERATOR = this;
+		}
+		
+		private void detach_T_UPDATE_TICKET(T_UPDATE_TICKET entity)
+		{
+			this.SendPropertyChanging();
+			entity.T_OPERATOR = null;
+		}
+		
+		private void attach_T_UPDATE_TICKET1(T_UPDATE_TICKET entity)
+		{
+			this.SendPropertyChanging();
+			entity.T_OPERATOR1 = this;
+		}
+		
+		private void detach_T_UPDATE_TICKET1(T_UPDATE_TICKET entity)
+		{
+			this.SendPropertyChanging();
+			entity.T_OPERATOR1 = null;
 		}
 	}
 	
@@ -720,6 +798,8 @@ namespace TP_INDUSDEV.Data
 		
 		private EntitySet<TJ_TICKET_MATERIAL_TYPE> _TJ_TICKET_MATERIAL_TYPE;
 		
+		private EntitySet<T_UPDATE_TICKET> _T_UPDATE_TICKET;
+		
 		private EntityRef<T_OPERATOR> _T_OPERATOR;
 		
 		private EntityRef<T_OPERATOR> _T_OPERATOR1;
@@ -755,6 +835,7 @@ namespace TP_INDUSDEV.Data
 		public T_TICKET()
 		{
 			this._TJ_TICKET_MATERIAL_TYPE = new EntitySet<TJ_TICKET_MATERIAL_TYPE>(new Action<TJ_TICKET_MATERIAL_TYPE>(this.attach_TJ_TICKET_MATERIAL_TYPE), new Action<TJ_TICKET_MATERIAL_TYPE>(this.detach_TJ_TICKET_MATERIAL_TYPE));
+			this._T_UPDATE_TICKET = new EntitySet<T_UPDATE_TICKET>(new Action<T_UPDATE_TICKET>(this.attach_T_UPDATE_TICKET), new Action<T_UPDATE_TICKET>(this.detach_T_UPDATE_TICKET));
 			this._T_OPERATOR = default(EntityRef<T_OPERATOR>);
 			this._T_OPERATOR1 = default(EntityRef<T_OPERATOR>);
 			this._T_OPERATOR2 = default(EntityRef<T_OPERATOR>);
@@ -971,6 +1052,19 @@ namespace TP_INDUSDEV.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="T_TICKET_T_UPDATE_TICKET", Storage="_T_UPDATE_TICKET", ThisKey="ID_TICKET", OtherKey="ID_TICKET")]
+		public EntitySet<T_UPDATE_TICKET> T_UPDATE_TICKET
+		{
+			get
+			{
+				return this._T_UPDATE_TICKET;
+			}
+			set
+			{
+				this._T_UPDATE_TICKET.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="T_OPERATOR_T_TICKET", Storage="_T_OPERATOR", ThisKey="ID_OWNER_OPERATOR", OtherKey="ID_OPERATOR", IsForeignKey=true)]
 		public T_OPERATOR T_OPERATOR
 		{
@@ -1138,6 +1232,18 @@ namespace TP_INDUSDEV.Data
 			this.SendPropertyChanging();
 			entity.T_TICKET = null;
 		}
+		
+		private void attach_T_UPDATE_TICKET(T_UPDATE_TICKET entity)
+		{
+			this.SendPropertyChanging();
+			entity.T_TICKET = this;
+		}
+		
+		private void detach_T_UPDATE_TICKET(T_UPDATE_TICKET entity)
+		{
+			this.SendPropertyChanging();
+			entity.T_TICKET = null;
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.T_TICKET_STATE")]
@@ -1152,6 +1258,8 @@ namespace TP_INDUSDEV.Data
 		
 		private EntitySet<T_TICKET> _T_TICKET;
 		
+		private EntitySet<T_UPDATE_TICKET> _T_UPDATE_TICKET;
+		
     #region Définitions de méthodes d'extensibilité
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1165,6 +1273,7 @@ namespace TP_INDUSDEV.Data
 		public T_TICKET_STATE()
 		{
 			this._T_TICKET = new EntitySet<T_TICKET>(new Action<T_TICKET>(this.attach_T_TICKET), new Action<T_TICKET>(this.detach_T_TICKET));
+			this._T_UPDATE_TICKET = new EntitySet<T_UPDATE_TICKET>(new Action<T_UPDATE_TICKET>(this.attach_T_UPDATE_TICKET), new Action<T_UPDATE_TICKET>(this.detach_T_UPDATE_TICKET));
 			OnCreated();
 		}
 		
@@ -1221,6 +1330,19 @@ namespace TP_INDUSDEV.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="T_TICKET_STATE_T_UPDATE_TICKET", Storage="_T_UPDATE_TICKET", ThisKey="ID_TICKET_STATE", OtherKey="ID_TICKET_STATE")]
+		public EntitySet<T_UPDATE_TICKET> T_UPDATE_TICKET
+		{
+			get
+			{
+				return this._T_UPDATE_TICKET;
+			}
+			set
+			{
+				this._T_UPDATE_TICKET.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1248,6 +1370,18 @@ namespace TP_INDUSDEV.Data
 		}
 		
 		private void detach_T_TICKET(T_TICKET entity)
+		{
+			this.SendPropertyChanging();
+			entity.T_TICKET_STATE = null;
+		}
+		
+		private void attach_T_UPDATE_TICKET(T_UPDATE_TICKET entity)
+		{
+			this.SendPropertyChanging();
+			entity.T_TICKET_STATE = this;
+		}
+		
+		private void detach_T_UPDATE_TICKET(T_UPDATE_TICKET entity)
 		{
 			this.SendPropertyChanging();
 			entity.T_TICKET_STATE = null;
@@ -1801,6 +1935,579 @@ namespace TP_INDUSDEV.Data
 		{
 			this.SendPropertyChanging();
 			entity.T_OPERATOR_TYPE = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.T_UPDATE_TICKET")]
+	public partial class T_UPDATE_TICKET : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID_UPDATE_TICKET;
+		
+		private System.DateTime _DATE_UPDATE_TICKET;
+		
+		private string _DESCRIPTION_UPDATE_TICKET;
+		
+		private int _ID_MODIFIER_OPERATOR;
+		
+		private int _ID_DELEGATED_OPERATOR;
+		
+		private int _ID_TICKET;
+		
+		private int _ID_TICKET_STATE;
+		
+		private int _ID_LEVEL_TICKET;
+		
+		private EntityRef<T_OPERATOR> _T_OPERATOR;
+		
+		private EntityRef<T_OPERATOR> _T_OPERATOR1;
+		
+		private EntityRef<T_TICKET> _T_TICKET;
+		
+		private EntityRef<T_TICKET_STATE> _T_TICKET_STATE;
+		
+		private EntityRef<T_LEVEL_TICKET> _T_LEVEL_TICKET;
+		
+    #region Définitions de méthodes d'extensibilité
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnID_UPDATE_TICKETChanging(int value);
+    partial void OnID_UPDATE_TICKETChanged();
+    partial void OnDATE_UPDATE_TICKETChanging(System.DateTime value);
+    partial void OnDATE_UPDATE_TICKETChanged();
+    partial void OnDESCRIPTION_UPDATE_TICKETChanging(string value);
+    partial void OnDESCRIPTION_UPDATE_TICKETChanged();
+    partial void OnID_MODIFIER_OPERATORChanging(int value);
+    partial void OnID_MODIFIER_OPERATORChanged();
+    partial void OnID_DELEGATED_OPERATORChanging(int value);
+    partial void OnID_DELEGATED_OPERATORChanged();
+    partial void OnID_TICKETChanging(int value);
+    partial void OnID_TICKETChanged();
+    partial void OnID_TICKET_STATEChanging(int value);
+    partial void OnID_TICKET_STATEChanged();
+    partial void OnID_LEVEL_TICKETChanging(int value);
+    partial void OnID_LEVEL_TICKETChanged();
+    #endregion
+		
+		public T_UPDATE_TICKET()
+		{
+			this._T_OPERATOR = default(EntityRef<T_OPERATOR>);
+			this._T_OPERATOR1 = default(EntityRef<T_OPERATOR>);
+			this._T_TICKET = default(EntityRef<T_TICKET>);
+			this._T_TICKET_STATE = default(EntityRef<T_TICKET_STATE>);
+			this._T_LEVEL_TICKET = default(EntityRef<T_LEVEL_TICKET>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_UPDATE_TICKET", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID_UPDATE_TICKET
+		{
+			get
+			{
+				return this._ID_UPDATE_TICKET;
+			}
+			set
+			{
+				if ((this._ID_UPDATE_TICKET != value))
+				{
+					this.OnID_UPDATE_TICKETChanging(value);
+					this.SendPropertyChanging();
+					this._ID_UPDATE_TICKET = value;
+					this.SendPropertyChanged("ID_UPDATE_TICKET");
+					this.OnID_UPDATE_TICKETChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATE_UPDATE_TICKET", DbType="DateTime NOT NULL")]
+		public System.DateTime DATE_UPDATE_TICKET
+		{
+			get
+			{
+				return this._DATE_UPDATE_TICKET;
+			}
+			set
+			{
+				if ((this._DATE_UPDATE_TICKET != value))
+				{
+					this.OnDATE_UPDATE_TICKETChanging(value);
+					this.SendPropertyChanging();
+					this._DATE_UPDATE_TICKET = value;
+					this.SendPropertyChanged("DATE_UPDATE_TICKET");
+					this.OnDATE_UPDATE_TICKETChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DESCRIPTION_UPDATE_TICKET", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string DESCRIPTION_UPDATE_TICKET
+		{
+			get
+			{
+				return this._DESCRIPTION_UPDATE_TICKET;
+			}
+			set
+			{
+				if ((this._DESCRIPTION_UPDATE_TICKET != value))
+				{
+					this.OnDESCRIPTION_UPDATE_TICKETChanging(value);
+					this.SendPropertyChanging();
+					this._DESCRIPTION_UPDATE_TICKET = value;
+					this.SendPropertyChanged("DESCRIPTION_UPDATE_TICKET");
+					this.OnDESCRIPTION_UPDATE_TICKETChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_MODIFIER_OPERATOR", DbType="Int NOT NULL")]
+		public int ID_MODIFIER_OPERATOR
+		{
+			get
+			{
+				return this._ID_MODIFIER_OPERATOR;
+			}
+			set
+			{
+				if ((this._ID_MODIFIER_OPERATOR != value))
+				{
+					if (this._T_OPERATOR1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_MODIFIER_OPERATORChanging(value);
+					this.SendPropertyChanging();
+					this._ID_MODIFIER_OPERATOR = value;
+					this.SendPropertyChanged("ID_MODIFIER_OPERATOR");
+					this.OnID_MODIFIER_OPERATORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_DELEGATED_OPERATOR", DbType="Int NOT NULL")]
+		public int ID_DELEGATED_OPERATOR
+		{
+			get
+			{
+				return this._ID_DELEGATED_OPERATOR;
+			}
+			set
+			{
+				if ((this._ID_DELEGATED_OPERATOR != value))
+				{
+					if (this._T_OPERATOR.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_DELEGATED_OPERATORChanging(value);
+					this.SendPropertyChanging();
+					this._ID_DELEGATED_OPERATOR = value;
+					this.SendPropertyChanged("ID_DELEGATED_OPERATOR");
+					this.OnID_DELEGATED_OPERATORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_TICKET", DbType="Int NOT NULL")]
+		public int ID_TICKET
+		{
+			get
+			{
+				return this._ID_TICKET;
+			}
+			set
+			{
+				if ((this._ID_TICKET != value))
+				{
+					if (this._T_TICKET.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_TICKETChanging(value);
+					this.SendPropertyChanging();
+					this._ID_TICKET = value;
+					this.SendPropertyChanged("ID_TICKET");
+					this.OnID_TICKETChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_TICKET_STATE", DbType="Int NOT NULL")]
+		public int ID_TICKET_STATE
+		{
+			get
+			{
+				return this._ID_TICKET_STATE;
+			}
+			set
+			{
+				if ((this._ID_TICKET_STATE != value))
+				{
+					if (this._T_TICKET_STATE.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_TICKET_STATEChanging(value);
+					this.SendPropertyChanging();
+					this._ID_TICKET_STATE = value;
+					this.SendPropertyChanged("ID_TICKET_STATE");
+					this.OnID_TICKET_STATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_LEVEL_TICKET", DbType="Int NOT NULL")]
+		public int ID_LEVEL_TICKET
+		{
+			get
+			{
+				return this._ID_LEVEL_TICKET;
+			}
+			set
+			{
+				if ((this._ID_LEVEL_TICKET != value))
+				{
+					if (this._T_LEVEL_TICKET.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_LEVEL_TICKETChanging(value);
+					this.SendPropertyChanging();
+					this._ID_LEVEL_TICKET = value;
+					this.SendPropertyChanged("ID_LEVEL_TICKET");
+					this.OnID_LEVEL_TICKETChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="T_OPERATOR_T_UPDATE_TICKET", Storage="_T_OPERATOR", ThisKey="ID_DELEGATED_OPERATOR", OtherKey="ID_OPERATOR", IsForeignKey=true)]
+		public T_OPERATOR T_OPERATOR
+		{
+			get
+			{
+				return this._T_OPERATOR.Entity;
+			}
+			set
+			{
+				T_OPERATOR previousValue = this._T_OPERATOR.Entity;
+				if (((previousValue != value) 
+							|| (this._T_OPERATOR.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._T_OPERATOR.Entity = null;
+						previousValue.T_UPDATE_TICKET.Remove(this);
+					}
+					this._T_OPERATOR.Entity = value;
+					if ((value != null))
+					{
+						value.T_UPDATE_TICKET.Add(this);
+						this._ID_DELEGATED_OPERATOR = value.ID_OPERATOR;
+					}
+					else
+					{
+						this._ID_DELEGATED_OPERATOR = default(int);
+					}
+					this.SendPropertyChanged("T_OPERATOR");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="T_OPERATOR_T_UPDATE_TICKET1", Storage="_T_OPERATOR1", ThisKey="ID_MODIFIER_OPERATOR", OtherKey="ID_OPERATOR", IsForeignKey=true)]
+		public T_OPERATOR T_OPERATOR1
+		{
+			get
+			{
+				return this._T_OPERATOR1.Entity;
+			}
+			set
+			{
+				T_OPERATOR previousValue = this._T_OPERATOR1.Entity;
+				if (((previousValue != value) 
+							|| (this._T_OPERATOR1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._T_OPERATOR1.Entity = null;
+						previousValue.T_UPDATE_TICKET1.Remove(this);
+					}
+					this._T_OPERATOR1.Entity = value;
+					if ((value != null))
+					{
+						value.T_UPDATE_TICKET1.Add(this);
+						this._ID_MODIFIER_OPERATOR = value.ID_OPERATOR;
+					}
+					else
+					{
+						this._ID_MODIFIER_OPERATOR = default(int);
+					}
+					this.SendPropertyChanged("T_OPERATOR1");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="T_TICKET_T_UPDATE_TICKET", Storage="_T_TICKET", ThisKey="ID_TICKET", OtherKey="ID_TICKET", IsForeignKey=true)]
+		public T_TICKET T_TICKET
+		{
+			get
+			{
+				return this._T_TICKET.Entity;
+			}
+			set
+			{
+				T_TICKET previousValue = this._T_TICKET.Entity;
+				if (((previousValue != value) 
+							|| (this._T_TICKET.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._T_TICKET.Entity = null;
+						previousValue.T_UPDATE_TICKET.Remove(this);
+					}
+					this._T_TICKET.Entity = value;
+					if ((value != null))
+					{
+						value.T_UPDATE_TICKET.Add(this);
+						this._ID_TICKET = value.ID_TICKET;
+					}
+					else
+					{
+						this._ID_TICKET = default(int);
+					}
+					this.SendPropertyChanged("T_TICKET");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="T_TICKET_STATE_T_UPDATE_TICKET", Storage="_T_TICKET_STATE", ThisKey="ID_TICKET_STATE", OtherKey="ID_TICKET_STATE", IsForeignKey=true)]
+		public T_TICKET_STATE T_TICKET_STATE
+		{
+			get
+			{
+				return this._T_TICKET_STATE.Entity;
+			}
+			set
+			{
+				T_TICKET_STATE previousValue = this._T_TICKET_STATE.Entity;
+				if (((previousValue != value) 
+							|| (this._T_TICKET_STATE.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._T_TICKET_STATE.Entity = null;
+						previousValue.T_UPDATE_TICKET.Remove(this);
+					}
+					this._T_TICKET_STATE.Entity = value;
+					if ((value != null))
+					{
+						value.T_UPDATE_TICKET.Add(this);
+						this._ID_TICKET_STATE = value.ID_TICKET_STATE;
+					}
+					else
+					{
+						this._ID_TICKET_STATE = default(int);
+					}
+					this.SendPropertyChanged("T_TICKET_STATE");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="T_LEVEL_TICKET_T_UPDATE_TICKET", Storage="_T_LEVEL_TICKET", ThisKey="ID_LEVEL_TICKET", OtherKey="ID_LEVEL_TICKET", IsForeignKey=true)]
+		public T_LEVEL_TICKET T_LEVEL_TICKET
+		{
+			get
+			{
+				return this._T_LEVEL_TICKET.Entity;
+			}
+			set
+			{
+				T_LEVEL_TICKET previousValue = this._T_LEVEL_TICKET.Entity;
+				if (((previousValue != value) 
+							|| (this._T_LEVEL_TICKET.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._T_LEVEL_TICKET.Entity = null;
+						previousValue.T_UPDATE_TICKET.Remove(this);
+					}
+					this._T_LEVEL_TICKET.Entity = value;
+					if ((value != null))
+					{
+						value.T_UPDATE_TICKET.Add(this);
+						this._ID_LEVEL_TICKET = value.ID_LEVEL_TICKET;
+					}
+					else
+					{
+						this._ID_LEVEL_TICKET = default(int);
+					}
+					this.SendPropertyChanged("T_LEVEL_TICKET");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.T_LEVEL_TICKET")]
+	public partial class T_LEVEL_TICKET : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID_LEVEL_TICKET;
+		
+		private string _NAME_LEVEL_TICKET;
+		
+		private int _GRADE_LEVEL_TICKET;
+		
+		private EntitySet<T_UPDATE_TICKET> _T_UPDATE_TICKET;
+		
+    #region Définitions de méthodes d'extensibilité
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnID_LEVEL_TICKETChanging(int value);
+    partial void OnID_LEVEL_TICKETChanged();
+    partial void OnNAME_LEVEL_TICKETChanging(string value);
+    partial void OnNAME_LEVEL_TICKETChanged();
+    partial void OnGRADE_LEVEL_TICKETChanging(int value);
+    partial void OnGRADE_LEVEL_TICKETChanged();
+    #endregion
+		
+		public T_LEVEL_TICKET()
+		{
+			this._T_UPDATE_TICKET = new EntitySet<T_UPDATE_TICKET>(new Action<T_UPDATE_TICKET>(this.attach_T_UPDATE_TICKET), new Action<T_UPDATE_TICKET>(this.detach_T_UPDATE_TICKET));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_LEVEL_TICKET", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID_LEVEL_TICKET
+		{
+			get
+			{
+				return this._ID_LEVEL_TICKET;
+			}
+			set
+			{
+				if ((this._ID_LEVEL_TICKET != value))
+				{
+					this.OnID_LEVEL_TICKETChanging(value);
+					this.SendPropertyChanging();
+					this._ID_LEVEL_TICKET = value;
+					this.SendPropertyChanged("ID_LEVEL_TICKET");
+					this.OnID_LEVEL_TICKETChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME_LEVEL_TICKET", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string NAME_LEVEL_TICKET
+		{
+			get
+			{
+				return this._NAME_LEVEL_TICKET;
+			}
+			set
+			{
+				if ((this._NAME_LEVEL_TICKET != value))
+				{
+					this.OnNAME_LEVEL_TICKETChanging(value);
+					this.SendPropertyChanging();
+					this._NAME_LEVEL_TICKET = value;
+					this.SendPropertyChanged("NAME_LEVEL_TICKET");
+					this.OnNAME_LEVEL_TICKETChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GRADE_LEVEL_TICKET", DbType="Int NOT NULL")]
+		public int GRADE_LEVEL_TICKET
+		{
+			get
+			{
+				return this._GRADE_LEVEL_TICKET;
+			}
+			set
+			{
+				if ((this._GRADE_LEVEL_TICKET != value))
+				{
+					this.OnGRADE_LEVEL_TICKETChanging(value);
+					this.SendPropertyChanging();
+					this._GRADE_LEVEL_TICKET = value;
+					this.SendPropertyChanged("GRADE_LEVEL_TICKET");
+					this.OnGRADE_LEVEL_TICKETChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="T_LEVEL_TICKET_T_UPDATE_TICKET", Storage="_T_UPDATE_TICKET", ThisKey="ID_LEVEL_TICKET", OtherKey="ID_LEVEL_TICKET")]
+		public EntitySet<T_UPDATE_TICKET> T_UPDATE_TICKET
+		{
+			get
+			{
+				return this._T_UPDATE_TICKET;
+			}
+			set
+			{
+				this._T_UPDATE_TICKET.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_T_UPDATE_TICKET(T_UPDATE_TICKET entity)
+		{
+			this.SendPropertyChanging();
+			entity.T_LEVEL_TICKET = this;
+		}
+		
+		private void detach_T_UPDATE_TICKET(T_UPDATE_TICKET entity)
+		{
+			this.SendPropertyChanging();
+			entity.T_LEVEL_TICKET = null;
 		}
 	}
 }
