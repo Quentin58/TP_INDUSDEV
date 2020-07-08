@@ -17,7 +17,7 @@ namespace TP_INDUSDEV
         // Variables
         #region Variables
 
-        public static LinqToDB_INDUSDEV_DEVDataContext dcIndusDev = new LinqToDB_INDUSDEV_DEVDataContext();
+        public static linqToDB_INDUSDEV_DEVDataContext dcIndusDev = new linqToDB_INDUSDEV_DEVDataContext();
 
         #endregion
 
