@@ -82,7 +82,7 @@
             this.button1.Text = "Se connecter";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // frmConnection
+            // FrmConnection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -92,7 +92,7 @@
             this.Controls.Add(this.tbxLogin);
             this.Controls.Add(this.lblSubTitle);
             this.Controls.Add(this.lblTitle);
-            this.Name = "frmConnection";
+            this.Name = "FrmConnection";
             this.Text = "Page de connexion";
             this.ResumeLayout(false);
             this.PerformLayout();

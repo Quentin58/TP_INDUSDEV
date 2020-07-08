@@ -64,11 +64,23 @@
     <Compile Include="FrmConnection.Designer.cs">
       <DependentUpon>FrmConnection.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\CustomButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Models\CustomTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Models\CustomTextBox.Designer.cs">
+      <DependentUpon>CustomTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Operator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmConnection.resx">
       <DependentUpon>FrmConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\CustomTextBox.resx">
+      <DependentUpon>CustomTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
