@@ -112,6 +112,12 @@
     <Compile Include="UserControls\UcDisplayTicket.Designer.cs">
       <DependentUpon>UcDisplayTicket.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UcHistoryTicket.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcHistoryTicket.Designer.cs">
+      <DependentUpon>UcHistoryTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UcManageRights.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -160,6 +166,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UcAddTicket.resx">
       <DependentUpon>UcAddTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcDisplayTicket.resx">
+      <DependentUpon>UcDisplayTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcHistoryTicket.resx">
+      <DependentUpon>UcHistoryTicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UcUpdateOperator.resx">
       <DependentUpon>UcUpdateOperator.cs</DependentUpon>
@@ -210,6 +222,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Reset1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deleteIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowMoreLess1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

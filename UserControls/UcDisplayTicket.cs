@@ -17,8 +17,11 @@ namespace TP_INDUSDEV.UserControls
         #region Variables
         T_TICKET actualTicket = new T_TICKET();
 
-        // Liste des couleur des niveau d'importance des ticket (du vert au rouge =W pas urgent à très urgent)
-        private List<string> liLevelTicketColor = new List<string>() { "#4AD989", "#CEFF77", "#FFFF60", "#FFCB63", "#FF5333" };
+        // Liste des couleur des niveau d'importance des ticket (du rouge au vert =W pas urgent à très urgent)
+        private List<string> liLevelTicketColor = new List<string>() { "#FF5333", "#FFCB63", "#FFFF60", "#CEFF77", "#4AD989" };
+
+        bool bHistoryActivate = false;
+        int iDefaultHeight = 0;
         #endregion
 
         // Constructeur
@@ -41,20 +44,16 @@ namespace TP_INDUSDEV.UserControls
             // - positionner les controls par rapport à la page
             // - définir leur taille
 
-            // Pour les nformation Ticket
-            this.pnlInformations.Height = (int)((int)(this.Height * 0.9));
-            // Controls du panel d'infromation
-            this.lblLevelIndicator.Width = (int)(this.pnlInformations.Width * 0.05);
-            this.lblTicketNumer.Width = (int)(this.pnlInformations.Width * 0.1);
-            this.lblCreateDate.Width = (int)(this.pnlInformations.Width * 0.15);
-            this.lblUpdateDate.Width = (int)(this.pnlInformations.Width * 0.15);
-            this.lblActualState.Width = (int)(this.pnlInformations.Width * 0.4);
-            this.ptbxEdit.Width = (int)(this.pnlInformations.Height);
-            this.ptbxDelete.Width = (int)(this.pnlInformations.Height);
-            this.ptbxShowMore.Width = (int)(this.pnlInformations.Height);
+            // Pour les information Ticket
+            this.pnlInformations.Height = (int)(this.Height * 0.95);
+
+            this.InitializeDisplayInformation();
+            this.InitializeDisplayHistory();
 
             // Control panel design
-            this.lblIndicatorTicketOwner.Width = (int)(this.pnlDesign.Width * 0.1);
+            this.lblIndicatorTicketOwner.Width = (int)(this.pnlDesign.Width * 0.05);
+
+            iDefaultHeight = this.Height;
 
             // Affichage selon type droit
             // Liste des droit de l'utilisateur
@@ -66,6 +65,36 @@ namespace TP_INDUSDEV.UserControls
             this.ptbxEdit.Visible = (liOperatorRights.Contains("Modification Ticket")) ? true : false;
             // - Droit de suppression
             this.ptbxDelete.Visible = (liOperatorRights.Contains("Suppression Ticket")) ? true : false;
+        }
+        /*_____________________________________________________________________________________________*/
+
+        private void InitializeDisplayInformation()
+        {
+            // Permet de :
+            // - positionner les controls par rapport à la page
+            // - définir leur taille
+
+            // Controls du panel d'infromation
+            this.lblLevelIndicator.Width = (int)(this.pnlInformations.Width * 0.05);
+            this.lblTicketNumer.Width = (int)(this.pnlInformations.Width * 0.1);
+            this.lblCreateDate.Width = (int)(this.pnlInformations.Width * 0.15);
+            this.lblUpdateDate.Width = (int)(this.pnlInformations.Width * 0.15);
+            this.lblActualState.Width = (int)(this.pnlInformations.Width * 0.4);
+            this.ptbxEdit.Width = (int)(this.pnlInformations.Height);
+            this.ptbxDelete.Width = (int)(this.pnlInformations.Height);
+            this.ptbxShowMore.Width = (int)(this.pnlInformations.Height);
+        }
+        /*_____________________________________________________________________________________________*/
+
+        private void InitializeDisplayHistory()
+        {
+            // Permet de :
+            // - positionner les controls par rapport à la page
+            // - définir leur taille
+
+            // Historique
+            this.pnlHistory.Width = (int)(this.Width * 0.6);
+            this.pnlFieldHistory.Height = (int)(this.Height * 0.5);
         }
         /*_____________________________________________________________________________________________*/
         #endregion
@@ -85,23 +114,24 @@ namespace TP_INDUSDEV.UserControls
 
         private void ptbxShowMore_Click(object sender, EventArgs e)
         {
+            this.Resize -= new EventHandler(UcDisplayTicket_Resize);
+
             // Agrandir le usercontrol par rapport à l'historique et modifier taille panel
             List<T_UPDATE_TICKET> liUpdateTicket = (from c in Program.dcIndusDev.T_UPDATE_TICKET
                                                     where c.ID_TICKET == actualTicket.ID_TICKET
                                                     select c).ToList();
-            if (!this.pnlHistory.Visible)
+            int iUpdateSize = (int)(liUpdateTicket.Count + 1 * (this.Height * 0.5));
+            if (!bHistoryActivate)
             {
-                this.Height += (int)(liUpdateTicket.Count * (this.Height * 0.5));
-                //this.pnlInformations.Height = (int)(this.Height * 0.2);
-                this.pnlHistory.Visible = true;
-                this.pnlHistory.Width = (int)(this.Width * 0.4);
+                this.Height += iUpdateSize;
             }
             else
             {
-                this.Height -= (int)(liUpdateTicket.Count * (this.Height * 0.5));
-                //this.pnlInformations.Height = (int)(this.Height * 0.2);
-                this.pnlHistory.Visible = false;
+                this.Height = iDefaultHeight;
             }
+
+            bHistoryActivate = !bHistoryActivate;
+            this.Resize += new EventHandler(UcDisplayTicket_Resize);
         }
         /*_____________________________________________________________________________________________*/
         #endregion

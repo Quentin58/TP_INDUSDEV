@@ -35,6 +35,7 @@ namespace TP_INDUSDEV.UserControls
             this.InitializeLists();
             this.InitializeContent();
         }
+        /*_____________________________________________________________________________________________*/
 
         // Méthodes
         #region Méthodes
