@@ -41,6 +41,12 @@ namespace TP_INDUSDEV.UserControls
             foreach (T_RIGHT right in liRight)
                 clibxRightsOperator.Items.Add(right.NAME_RIGHT);
 
+            foreach(TJ_RIGHT_OPERATOR_TYPE rightOperatorType in liRightOperatorType.Where(x => x.ID_OPERATOR_TYPE == OperatorType.ID_OPERATOR_TYPE))
+            {
+                if(rightOperatorType.ALLOWED)
+                {
+                }
+            }
         }
 
         // Méthodes

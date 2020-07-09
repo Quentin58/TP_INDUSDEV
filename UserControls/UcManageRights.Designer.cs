@@ -41,6 +41,7 @@
             // 
             // flpnlOperatorType
             // 
+            this.flpnlOperatorType.AutoScroll = true;
             this.flpnlOperatorType.Location = new System.Drawing.Point(3, 3);
             this.flpnlOperatorType.Name = "flpnlOperatorType";
             this.flpnlOperatorType.Size = new System.Drawing.Size(306, 217);
@@ -50,6 +51,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.flpnlOperatorType);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "UcManageRights";
