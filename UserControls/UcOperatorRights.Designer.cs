@@ -44,11 +44,13 @@
             // 
             // clibxRightsOperator
             // 
+            this.clibxRightsOperator.CheckOnClick = true;
             this.clibxRightsOperator.FormattingEnabled = true;
             this.clibxRightsOperator.Location = new System.Drawing.Point(116, 3);
             this.clibxRightsOperator.Name = "clibxRightsOperator";
-            this.clibxRightsOperator.Size = new System.Drawing.Size(485, 199);
+            this.clibxRightsOperator.Size = new System.Drawing.Size(245, 124);
             this.clibxRightsOperator.TabIndex = 1;
+            this.clibxRightsOperator.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clibxRightsOperator_ItemCheck);
             // 
             // UcOperatorRigths
             // 
@@ -57,7 +59,7 @@
             this.Controls.Add(this.clibxRightsOperator);
             this.Controls.Add(this.lblOperatorTypeName);
             this.Name = "UcOperatorRigths";
-            this.Size = new System.Drawing.Size(604, 210);
+            this.Size = new System.Drawing.Size(365, 130);
             this.ResumeLayout(false);
 
         }

@@ -122,7 +122,7 @@
             this.ptbQuit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbQuit.TabIndex = 14;
             this.ptbQuit.TabStop = false;
-            this.ptbQuit.Click += new System.EventHandler(this.ptbQuit_Click);
+            this.ptbQuit.Click += new System.EventHandler(this.PtbQuit_Click);
             // 
             // lblDesign
             // 

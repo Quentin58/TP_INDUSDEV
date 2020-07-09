@@ -41,6 +41,9 @@ namespace TP_INDUSDEV.UserControls
             foreach (T_RIGHT right in liRight)
                 clibxRightsOperator.Items.Add(right.NAME_RIGHT);
 
+            foreach(TJ_RIGHT_OPERATOR_TYPE rightOperatorType in liRightOperatorType.Where(x => x.ID_OPERATOR_TYPE == OperatorType.ID_OPERATOR_TYPE))
+                if(rightOperatorType.ALLOWED)
+                    clibxRightsOperator.SetItemChecked(clibxRightsOperator.Items.IndexOf(liRight.FirstOrDefault(x => x.ID_RIGHT == rightOperatorType.ID_RIGHT).NAME_RIGHT),true);
         }
 
         // Méthodes
@@ -48,7 +51,8 @@ namespace TP_INDUSDEV.UserControls
         #endregion
 
         // Evenements
-        #region Evenements
+        #region Evenement
         #endregion
+
     }
 }

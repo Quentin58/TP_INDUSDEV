@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_INDUSDEV.Data;
 
@@ -17,8 +13,6 @@ namespace TP_INDUSDEV.UserControls
         #region Variables
 
         string strAddTicketErrorMessage = "Impossible d'ajouter un nouveau ticket.";
-        string strRemoveTicketErrorMessage = "Impossible de supprimer un ticket.";
-        string strUpdateTicketErrorMessage = "Impossible de modifier un ticket.";
 
         #endregion
 
@@ -26,18 +20,18 @@ namespace TP_INDUSDEV.UserControls
         public UcAddTicket()
         {
             InitializeComponent();
-
-            // Initialisation de l'affichage des controls et des valeurs
-            this.InitializeDisplay();
-
-            InitializeControls();
+            InitializeDisplay();
+            InitializeControlsData();
         }
+        /*_____________________________________________________________________________________________*/
 
         // Méthodes
         #region Méthodes
 
         // Affichage
         #region Affichage
+
+        // Initialisation affichage
         private void InitializeDisplay()
         {
             // Permet de :
@@ -78,21 +72,22 @@ namespace TP_INDUSDEV.UserControls
             this.btnAddTicket.Location = new Point((int)(this.Width * 0.25), (int)(this.Height * 0.85));
         }
         /*_____________________________________________________________________________________________*/
+
         #endregion
 
-        // Initialisation champs formulaire
-        private void InitializeControls()
+        // Initialisation des données des champs du formulaire
+        private void InitializeControlsData()
         {
             // ComboBox techniciens
             cbbxSelectedOperator.DataSource = from t in Program.dcIndusDev.T_OPERATOR
                                               where t.ID_OPERATOR_TYPE == 2
                                               select t.FIRST_NAME_OPERATOR + " " + t.LAST_NAME_OPERATOR;
-            cbbxSelectedOperator.SelectedIndex = -1;
+            cbbxSelectedOperator.SelectedIndex = -1; // Item sélectionné : aucun
 
             // ComboBox niveaux
             cbbxLevelTicket.DataSource = from t in Program.dcIndusDev.T_LEVEL_TICKET
                                          select t.NAME_LEVEL_TICKET;
-            cbbxLevelTicket.SelectedIndex = -1;
+            cbbxLevelTicket.SelectedIndex = -1; // Item sélectionné : aucun
         }
         /*_____________________________________________________________________________________________*/
 
@@ -100,13 +95,6 @@ namespace TP_INDUSDEV.UserControls
         private void AddTicket(T_TICKET dTicket)
         {
             Program.dcIndusDev.T_TICKET.InsertOnSubmit(dTicket);
-        }
-        /*_____________________________________________________________________________________________*/
-
-        // Supprimer un ticket existant
-        private void RemoveTicket(T_TICKET dTicket)
-        {
-            Program.dcIndusDev.T_TICKET.DeleteOnSubmit(dTicket);
         }
         /*_____________________________________________________________________________________________*/
 
@@ -135,6 +123,15 @@ namespace TP_INDUSDEV.UserControls
         }
         /*_____________________________________________________________________________________________*/
 
+        // Vider les champs du formulaire
+        private void ClearFields()
+        {
+            rtbxTicketDetails.Text = "";
+            cbbxSelectedOperator.SelectedIndex = -1;
+            cbbxLevelTicket.SelectedIndex = -1;
+        }
+        /*_____________________________________________________________________________________________*/
+
         #endregion
 
         // Evenements
@@ -143,27 +140,29 @@ namespace TP_INDUSDEV.UserControls
         // Affichage
         #region Affichage
 
-        // Ajustement taille
+        // Changement de taille
         private void UcAddTicket_Resize(object sender, EventArgs e)
         {
-            this.InitializeDisplay();
+            InitializeDisplay();
         }
         /*_____________________________________________________________________________________________*/
 
-
-        private void ptbQuit_Click(object sender, EventArgs e)
+        // Fermeture UserControl
+        private void PtbQuit_Click(object sender, EventArgs e)
         {
-            this.Parent.Visible = false;
-            this.Parent.Controls.Remove(this);
+            Parent.Visible = false;
+            Parent.Controls.Remove(this);
         }
         /*_____________________________________________________________________________________________*/
         #endregion
 
         // Créer un nouveau ticket
-        private void btnAddTicket_Click(object sender, EventArgs e)
+        private void BtnAddTicket_Click(object sender, EventArgs e)
         {
             AddTicket(GetTicketData());
             Program.SubmitChanges(strAddTicketErrorMessage);
+            ClearFields();
+            //UcDisplayTicket.DiplayTickets();
         }
         /*_____________________________________________________________________________________________*/
 

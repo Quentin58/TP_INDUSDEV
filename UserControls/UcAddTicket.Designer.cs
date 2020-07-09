@@ -137,7 +137,7 @@
             this.btnAddTicket.Text = "Créer ticket";
             this.btnAddTicket.TextColor = System.Drawing.Color.White;
             this.btnAddTicket.UseVisualStyleBackColor = true;
-            this.btnAddTicket.Click += new System.EventHandler(this.btnAddTicket_Click);
+            this.btnAddTicket.Click += new System.EventHandler(this.BtnAddTicket_Click);
             // 
             // lblDesign
             // 
@@ -162,7 +162,7 @@
             this.ptbQuit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbQuit.TabIndex = 11;
             this.ptbQuit.TabStop = false;
-            this.ptbQuit.Click += new System.EventHandler(this.ptbQuit_Click);
+            this.ptbQuit.Click += new System.EventHandler(this.PtbQuit_Click);
             // 
             // UcAddTicket
             // 
