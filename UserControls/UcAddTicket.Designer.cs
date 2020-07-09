@@ -38,8 +38,8 @@
             this.cbbxLevelTicket = new System.Windows.Forms.ComboBox();
             this.btnAddTicket = new ZiTest.CustomButton();
             this.lblDesign = new System.Windows.Forms.Label();
-            this.ptbQuit = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbQuit)).BeginInit();
+            this.ptbxQuit = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbxQuit)).BeginInit();
             this.SuspendLayout();
             // 
             // lblStartDate
@@ -153,23 +153,23 @@
             // 
             // ptbQuit
             // 
-            this.ptbQuit.BackColor = System.Drawing.Color.Firebrick;
-            this.ptbQuit.Image = global::TP_INDUSDEV.Properties.Resources.quitIcon;
-            this.ptbQuit.Location = new System.Drawing.Point(580, 4);
-            this.ptbQuit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ptbQuit.Name = "ptbQuit";
-            this.ptbQuit.Size = new System.Drawing.Size(48, 37);
-            this.ptbQuit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbQuit.TabIndex = 11;
-            this.ptbQuit.TabStop = false;
-            this.ptbQuit.Click += new System.EventHandler(this.PtbQuit_Click);
+            this.ptbxQuit.BackColor = System.Drawing.Color.Firebrick;
+            this.ptbxQuit.Image = global::TP_INDUSDEV.Properties.Resources.quitIcon;
+            this.ptbxQuit.Location = new System.Drawing.Point(580, 4);
+            this.ptbxQuit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ptbxQuit.Name = "ptbQuit";
+            this.ptbxQuit.Size = new System.Drawing.Size(48, 37);
+            this.ptbxQuit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbxQuit.TabIndex = 11;
+            this.ptbxQuit.TabStop = false;
+            this.ptbxQuit.Click += new System.EventHandler(this.PtbQuit_Click);
             // 
             // UcAddTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.ptbQuit);
+            this.Controls.Add(this.ptbxQuit);
             this.Controls.Add(this.lblDesign);
             this.Controls.Add(this.lblLevelTicket);
             this.Controls.Add(this.cbbxLevelTicket);
@@ -184,7 +184,7 @@
             this.Name = "UcAddTicket";
             this.Size = new System.Drawing.Size(632, 530);
             this.Resize += new System.EventHandler(this.UcAddTicket_Resize);
-            ((System.ComponentModel.ISupportInitialize)(this.ptbQuit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbxQuit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,6 +201,6 @@
         private System.Windows.Forms.Label lblLevelTicket;
         private System.Windows.Forms.ComboBox cbbxLevelTicket;
         private System.Windows.Forms.Label lblDesign;
-        private System.Windows.Forms.PictureBox ptbQuit;
+        private System.Windows.Forms.PictureBox ptbxQuit;
     }
 }

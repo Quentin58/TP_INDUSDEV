@@ -63,26 +63,6 @@ namespace TP_INDUSDEV.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap deleteIcon {
-            get {
-                object obj = ResourceManager.GetObject("deleteIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap editIcon {
-            get {
-                object obj = ResourceManager.GetObject("editIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Padlock_symbol {
             get {
                 object obj = ResourceManager.GetObject("Padlock-symbol", resourceCulture);
@@ -113,9 +93,9 @@ namespace TP_INDUSDEV.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ShowMoreLess {
+        internal static System.Drawing.Bitmap Reset {
             get {
-                object obj = ResourceManager.GetObject("ShowMoreLess", resourceCulture);
+                object obj = ResourceManager.GetObject("Reset", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

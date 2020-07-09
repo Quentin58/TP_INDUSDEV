@@ -118,6 +118,18 @@
     <Compile Include="UserControls\UcManageRights.Designer.cs">
       <DependentUpon>UcManageRights.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UcUpdateOperator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcUpdateOperator.Designer.cs">
+      <DependentUpon>UcUpdateOperator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UcUpdateTicket.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcUpdateTicket.Designer.cs">
+      <DependentUpon>UcUpdateTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UcOperatorRights.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -149,8 +161,11 @@
     <EmbeddedResource Include="UserControls\UcAddTicket.resx">
       <DependentUpon>UcAddTicket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UcDisplayTicket.resx">
-      <DependentUpon>UcDisplayTicket.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UcUpdateOperator.resx">
+      <DependentUpon>UcUpdateOperator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcUpdateTicket.resx">
+      <DependentUpon>UcUpdateTicket.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Data\LinqToDB_INDUSDEV.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
@@ -194,13 +209,7 @@
     <None Include="Resources\quitIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ShowMoreLess.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\deleteIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\editIcon.png" />
+    <None Include="Resources\Reset1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,7 +12,7 @@ namespace TP_INDUSDEV.UserControls
         // Variables
         #region Variables
 
-        string strAddTicketErrorMessage = "Impossible d'ajouter un nouveau ticket.";
+        readonly string strAddTicketErrorMessage = "Impossible d'ajouter un nouveau ticket.";
 
         #endregion
 
@@ -40,8 +40,8 @@ namespace TP_INDUSDEV.UserControls
 
             // Titre
             this.lblTitle.Height = (int)(this.Height * 0.1);
-            this.ptbQuit.Size = new Size((int)(this.lblTitle.Height * 0.5), (int)(this.lblTitle.Height * 0.5));
-            this.ptbQuit.Location = new Point((int)(this.lblTitle.Width - (this.lblTitle.Height * 0.1 + this.ptbQuit.Width)), (int)(this.lblTitle.Height * 0.25));
+            this.ptbxQuit.Size = new Size((int)(this.lblTitle.Height * 0.5), (int)(this.lblTitle.Height * 0.5));
+            this.ptbxQuit.Location = new Point((int)(this.lblTitle.Width - (this.lblTitle.Height * 0.1 + this.ptbxQuit.Width)), (int)(this.lblTitle.Height * 0.25));
             // Label titre de champs
             Size sLblTitleField = new Size((int)(this.Width * 0.175),
                                             (int)(this.Height * 0.05));

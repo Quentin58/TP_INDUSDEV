@@ -33,10 +33,10 @@
             this.btnAddOperator = new ZiTest.CustomButton();
             this.tbxOperatorLastName = new CustomControlsLibrary.CustomTextBox();
             this.lblOperatorType = new System.Windows.Forms.Label();
-            this.ptbQuit = new System.Windows.Forms.PictureBox();
+            this.ptbxQuit = new System.Windows.Forms.PictureBox();
             this.lblDesign = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbQuit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbxQuit)).BeginInit();
             this.SuspendLayout();
             // 
             // cbbxOperatorType
@@ -114,15 +114,15 @@
             // 
             // ptbQuit
             // 
-            this.ptbQuit.BackColor = System.Drawing.Color.Firebrick;
-            this.ptbQuit.Image = global::TP_INDUSDEV.Properties.Resources.quitIcon;
-            this.ptbQuit.Location = new System.Drawing.Point(435, 3);
-            this.ptbQuit.Name = "ptbQuit";
-            this.ptbQuit.Size = new System.Drawing.Size(36, 30);
-            this.ptbQuit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbQuit.TabIndex = 14;
-            this.ptbQuit.TabStop = false;
-            this.ptbQuit.Click += new System.EventHandler(this.PtbQuit_Click);
+            this.ptbxQuit.BackColor = System.Drawing.Color.Firebrick;
+            this.ptbxQuit.Image = global::TP_INDUSDEV.Properties.Resources.quitIcon;
+            this.ptbxQuit.Location = new System.Drawing.Point(435, 3);
+            this.ptbxQuit.Name = "ptbQuit";
+            this.ptbxQuit.Size = new System.Drawing.Size(36, 30);
+            this.ptbxQuit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbxQuit.TabIndex = 14;
+            this.ptbxQuit.TabStop = false;
+            this.ptbxQuit.Click += new System.EventHandler(this.PtbQuit_Click);
             // 
             // lblDesign
             // 
@@ -155,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.ptbQuit);
+            this.Controls.Add(this.ptbxQuit);
             this.Controls.Add(this.lblDesign);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblOperatorType);
@@ -167,7 +167,7 @@
             this.Name = "UcAddOperator";
             this.Size = new System.Drawing.Size(474, 431);
             this.Resize += new System.EventHandler(this.UcAddOperator_Resize);
-            ((System.ComponentModel.ISupportInitialize)(this.ptbQuit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbxQuit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,7 +179,7 @@
         private CustomControlsLibrary.CustomTextBox tbxOperatorFirstName;
         private System.Windows.Forms.ComboBox cbbxOperatorType;
         private System.Windows.Forms.Label lblOperatorType;
-        private System.Windows.Forms.PictureBox ptbQuit;
+        private System.Windows.Forms.PictureBox ptbxQuit;
         private System.Windows.Forms.Label lblDesign;
         private System.Windows.Forms.Label lblTitle;
     }

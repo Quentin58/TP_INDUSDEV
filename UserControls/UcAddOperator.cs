@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_INDUSDEV.Data;
-using TP_INDUSDEV.UserControls;
-using System.Data.Linq;
 
 namespace TP_INDUSDEV.UserControls
 {
@@ -18,7 +12,7 @@ namespace TP_INDUSDEV.UserControls
         // Variables
         #region Variables
 
-        string strAddOperatorErrorMessage = "Impossible d'ajouter un nouvel opérateur.";
+        readonly string strAddOperatorErrorMessage = "Impossible d'ajouter un nouvel opérateur.";
 
         #endregion
 
@@ -46,8 +40,8 @@ namespace TP_INDUSDEV.UserControls
 
             // Titre
             this.lblTitle.Height = (int)(this.Height * 0.1);
-            this.ptbQuit.Size = new Size((int)(this.lblTitle.Height * 0.5), (int)(this.lblTitle.Height * 0.5));
-            this.ptbQuit.Location = new Point((int)(this.lblTitle.Width - (this.lblTitle.Height * 0.1 + this.ptbQuit.Width)), (int)(this.lblTitle.Height * 0.25));
+            this.ptbxQuit.Size = new Size((int)(this.lblTitle.Height * 0.5), (int)(this.lblTitle.Height * 0.5));
+            this.ptbxQuit.Location = new Point((int)(this.lblTitle.Width - (this.lblTitle.Height * 0.1 + this.ptbxQuit.Width)), (int)(this.lblTitle.Height * 0.25));
             // Champs
             this.tbxOperatorFirstName.Width = (int)(this.Width * 0.7);
             this.tbxOperatorFirstName.Location = new Point((int)(this.Width * 0.15),
