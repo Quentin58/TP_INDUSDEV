@@ -15,7 +15,8 @@ namespace TP_INDUSDEV.UserControls
         public FormTest()
         {
             InitializeComponent();
-            Controls.Add(new UcUpdateTicket(2));
+            //Controls.Add(new UcUpdateTicket(2));
+            Controls.Add(new UcUpdateOperator(7));
         }
     }
 }
