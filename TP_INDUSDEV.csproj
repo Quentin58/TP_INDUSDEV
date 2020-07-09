@@ -149,6 +149,9 @@
     <EmbeddedResource Include="UserControls\UcAddTicket.resx">
       <DependentUpon>UcAddTicket.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcDisplayTicket.resx">
+      <DependentUpon>UcDisplayTicket.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Data\LinqToDB_INDUSDEV.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>LinqToDB_INDUSDEV1.designer.cs</LastGenOutput>
@@ -189,6 +192,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\quitIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowMoreLess.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deleteIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

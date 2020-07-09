@@ -26,6 +26,7 @@ namespace TP_INDUSDEV.UserControls
 
             // Initialisation de l'affichage des controls
             this.InitializeDisplay(Program.connectedOperator);
+            this.InitializeContent();
         }
 
         // Méthodes
@@ -39,8 +40,11 @@ namespace TP_INDUSDEV.UserControls
             // - positionner les controls par rapport à la page
             // - définir leur taille
 
+            this.pnlFieldTicket.Height = (int)(this.Height * 0.7);
+            this.pnlFieldTicket.Height = (int)(this.Height * 0.7);
             this.pnlManagement.Width = (int)(this.Width * 0.4);
             this.pnlMenu.Height = (int)(this.Height * 0.05);
+
 
             // Menu
             this.InitializeDisplayMenu(connectedOperator);
@@ -86,6 +90,35 @@ namespace TP_INDUSDEV.UserControls
                 this.ptbAddTicketOrOperator.Location = new Point((int)(this.pnlMenu.Width * 0.5 - this.ptbAddTicketOrOperator.Width * 0.5),
                     (int)(this.pnlMenu.Height * 0.05));
                 this.ptbUpdateOperatorRights.Visible = false;
+            }
+        }
+        /*_____________________________________________________________________________________________*/
+        #endregion
+
+        // Initialisation
+        #region Initialisation
+        private void InitializeContent()
+        {
+            this.flpnlMainContent.Controls.Clear();
+
+            if (this.bEntryMode)
+                InitializeTickets();
+        }
+        /*_____________________________________________________________________________________________*/
+
+        private void InitializeTickets()
+        {
+            // Liste des tickets
+            List<T_TICKET> liTickets = (from t in Program.dcIndusDev.T_TICKET
+                                        select t).ToList();
+            foreach(var ticket in liTickets)
+            {
+                // Nouveau UcDisplayTicket
+                UcDisplayTicket newTicket = new UcDisplayTicket(ticket)
+                {
+                    Size = new Size((int)(this.flpnlMainContent.Width * 0.99), (int)(this.flpnlMainContent.Height * 0.05))
+                };
+                this.flpnlMainContent.Controls.Add(newTicket);
             }
         }
         /*_____________________________________________________________________________________________*/
@@ -139,6 +172,7 @@ namespace TP_INDUSDEV.UserControls
             // - Re-initialisé affichage menu
             this.InitializeDisplayMenu(Program.connectedOperator);
             // - Initialiser Panel d'affichage (selon le mode de saisie)
+            this.InitializeContent();
             // - Modifier fonction du bouton add
             this.ptbAddTicketOrOperator.Click += (this.bEntryMode) ? new EventHandler(ptbAddTicket_Click) : new EventHandler(ptbAddOperator_Click);
         }
