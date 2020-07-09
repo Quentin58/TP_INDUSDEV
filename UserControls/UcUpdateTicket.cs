@@ -119,6 +119,13 @@ namespace TP_INDUSDEV.UserControls
         }
         /*_____________________________________________________________________________________________*/
 
+        // Ajout mise à jour ticket
+        private void AddUpdateTicket(T_UPDATE_TICKET dUpdateTicket)
+        {
+            Program.dcIndusDev.T_UPDATE_TICKET.InsertOnSubmit(dUpdateTicket);
+        }
+        /*_____________________________________________________________________________________________*/
+
         // Récupérer les informations du formulaire
         private T_TICKET GetTicketData(bool bClosedTicket)
         {
@@ -168,6 +175,24 @@ namespace TP_INDUSDEV.UserControls
         }
         /*_____________________________________________________________________________________________*/
 
+        // Récupérer les informations du formulaire
+        private T_UPDATE_TICKET GetUpdatedTicketData(T_TICKET dTicket)
+        {
+            T_UPDATE_TICKET dUpdateTicket = new T_UPDATE_TICKET();
+
+            // Date modification, description modification, modificateur, opérateur délégué, ticket, etat, niveau
+            dUpdateTicket.DATE_UPDATE_TICKET = DateTime.Now;
+            dUpdateTicket.DESCRIPTION_UPDATE_TICKET = dTicket.INTERVENTION_DESCRIPTION_TICKET;
+            dUpdateTicket.ID_MODIFIER_OPERATOR = Program.connectedOperator.ID_OPERATOR;
+            dUpdateTicket.ID_DELEGATED_OPERATOR = dTicket.ID_SELECTED_OPERATOR;
+            dUpdateTicket.ID_TICKET = dTicket.ID_TICKET;
+            dUpdateTicket.ID_TICKET_STATE = dTicket.ID_TICKET_STATE;
+            dUpdateTicket.ID_LEVEL_TICKET = dTicket.ID_LEVEL_TICKET;
+
+            return dUpdateTicket;
+        }
+        /*_____________________________________________________________________________________________*/
+
         #endregion
 
         // Evenements
@@ -196,6 +221,7 @@ namespace TP_INDUSDEV.UserControls
         private void BtnUpdateTicket_Click(object sender, EventArgs e)
         {
             dTicket = GetTicketData(false);
+            AddUpdateTicket(GetUpdatedTicketData(dTicket));
             Program.SubmitChanges(strUpdateTicketErrorMessage);
             //UcDisplayTicket.DiplayTickets();
             Parent.Visible = false;
@@ -207,6 +233,7 @@ namespace TP_INDUSDEV.UserControls
         private void BtnCloseTicket_Click(object sender, EventArgs e)
         {
             dTicket = GetTicketData(true);
+            AddUpdateTicket(GetUpdatedTicketData(dTicket));
             Program.SubmitChanges(strUpdateTicketErrorMessage);
             //UcDisplayTicket.DiplayTickets();
             Parent.Visible = false;
