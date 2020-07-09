@@ -55,6 +55,12 @@ namespace TP_INDUSDEV.UserControls
 
         // Evenements
         #region Evenements
+        private void clibxRightsOperator_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+
+        }
+
         #endregion
+
     }
 }
