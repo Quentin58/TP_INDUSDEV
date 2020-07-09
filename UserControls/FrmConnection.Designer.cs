@@ -96,7 +96,7 @@
             // 
             // lblDesign
             // 
-            this.lblDesign.BackColor = System.Drawing.Color.Firebrick;
+            this.lblDesign.BackColor = System.Drawing.Color.Brown;
             this.lblDesign.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblDesign.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDesign.Location = new System.Drawing.Point(0, 55);
