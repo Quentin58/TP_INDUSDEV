@@ -77,7 +77,7 @@ namespace TP_INDUSDEV.UserControls
 
         #endregion
 
-        // Récupération donées du ticket à mettre à jour
+        // Récupération données du ticket à mettre à jour
         private T_TICKET GetTicketToUpdateData(int iIdTicket)
         {
             if ((from t in Program.dcIndusDev.T_TICKET
@@ -90,7 +90,7 @@ namespace TP_INDUSDEV.UserControls
             }
             else
             {
-                MessageBox.Show("Aucun ticket trouvé.");
+                MessageBox.Show("Ce ticket n'existe pas.");
 
                 return default;
             }
@@ -100,10 +100,7 @@ namespace TP_INDUSDEV.UserControls
         // Initialisation des données des champs du formulaire
         private void InitializeControlsData()
         {
-            // RichTextBox description intervention
-            rtbxTicketInterventionDescription.Text = (from t in Program.dcIndusDev.T_TICKET
-                                                      where t.ID_TICKET == dTicket.ID_TICKET
-                                                      select t.INTERVENTION_DESCRIPTION_TICKET).FirstOrDefault();
+            rtbxTicketInterventionDescription.Text = dTicket.INTERVENTION_DESCRIPTION_TICKET;
 
             // ComboBox techniciens
             cbbxSelectedOperator.DataSource = from t in Program.dcIndusDev.T_OPERATOR
