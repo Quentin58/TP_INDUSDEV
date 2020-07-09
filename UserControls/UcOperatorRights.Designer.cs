@@ -50,7 +50,6 @@
             this.clibxRightsOperator.Name = "clibxRightsOperator";
             this.clibxRightsOperator.Size = new System.Drawing.Size(245, 124);
             this.clibxRightsOperator.TabIndex = 1;
-            this.clibxRightsOperator.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clibxRightsOperator_ItemCheck);
             // 
             // UcOperatorRigths
             // 

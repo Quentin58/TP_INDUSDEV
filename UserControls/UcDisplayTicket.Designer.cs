@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcDisplayTicket));
             this.pnlInformations = new System.Windows.Forms.Panel();
+            this.ptbxEdit = new System.Windows.Forms.PictureBox();
+            this.ptbxDelete = new System.Windows.Forms.PictureBox();
+            this.ptbxShowMore = new System.Windows.Forms.PictureBox();
             this.lblActualState = new System.Windows.Forms.Label();
             this.lblUpdateDate = new System.Windows.Forms.Label();
             this.lblCreateDate = new System.Windows.Forms.Label();
             this.lblTicketNumer = new System.Windows.Forms.Label();
             this.lblLevelIndicator = new System.Windows.Forms.Label();
             this.pnlHistory = new System.Windows.Forms.Panel();
-            this.ptbxEdit = new System.Windows.Forms.PictureBox();
-            this.ptbxDelete = new System.Windows.Forms.PictureBox();
-            this.ptbxShowMore = new System.Windows.Forms.PictureBox();
             this.pnlDesign = new System.Windows.Forms.Panel();
             this.lblIndicatorTicketOwner = new System.Windows.Forms.Label();
             this.pnlInformations.SuspendLayout();
@@ -63,6 +63,40 @@
             this.pnlInformations.Name = "pnlInformations";
             this.pnlInformations.Size = new System.Drawing.Size(913, 48);
             this.pnlInformations.TabIndex = 0;
+            // 
+            // ptbxEdit
+            // 
+            this.ptbxEdit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ptbxEdit.Image = ((System.Drawing.Image)(resources.GetObject("ptbxEdit.Image")));
+            this.ptbxEdit.Location = new System.Drawing.Point(748, 0);
+            this.ptbxEdit.Name = "ptbxEdit";
+            this.ptbxEdit.Size = new System.Drawing.Size(55, 48);
+            this.ptbxEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbxEdit.TabIndex = 7;
+            this.ptbxEdit.TabStop = false;
+            // 
+            // ptbxDelete
+            // 
+            this.ptbxDelete.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ptbxDelete.Image = global::TP_INDUSDEV.Properties.Resources.deleteIcon;
+            this.ptbxDelete.Location = new System.Drawing.Point(803, 0);
+            this.ptbxDelete.Name = "ptbxDelete";
+            this.ptbxDelete.Size = new System.Drawing.Size(55, 48);
+            this.ptbxDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbxDelete.TabIndex = 6;
+            this.ptbxDelete.TabStop = false;
+            // 
+            // ptbxShowMore
+            // 
+            this.ptbxShowMore.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ptbxShowMore.Image = global::TP_INDUSDEV.Properties.Resources.ShowMoreLess;
+            this.ptbxShowMore.Location = new System.Drawing.Point(858, 0);
+            this.ptbxShowMore.Name = "ptbxShowMore";
+            this.ptbxShowMore.Size = new System.Drawing.Size(55, 48);
+            this.ptbxShowMore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbxShowMore.TabIndex = 5;
+            this.ptbxShowMore.TabStop = false;
+            this.ptbxShowMore.Click += new System.EventHandler(this.ptbxShowMore_Click);
             // 
             // lblActualState
             // 
@@ -124,40 +158,6 @@
             this.pnlHistory.TabIndex = 1;
             this.pnlHistory.Visible = false;
             // 
-            // ptbxEdit
-            // 
-            this.ptbxEdit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ptbxEdit.Image = ((System.Drawing.Image)(resources.GetObject("ptbxEdit.Image")));
-            this.ptbxEdit.Location = new System.Drawing.Point(748, 0);
-            this.ptbxEdit.Name = "ptbxEdit";
-            this.ptbxEdit.Size = new System.Drawing.Size(55, 48);
-            this.ptbxEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbxEdit.TabIndex = 7;
-            this.ptbxEdit.TabStop = false;
-            // 
-            // ptbxDelete
-            // 
-            this.ptbxDelete.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ptbxDelete.Image = global::TP_INDUSDEV.Properties.Resources.deleteIcon;
-            this.ptbxDelete.Location = new System.Drawing.Point(803, 0);
-            this.ptbxDelete.Name = "ptbxDelete";
-            this.ptbxDelete.Size = new System.Drawing.Size(55, 48);
-            this.ptbxDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbxDelete.TabIndex = 6;
-            this.ptbxDelete.TabStop = false;
-            // 
-            // ptbxShowMore
-            // 
-            this.ptbxShowMore.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ptbxShowMore.Image = global::TP_INDUSDEV.Properties.Resources.ShowMoreLess;
-            this.ptbxShowMore.Location = new System.Drawing.Point(858, 0);
-            this.ptbxShowMore.Name = "ptbxShowMore";
-            this.ptbxShowMore.Size = new System.Drawing.Size(55, 48);
-            this.ptbxShowMore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbxShowMore.TabIndex = 5;
-            this.ptbxShowMore.TabStop = false;
-            this.ptbxShowMore.Click += new System.EventHandler(this.ptbxShowMore_Click);
-            // 
             // pnlDesign
             // 
             this.pnlDesign.BackColor = System.Drawing.Color.Firebrick;
@@ -185,6 +185,7 @@
             this.Controls.Add(this.pnlHistory);
             this.Controls.Add(this.pnlInformations);
             this.Controls.Add(this.pnlDesign);
+            this.DoubleBuffered = true;
             this.Name = "UcDisplayTicket";
             this.Size = new System.Drawing.Size(913, 214);
             this.Resize += new System.EventHandler(this.UcDisplayTicket_Resize);

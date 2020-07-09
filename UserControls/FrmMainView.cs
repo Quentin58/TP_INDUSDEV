@@ -17,6 +17,12 @@ namespace TP_INDUSDEV.UserControls
         #region Variables
         // Mode de saisie (Ticket ou Operateur) / true = ticket & false = operateur
         bool bEntryMode = true;
+
+        // Liste tickets
+        List<T_TICKET> liTickets = new List<T_TICKET>();
+
+        // Liste opérateurs
+        List<T_OPERATOR> liOperators = new List<T_OPERATOR>();
         #endregion
 
         // Constructeur
@@ -26,6 +32,7 @@ namespace TP_INDUSDEV.UserControls
 
             // Initialisation de l'affichage des controls
             this.InitializeDisplay(Program.connectedOperator);
+            this.InitializeLists();
             this.InitializeContent();
         }
 
@@ -40,11 +47,9 @@ namespace TP_INDUSDEV.UserControls
             // - positionner les controls par rapport à la page
             // - définir leur taille
 
-            this.pnlFieldTicket.Height = (int)(this.Height * 0.7);
-            this.pnlFieldTicket.Height = (int)(this.Height * 0.7);
+            this.pnlFieldTicket.Height = (int)(this.Height * 0.07);
             this.pnlManagement.Width = (int)(this.Width * 0.4);
             this.pnlMenu.Height = (int)(this.Height * 0.05);
-
 
             // Menu
             this.InitializeDisplayMenu(connectedOperator);
@@ -97,9 +102,17 @@ namespace TP_INDUSDEV.UserControls
 
         // Initialisation
         #region Initialisation
-        private void InitializeContent()
+        public void InitializeLists()
         {
-            this.flpnlMainContent.Controls.Clear();
+            this.liTickets.Clear();
+            liTickets = (from t in Program.dcIndusDev.T_TICKET
+                         select t).ToList();
+        }
+        /*_____________________________________________________________________________________________*/
+
+        public void InitializeContent()
+        {
+            this.pnlMainContent.Controls.Clear();
 
             if (this.bEntryMode)
                 InitializeTickets();
@@ -108,17 +121,13 @@ namespace TP_INDUSDEV.UserControls
 
         private void InitializeTickets()
         {
-            // Liste des tickets
-            List<T_TICKET> liTickets = (from t in Program.dcIndusDev.T_TICKET
-                                        select t).ToList();
-            foreach(var ticket in liTickets)
+            foreach(var ticket in this.liTickets)
             {
                 // Nouveau UcDisplayTicket
-                UcDisplayTicket newTicket = new UcDisplayTicket(ticket)
-                {
-                    Size = new Size((int)(this.flpnlMainContent.Width * 0.99), (int)(this.flpnlMainContent.Height * 0.05))
-                };
-                this.flpnlMainContent.Controls.Add(newTicket);
+                UcDisplayTicket newTicket = new UcDisplayTicket(ticket);
+                this.pnlMainContent.Controls.Add(newTicket);
+                newTicket.Dock = DockStyle.Top;
+                newTicket.Height = (int)(this.pnlMainContent.Height * 0.05);
             }
         }
         /*_____________________________________________________________________________________________*/
