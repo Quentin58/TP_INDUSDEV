@@ -19,8 +19,6 @@ namespace TP_INDUSDEV.UserControls
         #region Variables
 
         string strAddOperatorErrorMessage = "Impossible d'ajouter un nouvel opérateur.";
-        string strRemoveOperatorErrorMessage = "Impossible de supprimer un opérateur.";
-        string strUpdateOperatorErrorMessage = "Impossible de modifier un opérateur.";
 
         #endregion
 
@@ -38,6 +36,8 @@ namespace TP_INDUSDEV.UserControls
 
         // Affichage
         #region Affichage
+
+        // Initialisation de l'affichage
         private void InitializeDisplay()
         {
             // Permet de :
@@ -71,6 +71,7 @@ namespace TP_INDUSDEV.UserControls
             this.btnAddOperator.Location = new Point((int)(this.Width * 0.25), (int)(this.Height * 0.85));
         }
         /*_____________________________________________________________________________________________*/
+
         #endregion
 
         // Initialisation champs formulaire
@@ -79,7 +80,7 @@ namespace TP_INDUSDEV.UserControls
             // ComboBox types opérateur
             cbbxOperatorType.DataSource = from t in Program.dcIndusDev.T_OPERATOR_TYPE
                                           select t.NAME_OPERATOR_TYPE;
-            this.cbbxOperatorType.SelectedIndex = -1;
+            cbbxOperatorType.SelectedIndex = -1;
         }
         /*_____________________________________________________________________________________________*/
 
@@ -87,13 +88,6 @@ namespace TP_INDUSDEV.UserControls
         private void AddOperator(T_OPERATOR dOperator)
         {
             Program.dcIndusDev.T_OPERATOR.InsertOnSubmit(dOperator);
-        }
-        /*_____________________________________________________________________________________________*/
-
-        // Supprimer un opérateur existant (intervenant, technicien ou administrateur)
-        private void RemoveOperator(T_OPERATOR dOperator)
-        {
-            Program.dcIndusDev.T_OPERATOR.DeleteOnSubmit(dOperator);
         }
         /*_____________________________________________________________________________________________*/
 
@@ -138,17 +132,12 @@ namespace TP_INDUSDEV.UserControls
         }
         /*_____________________________________________________________________________________________*/
 
-        // Ajouter type opérateur
-        private void AddOperatorType(string strTypeName)
+        // Vider les champs du formulaire
+        private void ClearFields()
         {
-            T_OPERATOR_TYPE dOperatorType = new T_OPERATOR_TYPE
-            {
-                ID_OPERATOR_TYPE = (from t in Program.dcIndusDev.T_OPERATOR_TYPE
-                                    select t.ID_OPERATOR_TYPE).Max() + 1,
-                NAME_OPERATOR_TYPE = strTypeName
-            };
-
-            Program.dcIndusDev.T_OPERATOR_TYPE.InsertOnSubmit(dOperatorType);
+            tbxOperatorFirstName.Text = "";
+            tbxOperatorLastName.Text = "";
+            cbbxOperatorType.SelectedIndex = -1;
         }
         /*_____________________________________________________________________________________________*/
 
@@ -157,20 +146,24 @@ namespace TP_INDUSDEV.UserControls
         // Évenements
         #region Évenements
 
-
         // Affichage
         #region Affichage
+
+        // Changement de taille
         private void UcAddOperator_Resize(object sender, EventArgs e)
         {
-            this.InitializeDisplay();
+            InitializeDisplay();
         }
         /*_____________________________________________________________________________________________*/
-        private void ptbQuit_Click(object sender, EventArgs e)
+
+        // Fermeture UserControl
+        private void PtbQuit_Click(object sender, EventArgs e)
         {
-            this.Parent.Visible = false;
-            this.Parent.Controls.Remove(this);
+            Parent.Visible = false;
+            Parent.Controls.Remove(this);
         }
         /*_____________________________________________________________________________________________*/
+
         #endregion
 
         // Ajouter nouvel opérateur (intervenant, technicien ou administrateur)
@@ -178,6 +171,8 @@ namespace TP_INDUSDEV.UserControls
         {        
             AddOperator(GetOperatorData());
             Program.SubmitChanges(strAddOperatorErrorMessage);
+            ClearFields();
+            //UcDisplayOperator.DisplayOperators();
         }
         /*_____________________________________________________________________________________________*/
 
