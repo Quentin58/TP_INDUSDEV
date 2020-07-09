@@ -83,6 +83,7 @@
             this.ptbUpdateOperatorRights.TabIndex = 13;
             this.ptbUpdateOperatorRights.TabStop = false;
             this.ptbUpdateOperatorRights.Visible = false;
+            this.ptbUpdateOperatorRights.Click += new System.EventHandler(this.ptbUpdateOperatorRights_Click);
             // 
             // btnTicketsOrOperateur
             // 

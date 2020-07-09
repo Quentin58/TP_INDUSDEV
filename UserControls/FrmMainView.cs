@@ -173,6 +173,19 @@ namespace TP_INDUSDEV.UserControls
             this.pnlManagement.Controls.Add(newUcAddOperator);
         }
         /*_____________________________________________________________________________________________*/
+        // Pour les droits
+        private void ptbUpdateOperatorRights_Click(object sender, EventArgs e)
+        {
+            this.pnlManagement.Controls.Clear();
+            this.pnlManagement.Visible = true;
+            this.pnlManagement.Width = (int)(this.Width * 0.4);
+
+            // Création d'une nouvelle fenêtre d'ajout de ticket
+            UcManageRights newUcManageRights = new UcManageRights();
+            newUcManageRights.Dock = DockStyle.Fill;
+            this.pnlManagement.Controls.Add(newUcManageRights);
+        }
+        /*_____________________________________________________________________________________________*/
         #endregion
 
         #endregion
