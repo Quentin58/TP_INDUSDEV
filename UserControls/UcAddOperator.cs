@@ -49,12 +49,10 @@ namespace TP_INDUSDEV.UserControls
             this.ptbQuit.Size = new Size((int)(this.lblTitle.Height * 0.5), (int)(this.lblTitle.Height * 0.5));
             this.ptbQuit.Location = new Point((int)(this.lblTitle.Width - (this.lblTitle.Height * 0.1 + this.ptbQuit.Width)), (int)(this.lblTitle.Height * 0.25));
             // Champs
-            Size sCtlField = new Size((int)(this.Width * 0.7),
-                                        (int)(this.Height * 0.15));
-            this.tbxOperatorFirstName.Size = sCtlField;
+            this.tbxOperatorFirstName.Width = (int)(this.Width * 0.7);
             this.tbxOperatorFirstName.Location = new Point((int)(this.Width * 0.15),
                                                         (int)(this.Height * 0.25));
-            this.tbxOperatorLastName.Size = sCtlField;
+            this.tbxOperatorLastName.Width = (int)(this.Width * 0.7);
             this.tbxOperatorLastName.Location = new Point((int)(this.Width * 0.15),
                                                         (int)(this.Height * 0.4));
 
@@ -62,7 +60,7 @@ namespace TP_INDUSDEV.UserControls
                                             (int)(this.Height * 0.05));
             this.lblOperatorType.Location = new Point((int)(this.Width * 0.15),
                                                         (int)(this.Height * 0.55));
-            this.cbbxOperatorType.Size = sCtlField;
+            this.cbbxOperatorType.Width = (int)(this.Width * 0.7);
             this.cbbxOperatorType.Location = new Point((int)(this.Width * 0.15),
                                                         (int)(this.Height * 0.6));
 
