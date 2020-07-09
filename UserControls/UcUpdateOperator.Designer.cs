@@ -120,6 +120,7 @@
             this.btnUpdateOperator.Text = "Valider modifications";
             this.btnUpdateOperator.TextColor = System.Drawing.Color.White;
             this.btnUpdateOperator.UseVisualStyleBackColor = true;
+            this.btnUpdateOperator.Click += new System.EventHandler(this.BtnUpdateOperator_Click);
             // 
             // tbxOperatorLastName
             // 
@@ -166,6 +167,7 @@
             this.ptbxResetPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbxResetPassword.TabIndex = 24;
             this.ptbxResetPassword.TabStop = false;
+            this.ptbxResetPassword.Click += new System.EventHandler(this.PtbxResetPassword_Click);
             // 
             // ptbxQuit
             // 
@@ -178,6 +180,7 @@
             this.ptbxQuit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbxQuit.TabIndex = 22;
             this.ptbxQuit.TabStop = false;
+            this.ptbxQuit.Click += new System.EventHandler(this.PtbxQuit_Click);
             // 
             // UcUpdateOperator
             // 
@@ -195,6 +198,7 @@
             this.Controls.Add(this.tbxOperatorLastName);
             this.Name = "UcUpdateOperator";
             this.Size = new System.Drawing.Size(599, 561);
+            this.Resize += new System.EventHandler(this.UcUpdateOperator_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.ptbxResetPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbxQuit)).EndInit();
             this.ResumeLayout(false);

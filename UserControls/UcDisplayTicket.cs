@@ -31,6 +31,8 @@ namespace TP_INDUSDEV.UserControls
             actualTicket = ticket;
 
             InitializeDisplay(Program.connectedOperator);
+
+            InitializeControls(ticket);
         }
 
         // Méthodes
@@ -45,12 +47,13 @@ namespace TP_INDUSDEV.UserControls
             // - définir leur taille
 
             // Pour les information Ticket
-            this.pnlInformations.Height = (int)(this.Height * 0.95);
+            this.pnlInformations.Height = (int)(this.Height * 0.85);
 
             this.InitializeDisplayInformation();
             this.InitializeDisplayHistory();
 
             // Control panel design
+            this.pnlDesign.Height = (int)(this.Height * 0.15);
             this.lblIndicatorTicketOwner.Width = (int)(this.pnlDesign.Width * 0.05);
 
             iDefaultHeight = this.Height;
@@ -95,6 +98,34 @@ namespace TP_INDUSDEV.UserControls
             // Historique
             this.pnlHistory.Width = (int)(this.Width * 0.6);
             this.pnlFieldHistory.Height = (int)(this.Height * 0.5);
+
+            this.lblTitleLevel.Width = (int)(this.pnlHistory.Width * 0.1);
+            this.lblTitleOperator.Width = (int)(this.pnlHistory.Width * 0.2);
+            this.lblTitleUpdateDate.Width = (int)(this.pnlHistory.Width * 0.25);
+            this.lblTitleUpdateState.Width = (int)(this.pnlHistory.Width * 0.25);
+            this.lblTitleDelegatedOperateur.Width = (int)(this.pnlHistory.Width * 0.2);
+        }
+        /*_____________________________________________________________________________________________*/
+        #endregion
+
+        // Données
+        #region Données
+        private void InitializeControls(T_TICKET ticket)
+        {
+            int iLevelTicket = ticket.T_LEVEL_TICKET.GRADE_LEVEL_TICKET;
+            this.lblLevelIndicator.BackColor = System.Drawing.ColorTranslator.FromHtml(liLevelTicketColor.ElementAtOrDefault(iLevelTicket));
+            this.lblTicketNumer.Text = "Ticket N° " + ticket.ID_TICKET.ToString();
+            this.lblCreateDate.Text = ticket.START_DATE_TICKET.ToString();
+            string strLastUpadteDate = (from ut in Program.dcIndusDev.T_UPDATE_TICKET
+                                        join t in Program.dcIndusDev.T_TICKET on ut.ID_TICKET equals t.ID_TICKET
+                                        where t.ID_TICKET == ticket.ID_TICKET
+                                        orderby ut.DATE_UPDATE_TICKET descending
+                                        select ut.DATE_UPDATE_TICKET).FirstOrDefault().ToString();
+            this.lblUpdateDate.Text = (strLastUpadteDate != "01/01/0001 00:00:00") ? strLastUpadteDate : "";
+            this.lblActualState.Text = ticket.T_TICKET_STATE.NAME_TICKET_STATE;
+
+            this.lblIndicatorTicketOwner.BackColor = (Program.connectedOperator.ID_OPERATOR == ticket.ID_SELECTED_OPERATOR ||
+                                                    Program.connectedOperator.ID_OPERATOR == ticket.ID_OWNER_OPERATOR) ? Color.White : Color.Black;
         }
         /*_____________________________________________________________________________________________*/
         #endregion

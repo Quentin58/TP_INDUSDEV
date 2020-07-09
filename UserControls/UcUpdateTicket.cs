@@ -77,7 +77,7 @@ namespace TP_INDUSDEV.UserControls
 
         #endregion
 
-        // Récupération donées du ticket à mettre à jour
+        // Récupération données du ticket à mettre à jour
         private T_TICKET GetTicketToUpdateData(int iIdTicket)
         {
             if ((from t in Program.dcIndusDev.T_TICKET
@@ -90,7 +90,7 @@ namespace TP_INDUSDEV.UserControls
             }
             else
             {
-                MessageBox.Show("Aucun ticket trouvé.");
+                MessageBox.Show("Ce ticket n'existe pas.");
 
                 return default;
             }
@@ -100,10 +100,7 @@ namespace TP_INDUSDEV.UserControls
         // Initialisation des données des champs du formulaire
         private void InitializeControlsData()
         {
-            // RichTextBox description intervention
-            rtbxTicketInterventionDescription.Text = (from t in Program.dcIndusDev.T_TICKET
-                                                      where t.ID_TICKET == dTicket.ID_TICKET
-                                                      select t.INTERVENTION_DESCRIPTION_TICKET).FirstOrDefault();
+            rtbxTicketInterventionDescription.Text = dTicket.INTERVENTION_DESCRIPTION_TICKET;
 
             // ComboBox techniciens
             cbbxSelectedOperator.DataSource = from t in Program.dcIndusDev.T_OPERATOR
@@ -119,6 +116,13 @@ namespace TP_INDUSDEV.UserControls
             cbbxLevelTicket.SelectedItem = (from t in Program.dcIndusDev.T_LEVEL_TICKET
                                             where t.ID_LEVEL_TICKET == dTicket.ID_LEVEL_TICKET
                                             select t.NAME_LEVEL_TICKET).FirstOrDefault();
+        }
+        /*_____________________________________________________________________________________________*/
+
+        // Ajout mise à jour ticket
+        private void AddUpdateTicket(T_UPDATE_TICKET dUpdateTicket)
+        {
+            Program.dcIndusDev.T_UPDATE_TICKET.InsertOnSubmit(dUpdateTicket);
         }
         /*_____________________________________________________________________________________________*/
 
@@ -171,6 +175,24 @@ namespace TP_INDUSDEV.UserControls
         }
         /*_____________________________________________________________________________________________*/
 
+        // Récupérer les informations du formulaire
+        private T_UPDATE_TICKET GetUpdatedTicketData(T_TICKET dTicket)
+        {
+            T_UPDATE_TICKET dUpdateTicket = new T_UPDATE_TICKET();
+
+            // Date modification, description modification, modificateur, opérateur délégué, ticket, etat, niveau
+            dUpdateTicket.DATE_UPDATE_TICKET = DateTime.Now;
+            dUpdateTicket.DESCRIPTION_UPDATE_TICKET = dTicket.INTERVENTION_DESCRIPTION_TICKET;
+            dUpdateTicket.ID_MODIFIER_OPERATOR = Program.connectedOperator.ID_OPERATOR;
+            dUpdateTicket.ID_DELEGATED_OPERATOR = dTicket.ID_SELECTED_OPERATOR;
+            dUpdateTicket.ID_TICKET = dTicket.ID_TICKET;
+            dUpdateTicket.ID_TICKET_STATE = dTicket.ID_TICKET_STATE;
+            dUpdateTicket.ID_LEVEL_TICKET = dTicket.ID_LEVEL_TICKET;
+
+            return dUpdateTicket;
+        }
+        /*_____________________________________________________________________________________________*/
+
         #endregion
 
         // Evenements
@@ -199,6 +221,7 @@ namespace TP_INDUSDEV.UserControls
         private void BtnUpdateTicket_Click(object sender, EventArgs e)
         {
             dTicket = GetTicketData(false);
+            AddUpdateTicket(GetUpdatedTicketData(dTicket));
             Program.SubmitChanges(strUpdateTicketErrorMessage);
             //UcDisplayTicket.DiplayTickets();
             Parent.Visible = false;
@@ -210,6 +233,7 @@ namespace TP_INDUSDEV.UserControls
         private void BtnCloseTicket_Click(object sender, EventArgs e)
         {
             dTicket = GetTicketData(true);
+            AddUpdateTicket(GetUpdatedTicketData(dTicket));
             Program.SubmitChanges(strUpdateTicketErrorMessage);
             //UcDisplayTicket.DiplayTickets();
             Parent.Visible = false;

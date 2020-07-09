@@ -54,6 +54,7 @@
             this.ptbxQuit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbxQuit.TabIndex = 22;
             this.ptbxQuit.TabStop = false;
+            this.ptbxQuit.Click += new System.EventHandler(this.PtbxQuit_Click);
             // 
             // lblDesign
             // 
@@ -204,6 +205,7 @@
             this.Controls.Add(this.lblStartDate);
             this.Name = "UcUpdateTicket";
             this.Size = new System.Drawing.Size(671, 593);
+            this.Resize += new System.EventHandler(this.UcUpdateTicket_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.ptbxQuit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

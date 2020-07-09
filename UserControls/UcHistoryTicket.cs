@@ -54,7 +54,12 @@ namespace TP_INDUSDEV.UserControls
         #region Données
         private void InitializeControls(T_UPDATE_TICKET update)
         {
-            this.lblLevelIndicator.BackColor = System.Drawing.ColorTranslator.FromHtml("#FFCC66");
+            int iLevelTicket = update.T_LEVEL_TICKET.GRADE_LEVEL_TICKET;
+            this.lblLevelIndicator.BackColor = System.Drawing.ColorTranslator.FromHtml(liLevelTicketColor.ElementAtOrDefault(iLevelTicket));
+            this.lblOperator.Text = update.T_OPERATOR.LOGIN_OPERATOR;
+            this.lblUpdateDate.Text = update.DATE_UPDATE_TICKET.ToString();
+            this.lblUpdateState.Text = update.T_TICKET_STATE.NAME_TICKET_STATE;
+            this.lblDelegatedOperateur.Text = update.T_OPERATOR1.LOGIN_OPERATOR;
         }
         /*_____________________________________________________________________________________________*/
         #endregion

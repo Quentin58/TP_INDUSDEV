@@ -29,24 +29,30 @@
         private void InitializeComponent()
         {
             this.pnlInformations = new System.Windows.Forms.Panel();
+            this.ptbxEdit = new System.Windows.Forms.PictureBox();
+            this.ptbxDelete = new System.Windows.Forms.PictureBox();
+            this.ptbxShowMore = new System.Windows.Forms.PictureBox();
             this.lblActualState = new System.Windows.Forms.Label();
             this.lblUpdateDate = new System.Windows.Forms.Label();
             this.lblCreateDate = new System.Windows.Forms.Label();
             this.lblTicketNumer = new System.Windows.Forms.Label();
             this.lblLevelIndicator = new System.Windows.Forms.Label();
             this.pnlHistory = new System.Windows.Forms.Panel();
+            this.pnlFieldHistory = new System.Windows.Forms.Panel();
+            this.lblTitleDelegatedOperateur = new System.Windows.Forms.Label();
+            this.lblTitleUpdateState = new System.Windows.Forms.Label();
+            this.lblTitleUpdateDate = new System.Windows.Forms.Label();
+            this.lblTitleOperator = new System.Windows.Forms.Label();
+            this.lblTitleLevel = new System.Windows.Forms.Label();
             this.pnlDesign = new System.Windows.Forms.Panel();
             this.lblIndicatorTicketOwner = new System.Windows.Forms.Label();
-            this.pnlFieldHistory = new System.Windows.Forms.Panel();
-            this.ptbxEdit = new System.Windows.Forms.PictureBox();
-            this.ptbxDelete = new System.Windows.Forms.PictureBox();
-            this.ptbxShowMore = new System.Windows.Forms.PictureBox();
             this.pnlInformations.SuspendLayout();
-            this.pnlHistory.SuspendLayout();
-            this.pnlDesign.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbxEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbxDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbxShowMore)).BeginInit();
+            this.pnlHistory.SuspendLayout();
+            this.pnlFieldHistory.SuspendLayout();
+            this.pnlDesign.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlInformations
@@ -64,6 +70,40 @@
             this.pnlInformations.Name = "pnlInformations";
             this.pnlInformations.Size = new System.Drawing.Size(913, 48);
             this.pnlInformations.TabIndex = 0;
+            // 
+            // ptbxEdit
+            // 
+            this.ptbxEdit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ptbxEdit.Image = global::TP_INDUSDEV.Properties.Resources.editIcon;
+            this.ptbxEdit.Location = new System.Drawing.Point(748, 0);
+            this.ptbxEdit.Name = "ptbxEdit";
+            this.ptbxEdit.Size = new System.Drawing.Size(55, 48);
+            this.ptbxEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbxEdit.TabIndex = 7;
+            this.ptbxEdit.TabStop = false;
+            // 
+            // ptbxDelete
+            // 
+            this.ptbxDelete.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ptbxDelete.Image = global::TP_INDUSDEV.Properties.Resources.deleteIcon;
+            this.ptbxDelete.Location = new System.Drawing.Point(803, 0);
+            this.ptbxDelete.Name = "ptbxDelete";
+            this.ptbxDelete.Size = new System.Drawing.Size(55, 48);
+            this.ptbxDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbxDelete.TabIndex = 6;
+            this.ptbxDelete.TabStop = false;
+            // 
+            // ptbxShowMore
+            // 
+            this.ptbxShowMore.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ptbxShowMore.Image = global::TP_INDUSDEV.Properties.Resources.ShowMoreLess;
+            this.ptbxShowMore.Location = new System.Drawing.Point(858, 0);
+            this.ptbxShowMore.Name = "ptbxShowMore";
+            this.ptbxShowMore.Size = new System.Drawing.Size(55, 48);
+            this.ptbxShowMore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbxShowMore.TabIndex = 5;
+            this.ptbxShowMore.TabStop = false;
+            this.ptbxShowMore.Click += new System.EventHandler(this.ptbxShowMore_Click);
             // 
             // lblActualState
             // 
@@ -125,6 +165,75 @@
             this.pnlHistory.Size = new System.Drawing.Size(515, 161);
             this.pnlHistory.TabIndex = 1;
             // 
+            // pnlFieldHistory
+            // 
+            this.pnlFieldHistory.BackColor = System.Drawing.Color.Firebrick;
+            this.pnlFieldHistory.Controls.Add(this.lblTitleDelegatedOperateur);
+            this.pnlFieldHistory.Controls.Add(this.lblTitleUpdateState);
+            this.pnlFieldHistory.Controls.Add(this.lblTitleUpdateDate);
+            this.pnlFieldHistory.Controls.Add(this.lblTitleOperator);
+            this.pnlFieldHistory.Controls.Add(this.lblTitleLevel);
+            this.pnlFieldHistory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFieldHistory.Location = new System.Drawing.Point(0, 0);
+            this.pnlFieldHistory.Name = "pnlFieldHistory";
+            this.pnlFieldHistory.Size = new System.Drawing.Size(515, 27);
+            this.pnlFieldHistory.TabIndex = 17;
+            // 
+            // lblTitleDelegatedOperateur
+            // 
+            this.lblTitleDelegatedOperateur.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTitleDelegatedOperateur.ForeColor = System.Drawing.Color.White;
+            this.lblTitleDelegatedOperateur.Location = new System.Drawing.Point(356, 0);
+            this.lblTitleDelegatedOperateur.Name = "lblTitleDelegatedOperateur";
+            this.lblTitleDelegatedOperateur.Size = new System.Drawing.Size(154, 27);
+            this.lblTitleDelegatedOperateur.TabIndex = 14;
+            this.lblTitleDelegatedOperateur.Text = "Opérateur aassigné";
+            this.lblTitleDelegatedOperateur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTitleUpdateState
+            // 
+            this.lblTitleUpdateState.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTitleUpdateState.ForeColor = System.Drawing.Color.White;
+            this.lblTitleUpdateState.Location = new System.Drawing.Point(202, 0);
+            this.lblTitleUpdateState.Name = "lblTitleUpdateState";
+            this.lblTitleUpdateState.Size = new System.Drawing.Size(154, 27);
+            this.lblTitleUpdateState.TabIndex = 13;
+            this.lblTitleUpdateState.Text = "Etat";
+            this.lblTitleUpdateState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTitleUpdateDate
+            // 
+            this.lblTitleUpdateDate.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTitleUpdateDate.ForeColor = System.Drawing.Color.White;
+            this.lblTitleUpdateDate.Location = new System.Drawing.Point(95, 0);
+            this.lblTitleUpdateDate.Name = "lblTitleUpdateDate";
+            this.lblTitleUpdateDate.Size = new System.Drawing.Size(107, 27);
+            this.lblTitleUpdateDate.TabIndex = 12;
+            this.lblTitleUpdateDate.Text = "Date";
+            this.lblTitleUpdateDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTitleOperator
+            // 
+            this.lblTitleOperator.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTitleOperator.ForeColor = System.Drawing.Color.White;
+            this.lblTitleOperator.Location = new System.Drawing.Point(41, 0);
+            this.lblTitleOperator.Name = "lblTitleOperator";
+            this.lblTitleOperator.Size = new System.Drawing.Size(54, 27);
+            this.lblTitleOperator.TabIndex = 11;
+            this.lblTitleOperator.Text = "Opérateur";
+            this.lblTitleOperator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTitleLevel
+            // 
+            this.lblTitleLevel.BackColor = System.Drawing.Color.Firebrick;
+            this.lblTitleLevel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTitleLevel.ForeColor = System.Drawing.Color.White;
+            this.lblTitleLevel.Location = new System.Drawing.Point(0, 0);
+            this.lblTitleLevel.Name = "lblTitleLevel";
+            this.lblTitleLevel.Size = new System.Drawing.Size(41, 27);
+            this.lblTitleLevel.TabIndex = 10;
+            this.lblTitleLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pnlDesign
             // 
             this.pnlDesign.BackColor = System.Drawing.Color.Firebrick;
@@ -145,49 +254,6 @@
             this.lblIndicatorTicketOwner.TabIndex = 5;
             this.lblIndicatorTicketOwner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnlFieldHistory
-            // 
-            this.pnlFieldHistory.BackColor = System.Drawing.Color.Firebrick;
-            this.pnlFieldHistory.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFieldHistory.Location = new System.Drawing.Point(0, 0);
-            this.pnlFieldHistory.Name = "pnlFieldHistory";
-            this.pnlFieldHistory.Size = new System.Drawing.Size(515, 27);
-            this.pnlFieldHistory.TabIndex = 17;
-            // 
-            // ptbxEdit
-            // 
-            this.ptbxEdit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ptbxEdit.Image = global::TP_INDUSDEV.Properties.Resources.editIcon;
-            this.ptbxEdit.Location = new System.Drawing.Point(748, 0);
-            this.ptbxEdit.Name = "ptbxEdit";
-            this.ptbxEdit.Size = new System.Drawing.Size(55, 48);
-            this.ptbxEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbxEdit.TabIndex = 7;
-            this.ptbxEdit.TabStop = false;
-            // 
-            // ptbxDelete
-            // 
-            this.ptbxDelete.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ptbxDelete.Image = global::TP_INDUSDEV.Properties.Resources.deleteIcon;
-            this.ptbxDelete.Location = new System.Drawing.Point(803, 0);
-            this.ptbxDelete.Name = "ptbxDelete";
-            this.ptbxDelete.Size = new System.Drawing.Size(55, 48);
-            this.ptbxDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbxDelete.TabIndex = 6;
-            this.ptbxDelete.TabStop = false;
-            // 
-            // ptbxShowMore
-            // 
-            this.ptbxShowMore.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ptbxShowMore.Image = global::TP_INDUSDEV.Properties.Resources.ShowMoreLess;
-            this.ptbxShowMore.Location = new System.Drawing.Point(858, 0);
-            this.ptbxShowMore.Name = "ptbxShowMore";
-            this.ptbxShowMore.Size = new System.Drawing.Size(55, 48);
-            this.ptbxShowMore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbxShowMore.TabIndex = 5;
-            this.ptbxShowMore.TabStop = false;
-            this.ptbxShowMore.Click += new System.EventHandler(this.ptbxShowMore_Click);
-            // 
             // UcDisplayTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,11 +266,12 @@
             this.Size = new System.Drawing.Size(913, 214);
             this.Resize += new System.EventHandler(this.UcDisplayTicket_Resize);
             this.pnlInformations.ResumeLayout(false);
-            this.pnlHistory.ResumeLayout(false);
-            this.pnlDesign.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbxEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbxDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbxShowMore)).EndInit();
+            this.pnlHistory.ResumeLayout(false);
+            this.pnlFieldHistory.ResumeLayout(false);
+            this.pnlDesign.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -224,5 +291,10 @@
         private System.Windows.Forms.Panel pnlDesign;
         private System.Windows.Forms.Label lblIndicatorTicketOwner;
         private System.Windows.Forms.Panel pnlFieldHistory;
+        private System.Windows.Forms.Label lblTitleDelegatedOperateur;
+        private System.Windows.Forms.Label lblTitleUpdateState;
+        private System.Windows.Forms.Label lblTitleUpdateDate;
+        private System.Windows.Forms.Label lblTitleOperator;
+        private System.Windows.Forms.Label lblTitleLevel;
     }
 }
