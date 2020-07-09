@@ -72,5 +72,10 @@ namespace TP_INDUSDEV.UserControls
         #region Evenements
 
         #endregion
+
+        private void customButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
