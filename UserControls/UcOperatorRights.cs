@@ -17,9 +17,9 @@ namespace TP_INDUSDEV.UserControls
         // Variables
         #region Variables
 
-        T_OPERATOR_TYPE OperatorType;
-        List<T_RIGHT> liRight;
-        List<TJ_RIGHT_OPERATOR_TYPE> liRightOperatorType;
+        public T_OPERATOR_TYPE OperatorType;
+        public List<T_RIGHT> liRight;
+        public List<TJ_RIGHT_OPERATOR_TYPE> liRightOperatorType;
 
         #endregion
 
@@ -48,6 +48,13 @@ namespace TP_INDUSDEV.UserControls
 
         // Méthodes
         #region Méthodes
+
+        public CheckedListBox GetClibxRightsOperator()
+        {
+            return clibxRightsOperator;
+        }
+
+
         #endregion
 
         // Evenements
