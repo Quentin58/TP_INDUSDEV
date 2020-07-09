@@ -121,10 +121,13 @@ namespace TP_INDUSDEV.UserControls
             dTicket.ID_TICKET_STATE = (from t in Program.dcIndusDev.T_TICKET_STATE
                                        where t.NAME_TICKET_STATE == "En saisie"
                                        select t.ID_TICKET_STATE).FirstOrDefault();
-            //dTicket.
+            dTicket.ID_LEVEL_TICKET = (from t in Program.dcIndusDev.T_LEVEL_TICKET
+                                       where t.NAME_LEVEL_TICKET == 
+                                       cbbxLevelTicket.SelectedItem.ToString()
+                                       select t.ID_LEVEL_TICKET).FirstOrDefault();
             dTicket.ID_OWNER_OPERATOR = Program.connectedOperator.ID_OPERATOR;
             dTicket.ID_SELECTED_OPERATOR = (from t in Program.dcIndusDev.T_OPERATOR
-                                            where t.FIRST_NAME_OPERATOR + t.LAST_NAME_OPERATOR ==
+                                            where t.FIRST_NAME_OPERATOR + " " + t.LAST_NAME_OPERATOR ==
                                             cbbxSelectedOperator.SelectedItem.ToString()
                                             select t.ID_OPERATOR).FirstOrDefault();
 
@@ -139,11 +142,15 @@ namespace TP_INDUSDEV.UserControls
 
         // Affichage
         #region Affichage
+
+        // Ajustement taille
         private void UcAddTicket_Resize(object sender, EventArgs e)
         {
             this.InitializeDisplay();
         }
         /*_____________________________________________________________________________________________*/
+
+
         private void ptbQuit_Click(object sender, EventArgs e)
         {
             this.Parent.Visible = false;
