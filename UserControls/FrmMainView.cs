@@ -48,20 +48,34 @@ namespace TP_INDUSDEV.UserControls
             // - positionner les controls par rapport à la page
             // - définir leur taille
 
-            this.pnlFieldTicket.Height = (int)(this.Height * 0.08);
-            this.lblTitleLevelIndicator.Width = (int)(this.pnlFieldTicket.Width * 0.05);
-            this.lblTitleTicketNumer.Width = (int)(this.pnlFieldTicket.Width * 0.1);
-            this.lblTitleCreateDate.Width = (int)(this.pnlFieldTicket.Width * 0.15);
-            this.lblTitleUpdateDate.Width = (int)(this.pnlFieldTicket.Width * 0.15);
-            this.lblTitleActualState.Width = (int)(this.pnlFieldTicket.Width * 0.4);
-
             this.pnlManagement.Width = (int)(this.Width * 0.4);
             this.pnlMenu.Height = (int)(this.Height * 0.05);
 
             // Menu
             this.InitializeDisplayMenu(connectedOperator);
+            // Titre champs
+            this.InitializeDisplayField();
         }
         /*_____________________________________________________________________________________________*/
+
+        private void InitializeDisplayField()
+        {
+            this.pnlFieldTitle.Height = (int)(this.Height * 0.08);
+            this.lblTitleLevelIndicator.Width = (int)(this.pnlFieldTitle.Width * 0.05);
+            this.lblTitleTicketNumer.Width = (int)(this.pnlFieldTitle.Width * 0.1);
+            this.lblTitleCreateDate.Width = (int)(this.pnlFieldTitle.Width * 0.15);
+            this.lblTitleUpdateDate.Width = (int)(this.pnlFieldTitle.Width * 0.15);
+            this.lblTitleActualState.Width = (int)(this.pnlFieldTitle.Width * 0.4);
+
+            this.lblTitleNameOperator.Width = (int)(this.pnlFieldTitle.Width * 0.25);
+            this.lblTitleNameOperator.Visible = false;
+            this.lblTitleLastNameOperator.Width = (int)(this.pnlFieldTitle.Width * 0.25);
+            this.lblTitleLastNameOperator.Visible = false;
+            this.lblTitleOperatorType.Width = (int)(this.pnlFieldTitle.Width * 0.25);
+            this.lblTitleOperatorType.Visible = false;
+        }
+        /*_____________________________________________________________________________________________*/
+
         private void InitializeDisplayMenu(T_OPERATOR connectedOperator)
         {
             // Controls du pnlMenu
@@ -153,6 +167,11 @@ namespace TP_INDUSDEV.UserControls
             this.InitializeDisplay(Program.connectedOperator);
         }
         /*_____________________________________________________________________________________________*/
+        private void pnlFieldTitle_Resize(object sender, EventArgs e)
+        {
+            this.InitializeDisplayField();
+        }
+        /*_____________________________________________________________________________________________*/
         #endregion
 
         // Navigation entre les pages
@@ -192,6 +211,9 @@ namespace TP_INDUSDEV.UserControls
             this.InitializeContent();
             // - Modifier fonction du bouton add
             this.ptbAddTicketOrOperator.Click += (this.bEntryMode) ? new EventHandler(ptbAddTicket_Click) : new EventHandler(ptbAddOperator_Click);
+            // Modifier Barre de titre
+            foreach(Control ctl in this.pnlFieldTitle.Controls)
+                ctl.Visible = !ctl.Visible;
         }
         /*_____________________________________________________________________________________________*/
         #endregion
@@ -239,6 +261,6 @@ namespace TP_INDUSDEV.UserControls
         /*_____________________________________________________________________________________________*/
         #endregion
 
-        #endregion
+        #endregion        
     }
 }

@@ -39,13 +39,13 @@
             this.lblLevelIndicator = new System.Windows.Forms.Label();
             this.pnlHistory = new System.Windows.Forms.Panel();
             this.pnlFieldHistory = new System.Windows.Forms.Panel();
-            this.pnlDesign = new System.Windows.Forms.Panel();
-            this.lblIndicatorTicketOwner = new System.Windows.Forms.Label();
             this.lblTitleDelegatedOperateur = new System.Windows.Forms.Label();
             this.lblTitleUpdateState = new System.Windows.Forms.Label();
             this.lblTitleUpdateDate = new System.Windows.Forms.Label();
             this.lblTitleOperator = new System.Windows.Forms.Label();
             this.lblTitleLevel = new System.Windows.Forms.Label();
+            this.pnlDesign = new System.Windows.Forms.Panel();
+            this.lblIndicatorTicketOwner = new System.Windows.Forms.Label();
             this.pnlInformations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbxEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbxDelete)).BeginInit();
@@ -179,26 +179,6 @@
             this.pnlFieldHistory.Size = new System.Drawing.Size(515, 27);
             this.pnlFieldHistory.TabIndex = 17;
             // 
-            // pnlDesign
-            // 
-            this.pnlDesign.BackColor = System.Drawing.Color.Firebrick;
-            this.pnlDesign.Controls.Add(this.lblIndicatorTicketOwner);
-            this.pnlDesign.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlDesign.Location = new System.Drawing.Point(0, 209);
-            this.pnlDesign.Name = "pnlDesign";
-            this.pnlDesign.Size = new System.Drawing.Size(913, 5);
-            this.pnlDesign.TabIndex = 2;
-            // 
-            // lblIndicatorTicketOwner
-            // 
-            this.lblIndicatorTicketOwner.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblIndicatorTicketOwner.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblIndicatorTicketOwner.Location = new System.Drawing.Point(0, 0);
-            this.lblIndicatorTicketOwner.Name = "lblIndicatorTicketOwner";
-            this.lblIndicatorTicketOwner.Size = new System.Drawing.Size(44, 5);
-            this.lblIndicatorTicketOwner.TabIndex = 5;
-            this.lblIndicatorTicketOwner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lblTitleDelegatedOperateur
             // 
             this.lblTitleDelegatedOperateur.Dock = System.Windows.Forms.DockStyle.Left;
@@ -252,8 +232,27 @@
             this.lblTitleLevel.Name = "lblTitleLevel";
             this.lblTitleLevel.Size = new System.Drawing.Size(41, 27);
             this.lblTitleLevel.TabIndex = 10;
-            this.lblTitleLevel.Text = "Niveau";
             this.lblTitleLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlDesign
+            // 
+            this.pnlDesign.BackColor = System.Drawing.Color.Firebrick;
+            this.pnlDesign.Controls.Add(this.lblIndicatorTicketOwner);
+            this.pnlDesign.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlDesign.Location = new System.Drawing.Point(0, 209);
+            this.pnlDesign.Name = "pnlDesign";
+            this.pnlDesign.Size = new System.Drawing.Size(913, 5);
+            this.pnlDesign.TabIndex = 2;
+            // 
+            // lblIndicatorTicketOwner
+            // 
+            this.lblIndicatorTicketOwner.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblIndicatorTicketOwner.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblIndicatorTicketOwner.Location = new System.Drawing.Point(0, 0);
+            this.lblIndicatorTicketOwner.Name = "lblIndicatorTicketOwner";
+            this.lblIndicatorTicketOwner.Size = new System.Drawing.Size(44, 5);
+            this.lblIndicatorTicketOwner.TabIndex = 5;
+            this.lblIndicatorTicketOwner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UcDisplayTicket
             // 
