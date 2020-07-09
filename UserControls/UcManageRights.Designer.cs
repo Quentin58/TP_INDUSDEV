@@ -54,6 +54,7 @@
             // 
             // btnValidateRights
             // 
+            this.btnValidateRights.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnValidateRights.BorderColor = System.Drawing.Color.Silver;
             this.btnValidateRights.ButtonColor = System.Drawing.Color.Red;
             this.btnValidateRights.Location = new System.Drawing.Point(152, 492);
@@ -97,6 +98,7 @@
             // 
             // ptbQuit
             // 
+            this.ptbQuit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ptbQuit.BackColor = System.Drawing.Color.Firebrick;
             this.ptbQuit.Image = global::TP_INDUSDEV.Properties.Resources.quitIcon;
             this.ptbQuit.Location = new System.Drawing.Point(389, 3);
