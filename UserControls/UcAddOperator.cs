@@ -28,6 +28,7 @@ namespace TP_INDUSDEV.UserControls
         public UcAddOperator()
         {
             InitializeComponent();
+            InitializeDisplay();
             InitializeControls();
         }
         /*_____________________________________________________________________________________________*/
@@ -35,12 +36,50 @@ namespace TP_INDUSDEV.UserControls
         // Méthodes
         #region Méthodes
 
+        // Affichage
+        #region Affichage
+        private void InitializeDisplay()
+        {
+            // Permet de :
+            // - positionner les controls par rapport à la page
+            // - définir leur taille
+
+            // Titre
+            this.lblTitle.Height = (int)(this.Height * 0.1);
+            this.ptbQuit.Size = new Size((int)(this.lblTitle.Height * 0.5), (int)(this.lblTitle.Height * 0.5));
+            this.ptbQuit.Location = new Point((int)(this.lblTitle.Width - (this.lblTitle.Height * 0.1 + this.ptbQuit.Width)), (int)(this.lblTitle.Height * 0.25));
+            // Champs
+            Size sCtlField = new Size((int)(this.Width * 0.7),
+                                        (int)(this.Height * 0.15));
+            this.tbxOperatorFirstName.Size = sCtlField;
+            this.tbxOperatorFirstName.Location = new Point((int)(this.Width * 0.15),
+                                                        (int)(this.Height * 0.25));
+            this.tbxOperatorLastName.Size = sCtlField;
+            this.tbxOperatorLastName.Location = new Point((int)(this.Width * 0.15),
+                                                        (int)(this.Height * 0.4));
+
+            this.lblOperatorType.Size = new Size((int)(this.Width * 0.175),
+                                            (int)(this.Height * 0.05));
+            this.lblOperatorType.Location = new Point((int)(this.Width * 0.15),
+                                                        (int)(this.Height * 0.55));
+            this.cbbxOperatorType.Size = sCtlField;
+            this.cbbxOperatorType.Location = new Point((int)(this.Width * 0.15),
+                                                        (int)(this.Height * 0.6));
+
+            // Bouton
+            this.btnAddOperator.Size = new Size((int)(this.Width * 0.5), (int)(this.Height * 0.1));
+            this.btnAddOperator.Location = new Point((int)(this.Width * 0.25), (int)(this.Height * 0.85));
+        }
+        /*_____________________________________________________________________________________________*/
+        #endregion
+
         // Initialisation champs formulaire
         private void InitializeControls()
         {
             // ComboBox types opérateur
             cbbxOperatorType.DataSource = from t in Program.dcIndusDev.T_OPERATOR_TYPE
                                           select t.NAME_OPERATOR_TYPE;
+            this.cbbxOperatorType.SelectedIndex = -1;
         }
         /*_____________________________________________________________________________________________*/
 
@@ -117,6 +156,22 @@ namespace TP_INDUSDEV.UserControls
 
         // Évenements
         #region Évenements
+
+
+        // Affichage
+        #region Affichage
+        private void UcAddOperator_Resize(object sender, EventArgs e)
+        {
+            this.InitializeDisplay();
+        }
+        /*_____________________________________________________________________________________________*/
+        private void ptbQuit_Click(object sender, EventArgs e)
+        {
+            this.Parent.Visible = false;
+            this.Parent.Controls.Remove(this);
+        }
+        /*_____________________________________________________________________________________________*/
+        #endregion
 
         // Ajouter nouvel opérateur (intervenant, technicien ou administrateur)
         private void BtnAddOperator_Click(object sender, EventArgs e)

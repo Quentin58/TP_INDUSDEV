@@ -65,11 +65,11 @@ namespace TP_INDUSDEV.UserControls
                 // Le bouton de modification des droits est disponible qu'en mode de saisie operateur (bEntryMode = false)
                 if (!bEntryMode)
                 {
-                    this.ptbAddTicketOrOperator.Location = new Point((int)(this.pnlMenu.Width * 0.5 - this.ptbUpdateOperatorRights.Width * 2.2),
+                    this.ptbAddTicketOrOperator.Location = new Point((int)(this.pnlMenu.Width * 0.5 + this.ptbUpdateOperatorRights.Width * 2.2),
                                                                     (int)(this.pnlMenu.Height * 0.05));
                     this.ptbUpdateOperatorRights.Visible = true;
                     this.ptbUpdateOperatorRights.Size = sPtb;
-                    this.ptbUpdateOperatorRights.Location = new Point((int)(this.pnlMenu.Width * 0.5 + this.ptbUpdateOperatorRights.Width * 1.2),
+                    this.ptbUpdateOperatorRights.Location = new Point((int)(this.pnlMenu.Width * 0.5 - this.ptbUpdateOperatorRights.Width * 1.2),
                         (int)(this.pnlMenu.Height * 0.05));
                 }
                 else
