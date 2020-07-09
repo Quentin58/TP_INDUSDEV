@@ -20,46 +20,12 @@
         <elementListCompartment Id="be19851f-87d7-4a48-82fe-6b734afb2f82" absoluteBounds="0.51499999999999968, 3.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="3b9d276a-f5fc-44c6-acad-6b495ec67ffe" absoluteBounds="6, 2.75, 2, 2.5401025390625">
-      <DataClassMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_TICKET" />
-      <nestedChildShapes>
-        <elementListCompartment Id="bfde1286-28b1-4e7e-b7cb-0926ccfd2f86" absoluteBounds="6.0150000000000006, 3.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(5.125 : 4.10659912109375); (6 : 4.10659912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_OPERATOR/T_OPERATOR_T_TICKET" />
-      <nodes>
-        <classShapeMoniker Id="91e53308-28cb-4022-9bb4-45c059fa3dc5" />
-        <classShapeMoniker Id="3b9d276a-f5fc-44c6-acad-6b495ec67ffe" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.125 : 3.55329956054688); (6 : 3.55329956054688)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_OPERATOR/T_OPERATOR_T_TICKET1" />
-      <nodes>
-        <classShapeMoniker Id="91e53308-28cb-4022-9bb4-45c059fa3dc5" />
-        <classShapeMoniker Id="3b9d276a-f5fc-44c6-acad-6b495ec67ffe" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.125 : 4.65989868164062); (6 : 4.65989868164062)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_OPERATOR/T_OPERATOR_T_TICKET2" />
-      <nodes>
-        <classShapeMoniker Id="91e53308-28cb-4022-9bb4-45c059fa3dc5" />
-        <classShapeMoniker Id="3b9d276a-f5fc-44c6-acad-6b495ec67ffe" />
-      </nodes>
-    </associationConnector>
     <classShape Id="f6a844f2-bcf7-4c77-a5ef-3e630e339b34" absoluteBounds="6, 6.25, 2, 1.1939925130208333">
       <DataClassMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_TICKET_STATE" />
       <nestedChildShapes>
         <elementListCompartment Id="d466e175-0ac1-4983-93e1-ec0a4b5b2a37" absoluteBounds="6.0150000000000006, 6.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7 : 6.25); (7 : 5.2901025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_TICKET_STATE/T_TICKET_STATE_T_TICKET" />
-      <nodes>
-        <classShapeMoniker Id="f6a844f2-bcf7-4c77-a5ef-3e630e339b34" />
-        <classShapeMoniker Id="3b9d276a-f5fc-44c6-acad-6b495ec67ffe" />
-      </nodes>
-    </associationConnector>
     <classShape Id="69ec109c-fcd9-4c75-8d66-9db77d33de89" absoluteBounds="0.5, 6, 2, 1.5785953776041666">
       <DataClassMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/TJ_RIGHT_OPERATOR_TYPE" />
       <nestedChildShapes>
@@ -83,13 +49,6 @@
       <AssociationMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_MATERIAL_TYPE/T_MATERIAL_TYPE_TJ_TICKET_MATERIAL_TYPE" />
       <nodes>
         <classShapeMoniker Id="9d43218c-1e4f-452e-a278-dc49e0596cae" />
-        <classShapeMoniker Id="62df0090-3cee-4cb0-84bd-6fef8d092b0c" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(7 : 2.75); (7 : 1.8862939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_TICKET/T_TICKET_TJ_TICKET_MATERIAL_TYPE" />
-      <nodes>
-        <classShapeMoniker Id="3b9d276a-f5fc-44c6-acad-6b495ec67ffe" />
         <classShapeMoniker Id="62df0090-3cee-4cb0-84bd-6fef8d092b0c" />
       </nodes>
     </associationConnector>
@@ -119,24 +78,17 @@
         <elementListCompartment Id="20d735c7-cea6-4438-9df4-5e3c96ede769" absoluteBounds="9.39, 4.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.15625 : 5.0881982421875); (3.15625 : 5.77005126953125); (4.10416666666667 : 5.77005126953125 : JumpStart); (4.27083333333333 : 5.77005126953125 : JumpEnd); (6.91666666666667 : 5.77005126953125 : JumpStart); (7.08333333333333 : 5.77005126953125 : JumpEnd); (9.375 : 5.77005126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3.15625 : 5.0881982421875); (3.15625 : 5.86620198567708); (4.10416666666667 : 5.86620198567708 : JumpStart); (4.27083333333333 : 5.86620198567708 : JumpEnd); (6.91666666666667 : 5.86620198567708 : JumpStart); (7.08333333333333 : 5.86620198567708 : JumpEnd); (9.375 : 5.86620198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_OPERATOR/T_OPERATOR_T_UPDATE_TICKET" />
       <nodes>
         <classShapeMoniker Id="91e53308-28cb-4022-9bb4-45c059fa3dc5" />
         <classShapeMoniker Id="96102ccd-b6eb-42fe-aee7-4abe603d5397" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3.171875 : 5.0881982421875); (3.171875 : 5.53007440429688); (4.10416666666667 : 5.53007440429688 : JumpStart); (4.27083333333333 : 5.53007440429688 : JumpEnd); (6.91666666666667 : 5.53007440429688 : JumpStart); (7.08333333333333 : 5.53007440429688 : JumpEnd); (9.375 : 5.53007440429688)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3.171875 : 5.0881982421875); (3.171875 : 5.67430047851563); (4.10416666666667 : 5.67430047851562 : JumpStart); (4.27083333333333 : 5.67430047851563 : JumpEnd); (6.91666666666667 : 5.67430047851562 : JumpStart); (7.08333333333333 : 5.67430047851563 : JumpEnd); (9.375 : 5.67430047851563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_OPERATOR/T_OPERATOR_T_UPDATE_TICKET1" />
       <nodes>
         <classShapeMoniker Id="91e53308-28cb-4022-9bb4-45c059fa3dc5" />
-        <classShapeMoniker Id="96102ccd-b6eb-42fe-aee7-4abe603d5397" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8 : 4.83255126953125); (9.375 : 4.83255126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_TICKET/T_TICKET_T_UPDATE_TICKET" />
-      <nodes>
-        <classShapeMoniker Id="3b9d276a-f5fc-44c6-acad-6b495ec67ffe" />
         <classShapeMoniker Id="96102ccd-b6eb-42fe-aee7-4abe603d5397" />
       </nodes>
     </associationConnector>
@@ -153,11 +105,66 @@
         <elementListCompartment Id="7841c69f-8bad-42af-b678-2a7eb7197fb4" absoluteBounds="9.39, 2.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(10.375 : 3.6362939453125); (10.375 : 4.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(10.375 : 3.6362939453125); (10.375 : 4.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_LEVEL_TICKET/T_LEVEL_TICKET_T_UPDATE_TICKET" />
       <nodes>
         <classShapeMoniker Id="7dd8f44d-fec9-4439-a06c-204742b10288" />
         <classShapeMoniker Id="96102ccd-b6eb-42fe-aee7-4abe603d5397" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="40b7f415-9e7c-4436-8c6c-8bc16896d117" absoluteBounds="6, 2.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_TICKET" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4f1dad36-503f-40c2-ae78-65221c7e2545" absoluteBounds="6.015, 3.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7 : 2.75); (7 : 1.8862939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_TICKET/T_TICKET_TJ_TICKET_MATERIAL_TYPE" />
+      <nodes>
+        <classShapeMoniker Id="40b7f415-9e7c-4436-8c6c-8bc16896d117" />
+        <classShapeMoniker Id="62df0090-3cee-4cb0-84bd-6fef8d092b0c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8 : 4.92870198567708); (9.375 : 4.92870198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_TICKET/T_TICKET_T_UPDATE_TICKET" />
+      <nodes>
+        <classShapeMoniker Id="40b7f415-9e7c-4436-8c6c-8bc16896d117" />
+        <classShapeMoniker Id="96102ccd-b6eb-42fe-aee7-4abe603d5397" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.375 : 3.19314697265625); (8 : 3.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_LEVEL_TICKET/T_LEVEL_TICKET_T_TICKET" />
+      <nodes>
+        <classShapeMoniker Id="7dd8f44d-fec9-4439-a06c-204742b10288" />
+        <classShapeMoniker Id="40b7f415-9e7c-4436-8c6c-8bc16896d117" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.125 : 4.10659912109375); (6 : 4.10659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_OPERATOR/T_OPERATOR_T_TICKET" />
+      <nodes>
+        <classShapeMoniker Id="91e53308-28cb-4022-9bb4-45c059fa3dc5" />
+        <classShapeMoniker Id="40b7f415-9e7c-4436-8c6c-8bc16896d117" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.125 : 3.55329956054688); (6 : 3.55329956054688)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_OPERATOR/T_OPERATOR_T_TICKET1" />
+      <nodes>
+        <classShapeMoniker Id="91e53308-28cb-4022-9bb4-45c059fa3dc5" />
+        <classShapeMoniker Id="40b7f415-9e7c-4436-8c6c-8bc16896d117" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.125 : 4.65989868164062); (6 : 4.65989868164062)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_OPERATOR/T_OPERATOR_T_TICKET2" />
+      <nodes>
+        <classShapeMoniker Id="91e53308-28cb-4022-9bb4-45c059fa3dc5" />
+        <classShapeMoniker Id="40b7f415-9e7c-4436-8c6c-8bc16896d117" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7 : 6.25); (7 : 5.48240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_TICKET_STATE/T_TICKET_STATE_T_TICKET" />
+      <nodes>
+        <classShapeMoniker Id="f6a844f2-bcf7-4c77-a5ef-3e630e339b34" />
+        <classShapeMoniker Id="40b7f415-9e7c-4436-8c6c-8bc16896d117" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

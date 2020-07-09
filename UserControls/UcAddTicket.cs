@@ -26,35 +26,6 @@ namespace TP_INDUSDEV.UserControls
         public UcAddTicket()
         {
             InitializeComponent();
-            /*
-            T_TICKET_STATE test = new T_TICKET_STATE
-            {
-                ID_TICKET_STATE = 1,
-                NAME_TICKET_STATE = "En saisie"
-            }; 
-            T_TICKET_STATE test2 = new T_TICKET_STATE
-            {
-                ID_TICKET_STATE = 2,
-                NAME_TICKET_STATE = "En cours"
-            }; 
-            T_TICKET_STATE test3 = new T_TICKET_STATE
-            {
-                ID_TICKET_STATE = 3,
-                NAME_TICKET_STATE = "Résolu"
-            }; 
-            T_TICKET_STATE test4 = new T_TICKET_STATE
-            {
-                ID_TICKET_STATE = 4,
-                NAME_TICKET_STATE = "Annulé"
-            };
-
-            List<T_TICKET_STATE> liTest = new List<T_TICKET_STATE>
-            {
-                test,test2,test3,test4
-            };
-
-            Program.dcIndusDev.T_TICKET_STATE.InsertAllOnSubmit(liTest);
-            Program.SubmitChanges("Salut");*/
 
             // Initialisation de l'affichage des controls et des valeurs
             this.InitializeDisplay();
@@ -117,6 +88,11 @@ namespace TP_INDUSDEV.UserControls
                                               where t.ID_OPERATOR_TYPE == 2
                                               select t.FIRST_NAME_OPERATOR + " " + t.LAST_NAME_OPERATOR;
             cbbxSelectedOperator.SelectedIndex = -1;
+
+            // ComboBox niveaux
+            cbbxLevelTicket.DataSource = from t in Program.dcIndusDev.T_LEVEL_TICKET
+                                         select t.NAME_LEVEL_TICKET;
+            cbbxLevelTicket.SelectedIndex = -1;
         }
         /*_____________________________________________________________________________________________*/
 
@@ -139,26 +115,19 @@ namespace TP_INDUSDEV.UserControls
         {
             T_TICKET dTicket = new T_TICKET();
 
-            // Date ouverture, date fermeture, détails, description intervention, etat, créateur, opérateur choisi, solveur
+            // Date ouverture, détails, niveau, etat, créateur, opérateur choisi
             dTicket.START_DATE_TICKET = DateTime.Now;
-            dTicket.END_DATE_TICKET = null;
             dTicket.DETAILS_TICKET = rtbxTicketDetails.Text;
             dTicket.ID_TICKET_STATE = (from t in Program.dcIndusDev.T_TICKET_STATE
                                        where t.NAME_TICKET_STATE == "En saisie"
                                        select t.ID_TICKET_STATE).FirstOrDefault();
-            dTicket.ID_OWNER_OPERATOR = (from t in Program.dcIndusDev.T_OPERATOR
-                                         where t.FIRST_NAME_OPERATOR + t.LAST_NAME_OPERATOR ==
-                                         cbbxSelectedOperator.SelectedItem.ToString()
-                                         select t.ID_OPERATOR).FirstOrDefault(); ;
+            //dTicket.
+            dTicket.ID_OWNER_OPERATOR = Program.connectedOperator.ID_OPERATOR;
             dTicket.ID_SELECTED_OPERATOR = (from t in Program.dcIndusDev.T_OPERATOR
                                             where t.FIRST_NAME_OPERATOR + t.LAST_NAME_OPERATOR ==
                                             cbbxSelectedOperator.SelectedItem.ToString()
                                             select t.ID_OPERATOR).FirstOrDefault();
-            dTicket.ID_SOLVER_OPERATOR = (from t in Program.dcIndusDev.T_OPERATOR
-                                          where t.FIRST_NAME_OPERATOR + t.LAST_NAME_OPERATOR ==
-                                          cbbxSelectedOperator.SelectedItem.ToString()
-                                          select t.ID_OPERATOR).FirstOrDefault();
-            ;
+
             return dTicket;
         }
         /*_____________________________________________________________________________________________*/

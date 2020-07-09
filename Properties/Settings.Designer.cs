@@ -33,5 +33,16 @@ namespace TP_INDUSDEV.Properties {
                 return ((string)(this["DB_INDUSDEV_DEVConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=myrod-dev.c8nesh19lf5i.eu-west-3.rds.amazonaws.com;Initial Catalog=DB" +
+            "_INDUSDEV_DEV;Persist Security Info=True;User ID=admin;Password=tu3m*?lD!C")]
+        public string DB_INDUSDEV_DEVConnectionString1 {
+            get {
+                return ((string)(this["DB_INDUSDEV_DEVConnectionString1"]));
+            }
+        }
     }
 }
