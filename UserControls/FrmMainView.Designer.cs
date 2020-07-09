@@ -37,9 +37,15 @@
             this.pnlDesing = new System.Windows.Forms.Panel();
             this.pnlFieldTicket = new System.Windows.Forms.Panel();
             this.pnlMainContent = new System.Windows.Forms.Panel();
+            this.lblTitleActualState = new System.Windows.Forms.Label();
+            this.lblTitleUpdateDate = new System.Windows.Forms.Label();
+            this.lblTitleCreateDate = new System.Windows.Forms.Label();
+            this.lblTitleTicketNumer = new System.Windows.Forms.Label();
+            this.lblTitleLevelIndicator = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAddTicketOrOperator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbUpdateOperatorRights)).BeginInit();
+            this.pnlFieldTicket.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -145,6 +151,11 @@
             // pnlFieldTicket
             // 
             this.pnlFieldTicket.BackColor = System.Drawing.Color.Firebrick;
+            this.pnlFieldTicket.Controls.Add(this.lblTitleActualState);
+            this.pnlFieldTicket.Controls.Add(this.lblTitleUpdateDate);
+            this.pnlFieldTicket.Controls.Add(this.lblTitleCreateDate);
+            this.pnlFieldTicket.Controls.Add(this.lblTitleTicketNumer);
+            this.pnlFieldTicket.Controls.Add(this.lblTitleLevelIndicator);
             this.pnlFieldTicket.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlFieldTicket.Location = new System.Drawing.Point(0, 0);
             this.pnlFieldTicket.Name = "pnlFieldTicket";
@@ -159,6 +170,66 @@
             this.pnlMainContent.Name = "pnlMainContent";
             this.pnlMainContent.Size = new System.Drawing.Size(693, 510);
             this.pnlMainContent.TabIndex = 17;
+            // 
+            // lblTitleActualState
+            // 
+            this.lblTitleActualState.BackColor = System.Drawing.Color.Firebrick;
+            this.lblTitleActualState.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTitleActualState.ForeColor = System.Drawing.Color.White;
+            this.lblTitleActualState.Location = new System.Drawing.Point(334, 0);
+            this.lblTitleActualState.Name = "lblTitleActualState";
+            this.lblTitleActualState.Size = new System.Drawing.Size(349, 42);
+            this.lblTitleActualState.TabIndex = 8;
+            this.lblTitleActualState.Text = "Etat actuel";
+            this.lblTitleActualState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTitleUpdateDate
+            // 
+            this.lblTitleUpdateDate.BackColor = System.Drawing.Color.Firebrick;
+            this.lblTitleUpdateDate.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTitleUpdateDate.ForeColor = System.Drawing.Color.White;
+            this.lblTitleUpdateDate.Location = new System.Drawing.Point(211, 0);
+            this.lblTitleUpdateDate.Name = "lblTitleUpdateDate";
+            this.lblTitleUpdateDate.Size = new System.Drawing.Size(123, 42);
+            this.lblTitleUpdateDate.TabIndex = 7;
+            this.lblTitleUpdateDate.Text = "Date de dernière modification";
+            this.lblTitleUpdateDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTitleCreateDate
+            // 
+            this.lblTitleCreateDate.BackColor = System.Drawing.Color.Firebrick;
+            this.lblTitleCreateDate.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTitleCreateDate.ForeColor = System.Drawing.Color.White;
+            this.lblTitleCreateDate.Location = new System.Drawing.Point(101, 0);
+            this.lblTitleCreateDate.Name = "lblTitleCreateDate";
+            this.lblTitleCreateDate.Size = new System.Drawing.Size(110, 42);
+            this.lblTitleCreateDate.TabIndex = 6;
+            this.lblTitleCreateDate.Text = "Date de création";
+            this.lblTitleCreateDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTitleTicketNumer
+            // 
+            this.lblTitleTicketNumer.BackColor = System.Drawing.Color.Firebrick;
+            this.lblTitleTicketNumer.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTitleTicketNumer.ForeColor = System.Drawing.Color.White;
+            this.lblTitleTicketNumer.Location = new System.Drawing.Point(44, 0);
+            this.lblTitleTicketNumer.Name = "lblTitleTicketNumer";
+            this.lblTitleTicketNumer.Size = new System.Drawing.Size(57, 42);
+            this.lblTitleTicketNumer.TabIndex = 5;
+            this.lblTitleTicketNumer.Text = "Numéro ticket";
+            this.lblTitleTicketNumer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTitleLevelIndicator
+            // 
+            this.lblTitleLevelIndicator.BackColor = System.Drawing.Color.Firebrick;
+            this.lblTitleLevelIndicator.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTitleLevelIndicator.ForeColor = System.Drawing.Color.White;
+            this.lblTitleLevelIndicator.Location = new System.Drawing.Point(0, 0);
+            this.lblTitleLevelIndicator.Name = "lblTitleLevelIndicator";
+            this.lblTitleLevelIndicator.Size = new System.Drawing.Size(44, 42);
+            this.lblTitleLevelIndicator.TabIndex = 9;
+            this.lblTitleLevelIndicator.Text = "Niveau";
+            this.lblTitleLevelIndicator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmMainView
             // 
@@ -179,6 +250,7 @@
             this.pnlMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbAddTicketOrOperator)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbUpdateOperatorRights)).EndInit();
+            this.pnlFieldTicket.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -193,5 +265,10 @@
         private System.Windows.Forms.Panel pnlDesing;
         private System.Windows.Forms.Panel pnlFieldTicket;
         private System.Windows.Forms.Panel pnlMainContent;
+        private System.Windows.Forms.Label lblTitleActualState;
+        private System.Windows.Forms.Label lblTitleUpdateDate;
+        private System.Windows.Forms.Label lblTitleCreateDate;
+        private System.Windows.Forms.Label lblTitleTicketNumer;
+        private System.Windows.Forms.Label lblTitleLevelIndicator;
     }
 }

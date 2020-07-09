@@ -48,7 +48,13 @@ namespace TP_INDUSDEV.UserControls
             // - positionner les controls par rapport à la page
             // - définir leur taille
 
-            this.pnlFieldTicket.Height = (int)(this.Height * 0.07);
+            this.pnlFieldTicket.Height = (int)(this.Height * 0.08);
+            this.lblTitleLevelIndicator.Width = (int)(this.pnlFieldTicket.Width * 0.05);
+            this.lblTitleTicketNumer.Width = (int)(this.pnlFieldTicket.Width * 0.1);
+            this.lblTitleCreateDate.Width = (int)(this.pnlFieldTicket.Width * 0.15);
+            this.lblTitleUpdateDate.Width = (int)(this.pnlFieldTicket.Width * 0.15);
+            this.lblTitleActualState.Width = (int)(this.pnlFieldTicket.Width * 0.4);
+
             this.pnlManagement.Width = (int)(this.Width * 0.4);
             this.pnlMenu.Height = (int)(this.Height * 0.05);
 
@@ -107,6 +113,7 @@ namespace TP_INDUSDEV.UserControls
         {
             this.liTickets.Clear();
             liTickets = (from t in Program.dcIndusDev.T_TICKET
+                         orderby t.ID_TICKET
                          select t).ToList();
         }
         /*_____________________________________________________________________________________________*/
@@ -128,7 +135,7 @@ namespace TP_INDUSDEV.UserControls
                 UcDisplayTicket newTicket = new UcDisplayTicket(ticket);
                 this.pnlMainContent.Controls.Add(newTicket);
                 newTicket.Dock = DockStyle.Top;
-                newTicket.Height = (int)(this.pnlMainContent.Height * 0.05);
+                newTicket.Height = (int)(this.pnlMainContent.Height * 0.075);
             }
         }
         /*_____________________________________________________________________________________________*/
