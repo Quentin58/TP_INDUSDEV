@@ -30,10 +30,10 @@
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flpnlOperatorType = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnValidateRights = new ZiTest.CustomButton();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDesign = new System.Windows.Forms.Label();
             this.ptbQuit = new System.Windows.Forms.PictureBox();
+            this.btnValidateRights = new ZiTest.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.ptbQuit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,23 +51,6 @@
             this.flpnlOperatorType.Name = "flpnlOperatorType";
             this.flpnlOperatorType.Size = new System.Drawing.Size(408, 436);
             this.flpnlOperatorType.TabIndex = 1;
-            // 
-            // btnValidateRights
-            // 
-            this.btnValidateRights.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnValidateRights.BorderColor = System.Drawing.Color.Silver;
-            this.btnValidateRights.ButtonColor = System.Drawing.Color.Red;
-            this.btnValidateRights.Location = new System.Drawing.Point(152, 492);
-            this.btnValidateRights.Name = "btnValidateRights";
-            this.btnValidateRights.OnHoverBorderColor = System.Drawing.Color.Gray;
-            this.btnValidateRights.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            this.btnValidateRights.OnHoverTextColor = System.Drawing.Color.Gray;
-            this.btnValidateRights.Size = new System.Drawing.Size(125, 49);
-            this.btnValidateRights.TabIndex = 2;
-            this.btnValidateRights.Text = "Valider";
-            this.btnValidateRights.TextColor = System.Drawing.Color.White;
-            this.btnValidateRights.UseVisualStyleBackColor = true;
-            this.btnValidateRights.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // lblTitle
             // 
@@ -108,15 +91,37 @@
             this.ptbQuit.TabIndex = 12;
             this.ptbQuit.TabStop = false;
             // 
+            // btnValidateRights
+            // 
+            this.btnValidateRights.BorderColor = System.Drawing.Color.Firebrick;
+            this.btnValidateRights.ButtonColor = System.Drawing.Color.Firebrick;
+            this.btnValidateRights.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.btnValidateRights.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.btnValidateRights.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.btnValidateRights.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnValidateRights.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValidateRights.Location = new System.Drawing.Point(138, 491);
+            this.btnValidateRights.Margin = new System.Windows.Forms.Padding(2);
+            this.btnValidateRights.Name = "btnValidateRights";
+            this.btnValidateRights.OnHoverBorderColor = System.Drawing.Color.DarkRed;
+            this.btnValidateRights.OnHoverButtonColor = System.Drawing.Color.DarkRed;
+            this.btnValidateRights.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnValidateRights.Size = new System.Drawing.Size(159, 46);
+            this.btnValidateRights.TabIndex = 13;
+            this.btnValidateRights.Text = "Valider";
+            this.btnValidateRights.TextColor = System.Drawing.Color.White;
+            this.btnValidateRights.UseVisualStyleBackColor = true;
+            this.btnValidateRights.Click += new System.EventHandler(this.btnValidateRights_Click);
+            // 
             // UcManageRights
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.Controls.Add(this.btnValidateRights);
             this.Controls.Add(this.ptbQuit);
             this.Controls.Add(this.lblDesign);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.btnValidateRights);
             this.Controls.Add(this.flpnlOperatorType);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "UcManageRights";
@@ -130,9 +135,9 @@
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flpnlOperatorType;
-        private ZiTest.CustomButton btnValidateRights;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblDesign;
         private System.Windows.Forms.PictureBox ptbQuit;
+        private ZiTest.CustomButton btnValidateRights;
     }
 }

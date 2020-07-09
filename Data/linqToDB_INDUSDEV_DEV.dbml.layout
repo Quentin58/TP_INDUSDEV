@@ -52,7 +52,7 @@
         <classShapeMoniker Id="91e53308-28cb-4022-9bb4-45c059fa3dc5" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3.25 : 6.84699625651042); (2.5 : 6.84699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(3.25 : 6.84699625651042); (2.5 : 6.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_OPERATOR_TYPE/T_OPERATOR_TYPE_TJ_RIGHT_OPERATOR_TYPE" />
       <nodes>
         <classShapeMoniker Id="a04b5c9d-e23f-485c-8fc7-244d69321b3f" />
@@ -105,7 +105,7 @@
         <elementListCompartment Id="4f1dad36-503f-40c2-ae78-65221c7e2545" absoluteBounds="6.015, 3.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7.59375 : 2.75); (7.59375 : 1.8862939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.59375 : 2.75); (7.59375 : 1.8862939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_TICKET/T_TICKET_TJ_TICKET_MATERIAL_TYPE" />
       <nodes>
         <classShapeMoniker Id="40b7f415-9e7c-4436-8c6c-8bc16896d117" />
@@ -126,14 +126,14 @@
         <classShapeMoniker Id="40b7f415-9e7c-4436-8c6c-8bc16896d117" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.125 : 4.14569559733073); (6 : 4.14569559733073)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.125 : 4.14569559733073); (6 : 4.14569559733073)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_OPERATOR/T_OPERATOR_T_TICKET" />
       <nodes>
         <classShapeMoniker Id="91e53308-28cb-4022-9bb4-45c059fa3dc5" />
         <classShapeMoniker Id="40b7f415-9e7c-4436-8c6c-8bc16896d117" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.125 : 4.93654846191406); (6 : 4.93654846191406)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.125 : 4.93654846191406); (6 : 4.93654846191406)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/linqToDB_INDUSDEV_DEVDataContext/T_OPERATOR/T_OPERATOR_T_TICKET1" />
       <nodes>
         <classShapeMoniker Id="91e53308-28cb-4022-9bb4-45c059fa3dc5" />
