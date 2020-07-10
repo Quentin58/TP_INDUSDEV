@@ -49,9 +49,9 @@ namespace TP_INDUSDEV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmConnection());
             AppCenter.Start("0e1bd9d9-17ed-470c-ba8b-9562483895b2",
                    typeof(Analytics), typeof(Crashes));
+            Application.Run(new FrmConnection());
             //Application.Run(new FormTest());
         }
     }
