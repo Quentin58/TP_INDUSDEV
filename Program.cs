@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_INDUSDEV.Data;
 using TP_INDUSDEV.UserControls;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace TP_INDUSDEV
 {
@@ -47,6 +50,10 @@ namespace TP_INDUSDEV
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmConnection());
+            AppCenter.Start("0e1bd9d9-17ed-470c-ba8b-9562483895b2",
+                   typeof(Analytics), typeof(Crashes));
+            AppCenter.Start("0e1bd9d9-17ed-470c-ba8b-9562483895b2",
+                               typeof(Analytics), typeof(Crashes));
             //Application.Run(new FormTest());
         }
     }
