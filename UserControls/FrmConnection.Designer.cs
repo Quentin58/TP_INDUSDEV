@@ -55,7 +55,7 @@
             this.lblSubTitle.Name = "lblSubTitle";
             this.lblSubTitle.Size = new System.Drawing.Size(624, 31);
             this.lblSubTitle.TabIndex = 1;
-            this.lblSubTitle.Text = "Connexion";
+            this.lblSubTitle.Text = "Connexion_Présentation";
             this.lblSubTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tbxLogin
